@@ -82,7 +82,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/marketstatus/now?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v1/marketstatus/now?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -168,7 +168,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/marketstatus/upcoming?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v1/marketstatus/upcoming?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -254,7 +254,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/meta/symbols/{symbol}/company?{}", configuration.base_path, query_string, symbol=symbol);
+        let uri_str = format!("{}v1/meta/symbols/{symbol}/company?{}", configuration.base_path, query_string, symbol=symbol);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -342,7 +342,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/meta/symbols/{symbol}/news?{}", configuration.base_path, query_string, symbol=symbol);
+        let uri_str = format!("{}v1/meta/symbols/{symbol}/news?{}", configuration.base_path, query_string, symbol=symbol);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -428,7 +428,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/reference/dividends/{symbol}?{}", configuration.base_path, query_string, symbol=symbol);
+        let uri_str = format!("{}v2/reference/dividends/{symbol}?{}", configuration.base_path, query_string, symbol=symbol);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -517,7 +517,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/reference/financials/{symbol}?{}", configuration.base_path, query_string, symbol=symbol);
+        let uri_str = format!("{}v2/reference/financials/{symbol}?{}", configuration.base_path, query_string, symbol=symbol);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -603,7 +603,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/reference/locales?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v2/reference/locales?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -689,7 +689,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/reference/markets?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v2/reference/markets?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -775,7 +775,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/reference/splits/{symbol}?{}", configuration.base_path, query_string, symbol=symbol);
+        let uri_str = format!("{}v2/reference/splits/{symbol}?{}", configuration.base_path, query_string, symbol=symbol);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -869,7 +869,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/reference/tickers?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v2/reference/tickers?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -955,7 +955,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/reference/types?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v2/reference/types?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {

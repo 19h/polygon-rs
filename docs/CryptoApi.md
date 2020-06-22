@@ -4,17 +4,17 @@ All URIs are relative to *https://api.polygon.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_historic_crypto_from_to_date_get**](CryptoApi.md#v1_historic_crypto_from_to_date_get) | **GET** /v1/historic/crypto/{from}/{to}/{date} | Historic Crypto Trades
-[**v1_last_crypto_from_to_get**](CryptoApi.md#v1_last_crypto_from_to_get) | **GET** /v1/last/crypto/{from}/{to} | Last Trade for a Crypto Pair
-[**v1_meta_crypto_exchanges_get**](CryptoApi.md#v1_meta_crypto_exchanges_get) | **GET** /v1/meta/crypto-exchanges | Crypto Exchanges
-[**v1_open_close_crypto_from_to_date_get**](CryptoApi.md#v1_open_close_crypto_from_to_date_get) | **GET** /v1/open-close/crypto/{from}/{to}/{date} | Daily Open / Close
-[**v2_aggs_grouped_locale_locale_market_market_date_get**](CryptoApi.md#v2_aggs_grouped_locale_locale_market_market_date_get) | **GET** /v2/aggs/grouped/locale/{locale}/market/{market}/{date} | Grouped Daily ( Bars )
-[**v2_aggs_ticker_ticker_prev_get**](CryptoApi.md#v2_aggs_ticker_ticker_prev_get) | **GET** /v2/aggs/ticker/{ticker}/prev | Previous Close
-[**v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get**](CryptoApi.md#v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get) | **GET** /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to} | Aggregates ( Bars )
-[**v2_snapshot_locale_global_markets_crypto_direction_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_direction_get) | **GET** /v2/snapshot/locale/global/markets/crypto/{direction} | Snapshot - Gainers / Losers
-[**v2_snapshot_locale_global_markets_crypto_tickers_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_tickers_get) | **GET** /v2/snapshot/locale/global/markets/crypto/tickers | Snapshot - All Tickers
-[**v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get) | **GET** /v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book | Snapshot - Single Ticker Full Book ( L2 )
-[**v2_snapshot_locale_global_markets_crypto_tickers_ticker_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_tickers_ticker_get) | **GET** /v2/snapshot/locale/global/markets/crypto/tickers/{ticker} | Snapshot - Single Ticker
+[**v1_historic_crypto_from_to_date_get**](CryptoApi.md#v1_historic_crypto_from_to_date_get) | **GET** v1/historic/crypto/{from}/{to}/{date} | Historic Crypto Trades
+[**v1_last_crypto_from_to_get**](CryptoApi.md#v1_last_crypto_from_to_get) | **GET** v1/last/crypto/{from}/{to} | Last Trade for a Crypto Pair
+[**v1_meta_crypto_exchanges_get**](CryptoApi.md#v1_meta_crypto_exchanges_get) | **GET** v1/meta/crypto-exchanges | Crypto Exchanges
+[**v1_open_close_crypto_from_to_date_get**](CryptoApi.md#v1_open_close_crypto_from_to_date_get) | **GET** v1/open-close/crypto/{from}/{to}/{date} | Daily Open / Close
+[**v2_aggs_grouped_locale_locale_market_market_date_get**](CryptoApi.md#v2_aggs_grouped_locale_locale_market_market_date_get) | **GET** v2/aggs/grouped/locale/{locale}/market/{market}/{date} | Grouped Daily ( Bars )
+[**v2_aggs_ticker_ticker_prev_get**](CryptoApi.md#v2_aggs_ticker_ticker_prev_get) | **GET** v2/aggs/ticker/{ticker}/prev | Previous Close
+[**v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get**](CryptoApi.md#v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get) | **GET** v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to} | Aggregates ( Bars )
+[**v2_snapshot_locale_global_markets_crypto_direction_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_direction_get) | **GET** v2/snapshot/locale/global/markets/crypto/{direction} | Snapshot - Gainers / Losers
+[**v2_snapshot_locale_global_markets_crypto_tickers_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_tickers_get) | **GET** v2/snapshot/locale/global/markets/crypto/tickers | Snapshot - All Tickers
+[**v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get) | **GET** v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book | Snapshot - Single Ticker Full Book ( L2 )
+[**v2_snapshot_locale_global_markets_crypto_tickers_ticker_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_tickers_ticker_get) | **GET** v2/snapshot/locale/global/markets/crypto/tickers/{ticker} | Snapshot - Single Ticker
 
 # **v1_historic_crypto_from_to_date_get**
 > InlineResponse20018 v1_historic_crypto_from_to_date_get(ctx, from, to, date, optional)

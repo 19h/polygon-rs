@@ -4,14 +4,14 @@ All URIs are relative to *https://api.polygon.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_conversion_from_to_get**](ForexCurrenciesApi.md#v1_conversion_from_to_get) | **GET** /v1/conversion/{from}/{to} | Real-time Currency Conversion
-[**v1_historic_forex_from_to_date_get**](ForexCurrenciesApi.md#v1_historic_forex_from_to_date_get) | **GET** /v1/historic/forex/{from}/{to}/{date} | Historic Forex Ticks
-[**v1_last_quote_currencies_from_to_get**](ForexCurrenciesApi.md#v1_last_quote_currencies_from_to_get) | **GET** /v1/last_quote/currencies/{from}/{to} | Last Quote for a Currency Pair
-[**v2_aggs_grouped_locale_locale_market_market_date_get**](ForexCurrenciesApi.md#v2_aggs_grouped_locale_locale_market_market_date_get) | **GET** /v2/aggs/grouped/locale/{locale}/market/{market}/{date} | Grouped Daily ( Bars )
-[**v2_aggs_ticker_ticker_prev_get**](ForexCurrenciesApi.md#v2_aggs_ticker_ticker_prev_get) | **GET** /v2/aggs/ticker/{ticker}/prev | Previous Close
-[**v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get**](ForexCurrenciesApi.md#v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get) | **GET** /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to} | Aggregates ( Bars )
-[**v2_snapshot_locale_global_markets_forex_direction_get**](ForexCurrenciesApi.md#v2_snapshot_locale_global_markets_forex_direction_get) | **GET** /v2/snapshot/locale/global/markets/forex/{direction} | Snapshot - Gainers / Losers
-[**v2_snapshot_locale_global_markets_forex_tickers_get**](ForexCurrenciesApi.md#v2_snapshot_locale_global_markets_forex_tickers_get) | **GET** /v2/snapshot/locale/global/markets/forex/tickers | Snapshot - All Tickers
+[**v1_conversion_from_to_get**](ForexCurrenciesApi.md#v1_conversion_from_to_get) | **GET** v1/conversion/{from}/{to} | Real-time Currency Conversion
+[**v1_historic_forex_from_to_date_get**](ForexCurrenciesApi.md#v1_historic_forex_from_to_date_get) | **GET** v1/historic/forex/{from}/{to}/{date} | Historic Forex Ticks
+[**v1_last_quote_currencies_from_to_get**](ForexCurrenciesApi.md#v1_last_quote_currencies_from_to_get) | **GET** v1/last_quote/currencies/{from}/{to} | Last Quote for a Currency Pair
+[**v2_aggs_grouped_locale_locale_market_market_date_get**](ForexCurrenciesApi.md#v2_aggs_grouped_locale_locale_market_market_date_get) | **GET** v2/aggs/grouped/locale/{locale}/market/{market}/{date} | Grouped Daily ( Bars )
+[**v2_aggs_ticker_ticker_prev_get**](ForexCurrenciesApi.md#v2_aggs_ticker_ticker_prev_get) | **GET** v2/aggs/ticker/{ticker}/prev | Previous Close
+[**v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get**](ForexCurrenciesApi.md#v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get) | **GET** v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to} | Aggregates ( Bars )
+[**v2_snapshot_locale_global_markets_forex_direction_get**](ForexCurrenciesApi.md#v2_snapshot_locale_global_markets_forex_direction_get) | **GET** v2/snapshot/locale/global/markets/forex/{direction} | Snapshot - Gainers / Losers
+[**v2_snapshot_locale_global_markets_forex_tickers_get**](ForexCurrenciesApi.md#v2_snapshot_locale_global_markets_forex_tickers_get) | **GET** v2/snapshot/locale/global/markets/forex/tickers | Snapshot - All Tickers
 
 # **v1_conversion_from_to_get**
 > InlineResponse20013 v1_conversion_from_to_get(ctx, from, to, optional)

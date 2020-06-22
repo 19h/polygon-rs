@@ -4,17 +4,17 @@ All URIs are relative to *https://api.polygon.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_marketstatus_now_get**](ReferenceApi.md#v1_marketstatus_now_get) | **GET** /v1/marketstatus/now | Market Status
-[**v1_marketstatus_upcoming_get**](ReferenceApi.md#v1_marketstatus_upcoming_get) | **GET** /v1/marketstatus/upcoming | Market Holidays
-[**v1_meta_symbols_symbol_company_get**](ReferenceApi.md#v1_meta_symbols_symbol_company_get) | **GET** /v1/meta/symbols/{symbol}/company | Ticker Details
-[**v1_meta_symbols_symbol_news_get**](ReferenceApi.md#v1_meta_symbols_symbol_news_get) | **GET** /v1/meta/symbols/{symbol}/news | Ticker News
-[**v2_reference_dividends_symbol_get**](ReferenceApi.md#v2_reference_dividends_symbol_get) | **GET** /v2/reference/dividends/{symbol} | Stock Dividends
-[**v2_reference_financials_symbol_get**](ReferenceApi.md#v2_reference_financials_symbol_get) | **GET** /v2/reference/financials/{symbol} | Stock Financials
-[**v2_reference_locales_get**](ReferenceApi.md#v2_reference_locales_get) | **GET** /v2/reference/locales | Locales
-[**v2_reference_markets_get**](ReferenceApi.md#v2_reference_markets_get) | **GET** /v2/reference/markets | Markets
-[**v2_reference_splits_symbol_get**](ReferenceApi.md#v2_reference_splits_symbol_get) | **GET** /v2/reference/splits/{symbol} | Stock Splits
-[**v2_reference_tickers_get**](ReferenceApi.md#v2_reference_tickers_get) | **GET** /v2/reference/tickers | Tickers
-[**v2_reference_types_get**](ReferenceApi.md#v2_reference_types_get) | **GET** /v2/reference/types | Ticker Types
+[**v1_marketstatus_now_get**](ReferenceApi.md#v1_marketstatus_now_get) | **GET** v1/marketstatus/now | Market Status
+[**v1_marketstatus_upcoming_get**](ReferenceApi.md#v1_marketstatus_upcoming_get) | **GET** v1/marketstatus/upcoming | Market Holidays
+[**v1_meta_symbols_symbol_company_get**](ReferenceApi.md#v1_meta_symbols_symbol_company_get) | **GET** v1/meta/symbols/{symbol}/company | Ticker Details
+[**v1_meta_symbols_symbol_news_get**](ReferenceApi.md#v1_meta_symbols_symbol_news_get) | **GET** v1/meta/symbols/{symbol}/news | Ticker News
+[**v2_reference_dividends_symbol_get**](ReferenceApi.md#v2_reference_dividends_symbol_get) | **GET** v2/reference/dividends/{symbol} | Stock Dividends
+[**v2_reference_financials_symbol_get**](ReferenceApi.md#v2_reference_financials_symbol_get) | **GET** v2/reference/financials/{symbol} | Stock Financials
+[**v2_reference_locales_get**](ReferenceApi.md#v2_reference_locales_get) | **GET** v2/reference/locales | Locales
+[**v2_reference_markets_get**](ReferenceApi.md#v2_reference_markets_get) | **GET** v2/reference/markets | Markets
+[**v2_reference_splits_symbol_get**](ReferenceApi.md#v2_reference_splits_symbol_get) | **GET** v2/reference/splits/{symbol} | Stock Splits
+[**v2_reference_tickers_get**](ReferenceApi.md#v2_reference_tickers_get) | **GET** v2/reference/tickers | Tickers
+[**v2_reference_types_get**](ReferenceApi.md#v2_reference_types_get) | **GET** v2/reference/types | Ticker Types
 
 # **v1_marketstatus_now_get**
 > MarketStatus v1_marketstatus_now_get(ctx, )

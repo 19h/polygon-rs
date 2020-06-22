@@ -81,7 +81,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/conversion/{from}/{to}?{}", configuration.base_path, query_string, from=from, to=to);
+        let uri_str = format!("{}v1/conversion/{from}/{to}?{}", configuration.base_path, query_string, from=from, to=to);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -169,7 +169,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/historic/forex/{from}/{to}/{date}?{}", configuration.base_path, query_string, from=from, to=to, date=date);
+        let uri_str = format!("{}v1/historic/forex/{from}/{to}/{date}?{}", configuration.base_path, query_string, from=from, to=to, date=date);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -255,7 +255,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/last_quote/currencies/{from}/{to}?{}", configuration.base_path, query_string, from=from, to=to);
+        let uri_str = format!("{}v1/last_quote/currencies/{from}/{to}?{}", configuration.base_path, query_string, from=from, to=to);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -342,7 +342,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/aggs/grouped/locale/{locale}/market/{market}/{date}?{}", configuration.base_path, query_string, locale=locale, market=market, date=date);
+        let uri_str = format!("{}v2/aggs/grouped/locale/{locale}/market/{market}/{date}?{}", configuration.base_path, query_string, locale=locale, market=market, date=date);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -429,7 +429,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/aggs/ticker/{ticker}/prev?{}", configuration.base_path, query_string, ticker=ticker);
+        let uri_str = format!("{}v2/aggs/ticker/{ticker}/prev?{}", configuration.base_path, query_string, ticker=ticker);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -517,7 +517,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}?{}", configuration.base_path, query_string, ticker=ticker, multiplier=multiplier, timespan=timespan, from=from, to=to);
+        let uri_str = format!("{}v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}?{}", configuration.base_path, query_string, ticker=ticker, multiplier=multiplier, timespan=timespan, from=from, to=to);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -603,7 +603,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/snapshot/locale/global/markets/forex/{direction}?{}", configuration.base_path, query_string, direction=direction);
+        let uri_str = format!("{}v2/snapshot/locale/global/markets/forex/{direction}?{}", configuration.base_path, query_string, direction=direction);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -689,7 +689,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/snapshot/locale/global/markets/forex/tickers?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v2/snapshot/locale/global/markets/forex/tickers?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {

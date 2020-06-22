@@ -4,19 +4,19 @@ All URIs are relative to *https://api.polygon.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_last_quote_stocks_symbol_get**](StocksEquitiesApi.md#v1_last_quote_stocks_symbol_get) | **GET** /v1/last_quote/stocks/{symbol} | Last Quote for a Symbol
-[**v1_last_stocks_symbol_get**](StocksEquitiesApi.md#v1_last_stocks_symbol_get) | **GET** /v1/last/stocks/{symbol} | Last Trade for a Symbol
-[**v1_meta_conditions_ticktype_get**](StocksEquitiesApi.md#v1_meta_conditions_ticktype_get) | **GET** /v1/meta/conditions/{ticktype} | Condition Mappings
-[**v1_meta_exchanges_get**](StocksEquitiesApi.md#v1_meta_exchanges_get) | **GET** /v1/meta/exchanges | Exchanges
-[**v1_open_close_symbol_date_get**](StocksEquitiesApi.md#v1_open_close_symbol_date_get) | **GET** /v1/open-close/{symbol}/{date} | Daily Open / Close
-[**v2_aggs_grouped_locale_locale_market_market_date_get**](StocksEquitiesApi.md#v2_aggs_grouped_locale_locale_market_market_date_get) | **GET** /v2/aggs/grouped/locale/{locale}/market/{market}/{date} | Grouped Daily ( Bars )
-[**v2_aggs_ticker_ticker_prev_get**](StocksEquitiesApi.md#v2_aggs_ticker_ticker_prev_get) | **GET** /v2/aggs/ticker/{ticker}/prev | Previous Close
-[**v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get**](StocksEquitiesApi.md#v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get) | **GET** /v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to} | Aggregates ( Bars )
-[**v2_snapshot_locale_us_markets_stocks_direction_get**](StocksEquitiesApi.md#v2_snapshot_locale_us_markets_stocks_direction_get) | **GET** /v2/snapshot/locale/us/markets/stocks/{direction} | Snapshot - Gainers / Losers
-[**v2_snapshot_locale_us_markets_stocks_tickers_get**](StocksEquitiesApi.md#v2_snapshot_locale_us_markets_stocks_tickers_get) | **GET** /v2/snapshot/locale/us/markets/stocks/tickers | Snapshot - All Tickers
-[**v2_snapshot_locale_us_markets_stocks_tickers_ticker_get**](StocksEquitiesApi.md#v2_snapshot_locale_us_markets_stocks_tickers_ticker_get) | **GET** /v2/snapshot/locale/us/markets/stocks/tickers/{ticker} | Snapshot - Single Ticker
-[**v2_ticks_stocks_nbbo_ticker_date_get**](StocksEquitiesApi.md#v2_ticks_stocks_nbbo_ticker_date_get) | **GET** /v2/ticks/stocks/nbbo/{ticker}/{date} | Historic Quotes ( NBBO )
-[**v2_ticks_stocks_trades_ticker_date_get**](StocksEquitiesApi.md#v2_ticks_stocks_trades_ticker_date_get) | **GET** /v2/ticks/stocks/trades/{ticker}/{date} | Historic Trades
+[**v1_last_quote_stocks_symbol_get**](StocksEquitiesApi.md#v1_last_quote_stocks_symbol_get) | **GET** v1/last_quote/stocks/{symbol} | Last Quote for a Symbol
+[**v1_last_stocks_symbol_get**](StocksEquitiesApi.md#v1_last_stocks_symbol_get) | **GET** v1/last/stocks/{symbol} | Last Trade for a Symbol
+[**v1_meta_conditions_ticktype_get**](StocksEquitiesApi.md#v1_meta_conditions_ticktype_get) | **GET** v1/meta/conditions/{ticktype} | Condition Mappings
+[**v1_meta_exchanges_get**](StocksEquitiesApi.md#v1_meta_exchanges_get) | **GET** v1/meta/exchanges | Exchanges
+[**v1_open_close_symbol_date_get**](StocksEquitiesApi.md#v1_open_close_symbol_date_get) | **GET** v1/open-close/{symbol}/{date} | Daily Open / Close
+[**v2_aggs_grouped_locale_locale_market_market_date_get**](StocksEquitiesApi.md#v2_aggs_grouped_locale_locale_market_market_date_get) | **GET** v2/aggs/grouped/locale/{locale}/market/{market}/{date} | Grouped Daily ( Bars )
+[**v2_aggs_ticker_ticker_prev_get**](StocksEquitiesApi.md#v2_aggs_ticker_ticker_prev_get) | **GET** v2/aggs/ticker/{ticker}/prev | Previous Close
+[**v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get**](StocksEquitiesApi.md#v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get) | **GET** v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to} | Aggregates ( Bars )
+[**v2_snapshot_locale_us_markets_stocks_direction_get**](StocksEquitiesApi.md#v2_snapshot_locale_us_markets_stocks_direction_get) | **GET** v2/snapshot/locale/us/markets/stocks/{direction} | Snapshot - Gainers / Losers
+[**v2_snapshot_locale_us_markets_stocks_tickers_get**](StocksEquitiesApi.md#v2_snapshot_locale_us_markets_stocks_tickers_get) | **GET** v2/snapshot/locale/us/markets/stocks/tickers | Snapshot - All Tickers
+[**v2_snapshot_locale_us_markets_stocks_tickers_ticker_get**](StocksEquitiesApi.md#v2_snapshot_locale_us_markets_stocks_tickers_ticker_get) | **GET** v2/snapshot/locale/us/markets/stocks/tickers/{ticker} | Snapshot - Single Ticker
+[**v2_ticks_stocks_nbbo_ticker_date_get**](StocksEquitiesApi.md#v2_ticks_stocks_nbbo_ticker_date_get) | **GET** v2/ticks/stocks/nbbo/{ticker}/{date} | Historic Quotes ( NBBO )
+[**v2_ticks_stocks_trades_ticker_date_get**](StocksEquitiesApi.md#v2_ticks_stocks_trades_ticker_date_get) | **GET** v2/ticks/stocks/trades/{ticker}/{date} | Historic Trades
 
 # **v1_last_quote_stocks_symbol_get**
 > InlineResponse2009 v1_last_quote_stocks_symbol_get(ctx, symbol)

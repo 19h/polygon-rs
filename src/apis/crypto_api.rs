@@ -84,7 +84,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/historic/crypto/{from}/{to}/{date}?{}", configuration.base_path, query_string, from=from, to=to, date=date);
+        let uri_str = format!("{}v1/historic/crypto/{from}/{to}/{date}?{}", configuration.base_path, query_string, from=from, to=to, date=date);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -170,7 +170,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/last/crypto/{from}/{to}?{}", configuration.base_path, query_string, from=from, to=to);
+        let uri_str = format!("{}v1/last/crypto/{from}/{to}?{}", configuration.base_path, query_string, from=from, to=to);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -256,7 +256,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/meta/crypto-exchanges?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v1/meta/crypto-exchanges?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -342,7 +342,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v1/open-close/crypto/{from}/{to}/{date}?{}", configuration.base_path, query_string, from=from, to=to, date=date);
+        let uri_str = format!("{}v1/open-close/crypto/{from}/{to}/{date}?{}", configuration.base_path, query_string, from=from, to=to, date=date);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -429,7 +429,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/aggs/grouped/locale/{locale}/market/{market}/{date}?{}", configuration.base_path, query_string, locale=locale, market=market, date=date);
+        let uri_str = format!("{}v2/aggs/grouped/locale/{locale}/market/{market}/{date}?{}", configuration.base_path, query_string, locale=locale, market=market, date=date);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -516,7 +516,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/aggs/ticker/{ticker}/prev?{}", configuration.base_path, query_string, ticker=ticker);
+        let uri_str = format!("{}v2/aggs/ticker/{ticker}/prev?{}", configuration.base_path, query_string, ticker=ticker);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -604,7 +604,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}?{}", configuration.base_path, query_string, ticker=ticker, multiplier=multiplier, timespan=timespan, from=from, to=to);
+        let uri_str = format!("{}v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from}/{to}?{}", configuration.base_path, query_string, ticker=ticker, multiplier=multiplier, timespan=timespan, from=from, to=to);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -690,7 +690,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/snapshot/locale/global/markets/crypto/{direction}?{}", configuration.base_path, query_string, direction=direction);
+        let uri_str = format!("{}v2/snapshot/locale/global/markets/crypto/{direction}?{}", configuration.base_path, query_string, direction=direction);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -776,7 +776,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/snapshot/locale/global/markets/crypto/tickers?{}", configuration.base_path, query_string);
+        let uri_str = format!("{}v2/snapshot/locale/global/markets/crypto/tickers?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -862,7 +862,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book?{}", configuration.base_path, query_string, ticker=ticker);
+        let uri_str = format!("{}v2/snapshot/locale/global/markets/crypto/tickers/{ticker}/book?{}", configuration.base_path, query_string, ticker=ticker);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
@@ -948,7 +948,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
             }
             query.finish()
         };
-        let uri_str = format!("{}/v2/snapshot/locale/global/markets/crypto/tickers/{ticker}?{}", configuration.base_path, query_string, ticker=ticker);
+        let uri_str = format!("{}v2/snapshot/locale/global/markets/crypto/tickers/{ticker}?{}", configuration.base_path, query_string, ticker=ticker);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
