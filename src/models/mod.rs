@@ -76,6 +76,8 @@ mod inline_response_200_2;
 pub use self::inline_response_200_2::InlineResponse2002;
 mod inline_response_200_20;
 pub use self::inline_response_200_20::InlineResponse20020;
+mod inline_response_200_21;
+pub use self::inline_response_200_21::InlineResponse20021;
 mod inline_response_200_3;
 pub use self::inline_response_200_3::InlineResponse2003;
 mod inline_response_200_4;

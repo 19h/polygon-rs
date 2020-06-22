@@ -10,7 +10,7 @@ extern crate url;
 extern crate bigdecimal;
 
 use std::fmt;
-use chrono::{SecondsFormat};
+use chrono::{NaiveDateTime, DateTime, FixedOffset, Utc, SecondsFormat};
 
 pub mod apis;
 pub mod models;

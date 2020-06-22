@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_dividends_symbol_get**
-> InlineResponse2003 v2_reference_dividends_symbol_get(ctx, symbol)
+> InlineResponse2004 v2_reference_dividends_symbol_get(ctx, symbol)
 Stock Dividends
 
 Get the historical divdends for this ticker. 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](inline_response_200_3.md)
+[**InlineResponse2004**](inline_response_200_4.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_financials_symbol_get**
-> InlineResponse2004 v2_reference_financials_symbol_get(ctx, symbol, optional)
+> InlineResponse2005 v2_reference_financials_symbol_get(ctx, symbol, optional)
 Stock Financials
 
 Get the historical financials for this ticker. 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](inline_response_200_4.md)
+[**InlineResponse2005**](inline_response_200_5.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_locales_get**
-> InlineResponse2001 v2_reference_locales_get(ctx, )
+> InlineResponse2002 v2_reference_locales_get(ctx, )
 Locales
 
 Get the list of currently supported locales 
@@ -206,7 +206,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**InlineResponse2002**](inline_response_200_2.md)
 
 ### Authorization
 
@@ -244,7 +244,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_splits_symbol_get**
-> InlineResponse2002 v2_reference_splits_symbol_get(ctx, symbol)
+> InlineResponse2003 v2_reference_splits_symbol_get(ctx, symbol)
 Stock Splits
 
 Get the historical splits for this symbol. 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](inline_response_200_2.md)
+[**InlineResponse2003**](inline_response_200_3.md)
 
 ### Authorization
 

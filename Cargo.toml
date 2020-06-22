@@ -20,6 +20,7 @@ headers = "^0.3.2"
 tokio = { version = "^0.2.21", features = ["full"] }
 bigdecimal = { version = "^0.1.2", features = ["serde"] }
 chrono = { version = "^0.4.11", features = ["serde"] }
+async-trait = "^0.1.36"
 
 [dev-dependencies]
 tokio-core = "^0.1.17"

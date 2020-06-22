@@ -14,10 +14,10 @@ Method | HTTP request | Description
 [**v2_snapshot_locale_global_markets_forex_tickers_get**](ForexCurrenciesApi.md#v2_snapshot_locale_global_markets_forex_tickers_get) | **GET** /v2/snapshot/locale/global/markets/forex/tickers | Snapshot - All Tickers
 
 # **v1_conversion_from_to_get**
-> InlineResponse20012 v1_conversion_from_to_get(ctx, from, to, optional)
+> InlineResponse20013 v1_conversion_from_to_get(ctx, from, to, optional)
 Real-time Currency Conversion
 
-Convert currencies using the latest market conversion rates. Note than you can convert in both directions. For example USD->CAD or CAD->USD. 
+Convert currencies using the latest market conversion rates. Note than you can convert in both directions. For example USD-&gt;CAD or CAD-&gt;USD. 
 
 ### Required Parameters
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](inline_response_200_12.md)
+[**InlineResponse20013**](inline_response_200_13.md)
 
 ### Authorization
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_historic_forex_from_to_date_get**
-> InlineResponse20011 v1_historic_forex_from_to_date_get(ctx, from, to, date, optional)
+> InlineResponse20012 v1_historic_forex_from_to_date_get(ctx, from, to, date, optional)
 Historic Forex Ticks
 
 Get historic ticks for a currency pair. Example for **USD/JPY** thefrom would be **USD** and to would be **JPY**. The date formatted like **2017-6-22** 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](inline_response_200_11.md)
+[**InlineResponse20012**](inline_response_200_12.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_last_quote_currencies_from_to_get**
-> InlineResponse20013 v1_last_quote_currencies_from_to_get(ctx, from, to)
+> InlineResponse20014 v1_last_quote_currencies_from_to_get(ctx, from, to)
 Last Quote for a Currency Pair
 
 Get Last Quote Tick for a Currency Pair. 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](inline_response_200_13.md)
+[**InlineResponse20014**](inline_response_200_14.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 > AggResponse v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(ctx, ticker, multiplier, timespan, from, to, optional)
 Aggregates ( Bars )
 
-Get aggregates for a date range, in custom time window sizes.  Some tickers require a prefix, see examples below&#58; - Stocks&#58; **AAPL** - Currencies&#58; **C&#58;EURUSD** - Crypto&#58; **X&#58;BTCUSD** 
+Get aggregates for a date range, in custom time window sizes.  Some tickers require a prefix, see examples below&amp;#58; - Stocks&amp;#58; **AAPL** - Currencies&amp;#58; **C&amp;#58;EURUSD** - Crypto&amp;#58; **X&amp;#58;BTCUSD** 
 
 ### Required Parameters
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_snapshot_locale_global_markets_forex_direction_get**
-> InlineResponse20014 v2_snapshot_locale_global_markets_forex_direction_get(ctx, direction)
+> InlineResponse20015 v2_snapshot_locale_global_markets_forex_direction_get(ctx, direction)
 Snapshot - Gainers / Losers
 
 See the current snapshot of the top 20 gainers or losers of the day at the moment. 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](inline_response_200_14.md)
+[**InlineResponse20015**](inline_response_200_15.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_snapshot_locale_global_markets_forex_tickers_get**
-> InlineResponse20014 v2_snapshot_locale_global_markets_forex_tickers_get(ctx, )
+> InlineResponse20015 v2_snapshot_locale_global_markets_forex_tickers_get(ctx, )
 Snapshot - All Tickers
 
 Snapshot allows you to see all tickers current minute aggregate, daily aggregate and last trade. As well as previous days aggregate and calculated change for today.  ### *** Warning, may cause browser to hang *** The response size is large, and sometimes will cause the browser prettyprint to crash. 
@@ -282,7 +282,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20014**](inline_response_200_14.md)
+[**InlineResponse20015**](inline_response_200_15.md)
 
 ### Authorization
 

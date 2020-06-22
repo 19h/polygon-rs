@@ -48,7 +48,7 @@ impl<T> From<serde_json::Error> for Error<T> {
     }
 }
 
-
+use super::models::*;
 
 mod crypto_api;
 pub use self::crypto_api::{ CryptoApi, CryptoApiClient };

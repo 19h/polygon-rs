@@ -18,18 +18,18 @@ use crate::models::*;
 //use crate::datetime_serializer;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct InlineResponse20015 {
+pub struct InlineResponse20021 {
   #[serde(rename = "status")]
   status: String,  // OK 
-  #[serde(rename = "tickers")]
-  tickers: Vec<ForexSnapshotTicker> 
+  #[serde(rename = "data")]
+  data: Option<CryptoSnapshotTickerBook> 
 }
 
-impl InlineResponse20015 {
-  pub fn new(status: String, tickers: Vec<ForexSnapshotTicker>, ) -> InlineResponse20015 {
-    InlineResponse20015 {
+impl InlineResponse20021 {
+  pub fn new(status: String, ) -> InlineResponse20021 {
+    InlineResponse20021 {
       status: status,
-      tickers: tickers
+      data: None
     }
   }
 
@@ -37,7 +37,7 @@ impl InlineResponse20015 {
     self.status = status;
   }
 
-  pub fn with_status(mut self, status: String) -> InlineResponse20015 {
+  pub fn with_status(mut self, status: String) -> InlineResponse20021 {
     self.status = status;
     self
   }
@@ -47,19 +47,22 @@ impl InlineResponse20015 {
   }
 
 
-  pub fn set_tickers(&mut self, tickers: Vec<ForexSnapshotTicker>) {
-    self.tickers = tickers;
+  pub fn set_data(&mut self, data: CryptoSnapshotTickerBook) {
+    self.data = Some(data);
   }
 
-  pub fn with_tickers(mut self, tickers: Vec<ForexSnapshotTicker>) -> InlineResponse20015 {
-    self.tickers = tickers;
+  pub fn with_data(mut self, data: CryptoSnapshotTickerBook) -> InlineResponse20021 {
+    self.data = Some(data);
     self
   }
 
-  pub fn tickers(&self) -> &Vec<ForexSnapshotTicker> {
-    &self.tickers
+  pub fn data(&self) -> Option<&CryptoSnapshotTickerBook> {
+    self.data.as_ref()
   }
 
+  pub fn reset_data(&mut self) {
+    self.data = None;
+  }
 
 }
 
