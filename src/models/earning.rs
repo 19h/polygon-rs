@@ -22,13 +22,13 @@ pub struct Earning {
   #[serde(rename = "symbol")]
   symbol: String,  // AAPL 
   #[serde(rename = "EPSReportDate")]
-  eps_report_date: DateTime<Utc>,  // 2018-02-01T00:00Z 
+  eps_report_date: String,  // 2018-02-01T00:00:00.000Z 
   #[serde(rename = "EPSReportDateStr")]
   eps_report_date_str: String,  // 2018-02-01 
   #[serde(rename = "fiscalPeriod")]
   fiscal_period: Option<String>,  // Q1 2018 
   #[serde(rename = "fiscalEndDate")]
-  fiscal_end_date: Option<DateTime<Utc>>,  // 2017-12-31T00:00Z 
+  fiscal_end_date: Option<String>,  // 2017-12-31T00:00:00.000Z 
   #[serde(rename = "actualEPS")]
   actual_eps: Option<f32>,  // 3.89 
   #[serde(rename = "consensusEPS")]
@@ -50,7 +50,7 @@ pub struct Earning {
 }
 
 impl Earning {
-  pub fn new(symbol: String, eps_report_date: DateTime<Utc>, eps_report_date_str: String, ) -> Earning {
+  pub fn new(symbol: String, eps_report_date: String, eps_report_date_str: String, ) -> Earning {
     Earning {
       symbol: symbol,
       eps_report_date: eps_report_date,
@@ -83,16 +83,16 @@ impl Earning {
   }
 
 
-  pub fn set_eps_report_date(&mut self, eps_report_date: DateTime<Utc>) {
+  pub fn set_eps_report_date(&mut self, eps_report_date: String) {
     self.eps_report_date = eps_report_date;
   }
 
-  pub fn with_eps_report_date(mut self, eps_report_date: DateTime<Utc>) -> Earning {
+  pub fn with_eps_report_date(mut self, eps_report_date: String) -> Earning {
     self.eps_report_date = eps_report_date;
     self
   }
 
-  pub fn eps_report_date(&self) -> &DateTime<Utc> {
+  pub fn eps_report_date(&self) -> &String {
     &self.eps_report_date
   }
 
@@ -128,16 +128,16 @@ impl Earning {
     self.fiscal_period = None;
   }
 
-  pub fn set_fiscal_end_date(&mut self, fiscal_end_date: DateTime<Utc>) {
+  pub fn set_fiscal_end_date(&mut self, fiscal_end_date: String) {
     self.fiscal_end_date = Some(fiscal_end_date);
   }
 
-  pub fn with_fiscal_end_date(mut self, fiscal_end_date: DateTime<Utc>) -> Earning {
+  pub fn with_fiscal_end_date(mut self, fiscal_end_date: String) -> Earning {
     self.fiscal_end_date = Some(fiscal_end_date);
     self
   }
 
-  pub fn fiscal_end_date(&self) -> Option<&DateTime<Utc>> {
+  pub fn fiscal_end_date(&self) -> Option<&String> {
     self.fiscal_end_date.as_ref()
   }
 

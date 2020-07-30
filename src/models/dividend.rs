@@ -21,17 +21,17 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Dividend {
   #[serde(rename = "symbol")]
-  symbol: StockSymbol, 
+  symbol: String,  // AAPL 
   #[serde(rename = "type")]
   _type: String,  // Dividend income 
   #[serde(rename = "exDate")]
-  ex_date: DateTime<Utc>,  // 2016-11-03T04:00Z 
+  ex_date: String,  // 2016-11-03T04:00:00.000Z 
   #[serde(rename = "paymentDate")]
-  payment_date: Option<DateTime<Utc>>,  // 2016-11-03T04:00Z 
+  payment_date: Option<String>,  // 2016-11-03T04:00:00.000Z 
   #[serde(rename = "recordDate")]
-  record_date: Option<DateTime<Utc>>,  // 2016-11-03T04:00Z 
+  record_date: Option<String>,  // 2016-11-03T04:00:00.000Z 
   #[serde(rename = "declaredDate")]
-  declared_date: Option<DateTime<Utc>>,  // 2016-11-03T04:00Z 
+  declared_date: Option<String>,  // 2016-11-03T04:00:00.000Z 
   #[serde(rename = "amount")]
   amount: f32,  // 0.57 
   #[serde(rename = "qualified")]
@@ -41,7 +41,7 @@ pub struct Dividend {
 }
 
 impl Dividend {
-  pub fn new(symbol: StockSymbol, _type: String, ex_date: DateTime<Utc>, amount: f32, ) -> Dividend {
+  pub fn new(symbol: String, _type: String, ex_date: String, amount: f32, ) -> Dividend {
     Dividend {
       symbol: symbol,
       _type: _type,
@@ -55,16 +55,16 @@ impl Dividend {
     }
   }
 
-  pub fn set_symbol(&mut self, symbol: StockSymbol) {
+  pub fn set_symbol(&mut self, symbol: String) {
     self.symbol = symbol;
   }
 
-  pub fn with_symbol(mut self, symbol: StockSymbol) -> Dividend {
+  pub fn with_symbol(mut self, symbol: String) -> Dividend {
     self.symbol = symbol;
     self
   }
 
-  pub fn symbol(&self) -> &StockSymbol {
+  pub fn symbol(&self) -> &String {
     &self.symbol
   }
 
@@ -83,30 +83,30 @@ impl Dividend {
   }
 
 
-  pub fn set_ex_date(&mut self, ex_date: DateTime<Utc>) {
+  pub fn set_ex_date(&mut self, ex_date: String) {
     self.ex_date = ex_date;
   }
 
-  pub fn with_ex_date(mut self, ex_date: DateTime<Utc>) -> Dividend {
+  pub fn with_ex_date(mut self, ex_date: String) -> Dividend {
     self.ex_date = ex_date;
     self
   }
 
-  pub fn ex_date(&self) -> &DateTime<Utc> {
+  pub fn ex_date(&self) -> &String {
     &self.ex_date
   }
 
 
-  pub fn set_payment_date(&mut self, payment_date: DateTime<Utc>) {
+  pub fn set_payment_date(&mut self, payment_date: String) {
     self.payment_date = Some(payment_date);
   }
 
-  pub fn with_payment_date(mut self, payment_date: DateTime<Utc>) -> Dividend {
+  pub fn with_payment_date(mut self, payment_date: String) -> Dividend {
     self.payment_date = Some(payment_date);
     self
   }
 
-  pub fn payment_date(&self) -> Option<&DateTime<Utc>> {
+  pub fn payment_date(&self) -> Option<&String> {
     self.payment_date.as_ref()
   }
 
@@ -114,16 +114,16 @@ impl Dividend {
     self.payment_date = None;
   }
 
-  pub fn set_record_date(&mut self, record_date: DateTime<Utc>) {
+  pub fn set_record_date(&mut self, record_date: String) {
     self.record_date = Some(record_date);
   }
 
-  pub fn with_record_date(mut self, record_date: DateTime<Utc>) -> Dividend {
+  pub fn with_record_date(mut self, record_date: String) -> Dividend {
     self.record_date = Some(record_date);
     self
   }
 
-  pub fn record_date(&self) -> Option<&DateTime<Utc>> {
+  pub fn record_date(&self) -> Option<&String> {
     self.record_date.as_ref()
   }
 
@@ -131,16 +131,16 @@ impl Dividend {
     self.record_date = None;
   }
 
-  pub fn set_declared_date(&mut self, declared_date: DateTime<Utc>) {
+  pub fn set_declared_date(&mut self, declared_date: String) {
     self.declared_date = Some(declared_date);
   }
 
-  pub fn with_declared_date(mut self, declared_date: DateTime<Utc>) -> Dividend {
+  pub fn with_declared_date(mut self, declared_date: String) -> Dividend {
     self.declared_date = Some(declared_date);
     self
   }
 
-  pub fn declared_date(&self) -> Option<&DateTime<Utc>> {
+  pub fn declared_date(&self) -> Option<&String> {
     self.declared_date.as_ref()
   }
 

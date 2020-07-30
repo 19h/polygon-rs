@@ -20,7 +20,7 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Ticker {
   #[serde(rename = "ticker")]
-  ticker: StockSymbol, 
+  ticker: String,  // AAPL 
   #[serde(rename = "name")]
   name: String,  // Apple Inc 
   #[serde(rename = "market")]
@@ -36,7 +36,7 @@ pub struct Ticker {
   #[serde(rename = "url")]
   url: Option<String>,  // https://api.polygon.io/v2/reference/tickers/AAPL 
   #[serde(rename = "updated")]
-  updated: DateTime<Utc>, 
+  updated: String,  // 2019-01-25 
   #[serde(rename = "attrs")]
   attrs: Option<Value>, 
   #[serde(rename = "codes")]
@@ -44,7 +44,7 @@ pub struct Ticker {
 }
 
 impl Ticker {
-  pub fn new(ticker: StockSymbol, name: String, market: String, locale: String, updated: DateTime<Utc>, ) -> Ticker {
+  pub fn new(ticker: String, name: String, market: String, locale: String, updated: String, ) -> Ticker {
     Ticker {
       ticker: ticker,
       name: name,
@@ -60,16 +60,16 @@ impl Ticker {
     }
   }
 
-  pub fn set_ticker(&mut self, ticker: StockSymbol) {
+  pub fn set_ticker(&mut self, ticker: String) {
     self.ticker = ticker;
   }
 
-  pub fn with_ticker(mut self, ticker: StockSymbol) -> Ticker {
+  pub fn with_ticker(mut self, ticker: String) -> Ticker {
     self.ticker = ticker;
     self
   }
 
-  pub fn ticker(&self) -> &StockSymbol {
+  pub fn ticker(&self) -> &String {
     &self.ticker
   }
 
@@ -184,16 +184,16 @@ impl Ticker {
     self.url = None;
   }
 
-  pub fn set_updated(&mut self, updated: DateTime<Utc>) {
+  pub fn set_updated(&mut self, updated: String) {
     self.updated = updated;
   }
 
-  pub fn with_updated(mut self, updated: DateTime<Utc>) -> Ticker {
+  pub fn with_updated(mut self, updated: String) -> Ticker {
     self.updated = updated;
     self
   }
 
-  pub fn updated(&self) -> &DateTime<Utc> {
+  pub fn updated(&self) -> &String {
     &self.updated
   }
 

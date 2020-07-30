@@ -22,7 +22,7 @@ pub struct Financial {
   #[serde(rename = "symbol")]
   symbol: String,  // AAPL 
   #[serde(rename = "reportDate")]
-  report_date: DateTime<Utc>,  // 2017-12-31T00:00Z 
+  report_date: String,  // 2017-12-31T00:00:00.000Z 
   #[serde(rename = "reportDateStr")]
   report_date_str: String,  // 2017-12-31 
   #[serde(rename = "grossProfit")]
@@ -66,7 +66,7 @@ pub struct Financial {
 }
 
 impl Financial {
-  pub fn new(symbol: String, report_date: DateTime<Utc>, report_date_str: String, ) -> Financial {
+  pub fn new(symbol: String, report_date: String, report_date_str: String, ) -> Financial {
     Financial {
       symbol: symbol,
       report_date: report_date,
@@ -107,16 +107,16 @@ impl Financial {
   }
 
 
-  pub fn set_report_date(&mut self, report_date: DateTime<Utc>) {
+  pub fn set_report_date(&mut self, report_date: String) {
     self.report_date = report_date;
   }
 
-  pub fn with_report_date(mut self, report_date: DateTime<Utc>) -> Financial {
+  pub fn with_report_date(mut self, report_date: String) -> Financial {
     self.report_date = report_date;
     self
   }
 
-  pub fn report_date(&self) -> &DateTime<Utc> {
+  pub fn report_date(&self) -> &String {
     &self.report_date
   }
 

@@ -26,15 +26,15 @@ pub struct MarketHoliday {
   #[serde(rename = "status")]
   status: String,  // early-close 
   #[serde(rename = "date")]
-  date: DateTime<Utc>,  // 2018-11-23T00:00Z 
+  date: String,  // 2018-11-23T00:00:00.000Z 
   #[serde(rename = "open")]
-  open: Option<DateTime<Utc>>,  // 2018-11-23T09:30Z 
+  open: Option<String>,  // 2018-11-23T09:30:00.000Z 
   #[serde(rename = "close")]
-  close: Option<DateTime<Utc>>  // 2018-11-23T13:00Z 
+  close: Option<String>  // 2018-11-23T13:00:00.000Z 
 }
 
 impl MarketHoliday {
-  pub fn new(exchange: String, name: String, status: String, date: DateTime<Utc>, ) -> MarketHoliday {
+  pub fn new(exchange: String, name: String, status: String, date: String, ) -> MarketHoliday {
     MarketHoliday {
       exchange: exchange,
       name: name,
@@ -87,30 +87,30 @@ impl MarketHoliday {
   }
 
 
-  pub fn set_date(&mut self, date: DateTime<Utc>) {
+  pub fn set_date(&mut self, date: String) {
     self.date = date;
   }
 
-  pub fn with_date(mut self, date: DateTime<Utc>) -> MarketHoliday {
+  pub fn with_date(mut self, date: String) -> MarketHoliday {
     self.date = date;
     self
   }
 
-  pub fn date(&self) -> &DateTime<Utc> {
+  pub fn date(&self) -> &String {
     &self.date
   }
 
 
-  pub fn set_open(&mut self, open: DateTime<Utc>) {
+  pub fn set_open(&mut self, open: String) {
     self.open = Some(open);
   }
 
-  pub fn with_open(mut self, open: DateTime<Utc>) -> MarketHoliday {
+  pub fn with_open(mut self, open: String) -> MarketHoliday {
     self.open = Some(open);
     self
   }
 
-  pub fn open(&self) -> Option<&DateTime<Utc>> {
+  pub fn open(&self) -> Option<&String> {
     self.open.as_ref()
   }
 
@@ -118,16 +118,16 @@ impl MarketHoliday {
     self.open = None;
   }
 
-  pub fn set_close(&mut self, close: DateTime<Utc>) {
+  pub fn set_close(&mut self, close: String) {
     self.close = Some(close);
   }
 
-  pub fn with_close(mut self, close: DateTime<Utc>) -> MarketHoliday {
+  pub fn with_close(mut self, close: String) -> MarketHoliday {
     self.close = Some(close);
     self
   }
 
-  pub fn close(&self) -> Option<&DateTime<Utc>> {
+  pub fn close(&self) -> Option<&String> {
     self.close.as_ref()
   }
 

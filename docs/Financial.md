@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** | Stock Symbol | [default to null]
-**report_date** | **DateTime<Utc>** | Report Date | [default to null]
+**report_date** | **String** | Report Date | [default to null]
 **report_date_str** | **String** | Report date as non date format | [default to null]
 **gross_profit** | **f32** |  | [optional] [default to null]
 **cost_of_revenue** | **f32** |  | [optional] [default to null]

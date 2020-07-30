@@ -26,7 +26,7 @@ pub struct Company {
   #[serde(rename = "name")]
   name: String,  // Apple Inc. 
   #[serde(rename = "symbol")]
-  symbol: StockSymbol, 
+  symbol: String,  // AAPL 
   #[serde(rename = "listdate")]
   listdate: Option<String>, 
   #[serde(rename = "cik")]
@@ -59,15 +59,15 @@ pub struct Company {
   description: String,  // Apple Inc. designs, manufactures, and markets mobile communication and media devices, personal computers, and portable digital music players to consumers...
  
   #[serde(rename = "similar")]
-  similar: Option<Vec<StockSymbol>>,  // ["MSFT","IBM","GOOGL"] 
+  similar: Option<Vec<String>>,  // ["MSFT","IBM","GOOGL"] 
   #[serde(rename = "tags")]
   tags: Option<Vec<String>>,  // ["Technology","Consumer Electronics","Computer Hardware"] 
   #[serde(rename = "updated")]
-  updated: DateTime<Utc> 
+  updated: String 
 }
 
 impl Company {
-  pub fn new(exchange: String, name: String, symbol: StockSymbol, description: String, updated: DateTime<Utc>, ) -> Company {
+  pub fn new(exchange: String, name: String, symbol: String, description: String, updated: String, ) -> Company {
     Company {
       logo: None,
       exchange: exchange,
@@ -139,16 +139,16 @@ impl Company {
   }
 
 
-  pub fn set_symbol(&mut self, symbol: StockSymbol) {
+  pub fn set_symbol(&mut self, symbol: String) {
     self.symbol = symbol;
   }
 
-  pub fn with_symbol(mut self, symbol: StockSymbol) -> Company {
+  pub fn with_symbol(mut self, symbol: String) -> Company {
     self.symbol = symbol;
     self
   }
 
-  pub fn symbol(&self) -> &StockSymbol {
+  pub fn symbol(&self) -> &String {
     &self.symbol
   }
 
@@ -405,16 +405,16 @@ impl Company {
   }
 
 
-  pub fn set_similar(&mut self, similar: Vec<StockSymbol>) {
+  pub fn set_similar(&mut self, similar: Vec<String>) {
     self.similar = Some(similar);
   }
 
-  pub fn with_similar(mut self, similar: Vec<StockSymbol>) -> Company {
+  pub fn with_similar(mut self, similar: Vec<String>) -> Company {
     self.similar = Some(similar);
     self
   }
 
-  pub fn similar(&self) -> Option<&Vec<StockSymbol>> {
+  pub fn similar(&self) -> Option<&Vec<String>> {
     self.similar.as_ref()
   }
 
@@ -439,16 +439,16 @@ impl Company {
     self.tags = None;
   }
 
-  pub fn set_updated(&mut self, updated: DateTime<Utc>) {
+  pub fn set_updated(&mut self, updated: String) {
     self.updated = updated;
   }
 
-  pub fn with_updated(mut self, updated: DateTime<Utc>) -> Company {
+  pub fn with_updated(mut self, updated: String) -> Company {
     self.updated = updated;
     self
   }
 
-  pub fn updated(&self) -> &DateTime<Utc> {
+  pub fn updated(&self) -> &String {
     &self.updated
   }
 

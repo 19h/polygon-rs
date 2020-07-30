@@ -21,15 +21,15 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Split {
   #[serde(rename = "ticker")]
-  ticker: TickerSymbol, 
+  ticker: String,  // AAPL 
   #[serde(rename = "exDate")]
-  ex_date: DateTime<Utc>, 
+  ex_date: String,  // 1999-03-28 
   #[serde(rename = "paymentDate")]
-  payment_date: DateTime<Utc>, 
+  payment_date: String,  // 1999-03-28 
   #[serde(rename = "recordDate")]
-  record_date: Option<DateTime<Utc>>, 
+  record_date: Option<String>,  // 1999-03-28 
   #[serde(rename = "declaredDate")]
-  declared_date: Option<DateTime<Utc>>, 
+  declared_date: Option<String>,  // 1999-03-28 
   #[serde(rename = "ratio")]
   ratio: f32,  // 0.142857 
   #[serde(rename = "tofactor")]
@@ -39,7 +39,7 @@ pub struct Split {
 }
 
 impl Split {
-  pub fn new(ticker: TickerSymbol, ex_date: DateTime<Utc>, payment_date: DateTime<Utc>, ratio: f32, tofactor: f32, forfactor: f32, ) -> Split {
+  pub fn new(ticker: String, ex_date: String, payment_date: String, ratio: f32, tofactor: f32, forfactor: f32, ) -> Split {
     Split {
       ticker: ticker,
       ex_date: ex_date,
@@ -52,58 +52,58 @@ impl Split {
     }
   }
 
-  pub fn set_ticker(&mut self, ticker: TickerSymbol) {
+  pub fn set_ticker(&mut self, ticker: String) {
     self.ticker = ticker;
   }
 
-  pub fn with_ticker(mut self, ticker: TickerSymbol) -> Split {
+  pub fn with_ticker(mut self, ticker: String) -> Split {
     self.ticker = ticker;
     self
   }
 
-  pub fn ticker(&self) -> &TickerSymbol {
+  pub fn ticker(&self) -> &String {
     &self.ticker
   }
 
 
-  pub fn set_ex_date(&mut self, ex_date: DateTime<Utc>) {
+  pub fn set_ex_date(&mut self, ex_date: String) {
     self.ex_date = ex_date;
   }
 
-  pub fn with_ex_date(mut self, ex_date: DateTime<Utc>) -> Split {
+  pub fn with_ex_date(mut self, ex_date: String) -> Split {
     self.ex_date = ex_date;
     self
   }
 
-  pub fn ex_date(&self) -> &DateTime<Utc> {
+  pub fn ex_date(&self) -> &String {
     &self.ex_date
   }
 
 
-  pub fn set_payment_date(&mut self, payment_date: DateTime<Utc>) {
+  pub fn set_payment_date(&mut self, payment_date: String) {
     self.payment_date = payment_date;
   }
 
-  pub fn with_payment_date(mut self, payment_date: DateTime<Utc>) -> Split {
+  pub fn with_payment_date(mut self, payment_date: String) -> Split {
     self.payment_date = payment_date;
     self
   }
 
-  pub fn payment_date(&self) -> &DateTime<Utc> {
+  pub fn payment_date(&self) -> &String {
     &self.payment_date
   }
 
 
-  pub fn set_record_date(&mut self, record_date: DateTime<Utc>) {
+  pub fn set_record_date(&mut self, record_date: String) {
     self.record_date = Some(record_date);
   }
 
-  pub fn with_record_date(mut self, record_date: DateTime<Utc>) -> Split {
+  pub fn with_record_date(mut self, record_date: String) -> Split {
     self.record_date = Some(record_date);
     self
   }
 
-  pub fn record_date(&self) -> Option<&DateTime<Utc>> {
+  pub fn record_date(&self) -> Option<&String> {
     self.record_date.as_ref()
   }
 
@@ -111,16 +111,16 @@ impl Split {
     self.record_date = None;
   }
 
-  pub fn set_declared_date(&mut self, declared_date: DateTime<Utc>) {
+  pub fn set_declared_date(&mut self, declared_date: String) {
     self.declared_date = Some(declared_date);
   }
 
-  pub fn with_declared_date(mut self, declared_date: DateTime<Utc>) -> Split {
+  pub fn with_declared_date(mut self, declared_date: String) -> Split {
     self.declared_date = Some(declared_date);
     self
   }
 
-  pub fn declared_date(&self) -> Option<&DateTime<Utc>> {
+  pub fn declared_date(&self) -> Option<&String> {
     self.declared_date.as_ref()
   }
 

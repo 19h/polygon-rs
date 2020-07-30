@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **logo** | **String** | URL of the entities logo. | [optional] [default to null]
 **exchange** | **String** | Symbols primary exchange | [default to null]
 **name** | **String** | Name of the company/entity | [default to null]
-**symbol** | **StockSymbol** |  | [default to null]
+**symbol** | **String** | An actual exchange symbol this item is traded under. | [default to null]
 **listdate** | [***String**](string.md) | Date this symbol was listed on the exchange. | [optional] [default to null]
 **cik** | **String** | Official CIK guid used for SEC database / filings. | [optional] [default to null]
 **bloomberg** | **String** | Bloomberg guid for this symbol | [optional] [default to null]
@@ -22,9 +22,9 @@ Name | Type | Description | Notes
 **ceo** | **String** | Name of the companies current CEO | [optional] [default to null]
 **url** | **String** | URL of the companies website | [optional] [default to null]
 **description** | **String** | A description of the company and what they do/offer | [default to null]
-**similar** | **Vec<StockSymbol>** |  | [optional] [default to null]
+**similar** | **Vec<String>** |  | [optional] [default to null]
 **tags** | **Vec<String>** |  | [optional] [default to null]
-**updated** | **DateTime<Utc>** | Last time this company record was updated. | [default to null]
+**updated** | **String** | Last time this company record was updated. | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

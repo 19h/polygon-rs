@@ -18,16 +18,5 @@ use crate::models::*;
 //use crate::date_serializer;
 //use crate::datetime_serializer;
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct StockSymbol {
-}
-
-impl StockSymbol {
-  pub fn new() -> StockSymbol {
-    StockSymbol {
-    }
-  }
-
-}
-
+pub type StockSymbol = String;
 

@@ -20,7 +20,7 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct News {
   #[serde(rename = "symbols")]
-  symbols: Vec<StockSymbol>,  // ["MSFT","AAPL","IBM"] 
+  symbols: Vec<String>,  // ["MSFT","AAPL","IBM"] 
   #[serde(rename = "title")]
   title: String,  // Goldman in talks to finance iPhones - WSJ 
   #[serde(rename = "url")]
@@ -32,13 +32,13 @@ pub struct News {
   #[serde(rename = "image")]
   image: Option<String>,  // https://static.seekingalpha.com/assets/og_image_410-b8960ce31ec84f7f12dba11a09fc1849b69b234e0f5f39d7c62f46f8692e58a5.png 
   #[serde(rename = "timestamp")]
-  timestamp: DateTime<Utc>,  // 2018-02-07T12:48:47Z 
+  timestamp: String,  // 2018-02-07T12:48:47.000Z 
   #[serde(rename = "keywords")]
   keywords: Option<Vec<Value>>  // ["financial services","aapl","investing","bsiness news","mobile"] 
 }
 
 impl News {
-  pub fn new(symbols: Vec<StockSymbol>, title: String, url: String, source: String, summary: String, timestamp: DateTime<Utc>, ) -> News {
+  pub fn new(symbols: Vec<String>, title: String, url: String, source: String, summary: String, timestamp: String, ) -> News {
     News {
       symbols: symbols,
       title: title,
@@ -51,16 +51,16 @@ impl News {
     }
   }
 
-  pub fn set_symbols(&mut self, symbols: Vec<StockSymbol>) {
+  pub fn set_symbols(&mut self, symbols: Vec<String>) {
     self.symbols = symbols;
   }
 
-  pub fn with_symbols(mut self, symbols: Vec<StockSymbol>) -> News {
+  pub fn with_symbols(mut self, symbols: Vec<String>) -> News {
     self.symbols = symbols;
     self
   }
 
-  pub fn symbols(&self) -> &Vec<StockSymbol> {
+  pub fn symbols(&self) -> &Vec<String> {
     &self.symbols
   }
 
@@ -138,16 +138,16 @@ impl News {
     self.image = None;
   }
 
-  pub fn set_timestamp(&mut self, timestamp: DateTime<Utc>) {
+  pub fn set_timestamp(&mut self, timestamp: String) {
     self.timestamp = timestamp;
   }
 
-  pub fn with_timestamp(mut self, timestamp: DateTime<Utc>) -> News {
+  pub fn with_timestamp(mut self, timestamp: String) -> News {
     self.timestamp = timestamp;
     self
   }
 
-  pub fn timestamp(&self) -> &DateTime<Utc> {
+  pub fn timestamp(&self) -> &String {
     &self.timestamp
   }
 

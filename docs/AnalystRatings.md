@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **hold** | [***Value**](Value.md) | Hold ratings | [default to null]
 **sell** | [***Value**](Value.md) | Moderate Sell ratings | [default to null]
 **strong_sell** | [***Value**](Value.md) | Strong Sell ratings | [default to null]
-**updated** | **DateTime<Utc>** | Last time the ratings for this symbol were updated. | [default to null]
+**updated** | **String** | Last time the ratings for this symbol were updated. | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

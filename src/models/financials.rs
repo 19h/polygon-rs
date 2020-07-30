@@ -21,15 +21,15 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Financials {
   #[serde(rename = "ticker")]
-  ticker: TickerSymbol, 
+  ticker: String,  // AAPL 
   #[serde(rename = "period")]
   period: Option<String>,  // Q 
   #[serde(rename = "calendarDate")]
-  calendar_date: Option<DateTime<Utc>>, 
+  calendar_date: Option<String>,  // 2019-03-31 
   #[serde(rename = "reportPeriod")]
-  report_period: Option<DateTime<Utc>>, 
+  report_period: Option<String>,  // 2019-03-31 
   #[serde(rename = "updated")]
-  updated: Option<DateTime<Utc>>, 
+  updated: Option<String>,  // 1999-03-28 
   #[serde(rename = "accumulatedOtherComprehensiveIncome")]
   accumulated_other_comprehensive_income: Option<i64>, 
   #[serde(rename = "assets")]
@@ -243,7 +243,7 @@ pub struct Financials {
 }
 
 impl Financials {
-  pub fn new(ticker: TickerSymbol, ) -> Financials {
+  pub fn new(ticker: String, ) -> Financials {
     Financials {
       ticker: ticker,
       period: None,
@@ -358,16 +358,16 @@ impl Financials {
     }
   }
 
-  pub fn set_ticker(&mut self, ticker: TickerSymbol) {
+  pub fn set_ticker(&mut self, ticker: String) {
     self.ticker = ticker;
   }
 
-  pub fn with_ticker(mut self, ticker: TickerSymbol) -> Financials {
+  pub fn with_ticker(mut self, ticker: String) -> Financials {
     self.ticker = ticker;
     self
   }
 
-  pub fn ticker(&self) -> &TickerSymbol {
+  pub fn ticker(&self) -> &String {
     &self.ticker
   }
 
@@ -389,16 +389,16 @@ impl Financials {
     self.period = None;
   }
 
-  pub fn set_calendar_date(&mut self, calendar_date: DateTime<Utc>) {
+  pub fn set_calendar_date(&mut self, calendar_date: String) {
     self.calendar_date = Some(calendar_date);
   }
 
-  pub fn with_calendar_date(mut self, calendar_date: DateTime<Utc>) -> Financials {
+  pub fn with_calendar_date(mut self, calendar_date: String) -> Financials {
     self.calendar_date = Some(calendar_date);
     self
   }
 
-  pub fn calendar_date(&self) -> Option<&DateTime<Utc>> {
+  pub fn calendar_date(&self) -> Option<&String> {
     self.calendar_date.as_ref()
   }
 
@@ -406,16 +406,16 @@ impl Financials {
     self.calendar_date = None;
   }
 
-  pub fn set_report_period(&mut self, report_period: DateTime<Utc>) {
+  pub fn set_report_period(&mut self, report_period: String) {
     self.report_period = Some(report_period);
   }
 
-  pub fn with_report_period(mut self, report_period: DateTime<Utc>) -> Financials {
+  pub fn with_report_period(mut self, report_period: String) -> Financials {
     self.report_period = Some(report_period);
     self
   }
 
-  pub fn report_period(&self) -> Option<&DateTime<Utc>> {
+  pub fn report_period(&self) -> Option<&String> {
     self.report_period.as_ref()
   }
 
@@ -423,16 +423,16 @@ impl Financials {
     self.report_period = None;
   }
 
-  pub fn set_updated(&mut self, updated: DateTime<Utc>) {
+  pub fn set_updated(&mut self, updated: String) {
     self.updated = Some(updated);
   }
 
-  pub fn with_updated(mut self, updated: DateTime<Utc>) -> Financials {
+  pub fn with_updated(mut self, updated: String) -> Financials {
     self.updated = Some(updated);
     self
   }
 
-  pub fn updated(&self) -> Option<&DateTime<Utc>> {
+  pub fn updated(&self) -> Option<&String> {
     self.updated.as_ref()
   }
 

@@ -1,11 +1,8 @@
 [package]
 name = "pt"
-version = "0.2.3-alpha.0"
-authors = ["Swagger Codegen team and contributors"]
+version = "0.2.0"
+authors = ["Kenan Sulayman <kenan@sig.dev"]
 edition = "2018"
-
-description = "Polygon.io Rust client"
-license = "MIT"
 
 [dependencies]
 serde = "^1.0.113"
@@ -25,3 +22,4 @@ async-trait = "^0.1.36"
 [dev-dependencies]
 tokio-core = "^0.1.17"
 tokio = { version = "^0.2.21", features = ["full"] }
+

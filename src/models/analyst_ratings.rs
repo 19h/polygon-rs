@@ -36,11 +36,11 @@ pub struct AnalystRatings {
   #[serde(rename = "strongSell")]
   strong_sell: Value, 
   #[serde(rename = "updated")]
-  updated: DateTime<Utc> 
+  updated: String  // 11/10/2018 
 }
 
 impl AnalystRatings {
-  pub fn new(symbol: String, analysts: f32, change: f32, strong_buy: Value, buy: Value, hold: Value, sell: Value, strong_sell: Value, updated: DateTime<Utc>, ) -> AnalystRatings {
+  pub fn new(symbol: String, analysts: f32, change: f32, strong_buy: Value, buy: Value, hold: Value, sell: Value, strong_sell: Value, updated: String, ) -> AnalystRatings {
     AnalystRatings {
       symbol: symbol,
       analysts: analysts,
@@ -166,16 +166,16 @@ impl AnalystRatings {
   }
 
 
-  pub fn set_updated(&mut self, updated: DateTime<Utc>) {
+  pub fn set_updated(&mut self, updated: String) {
     self.updated = updated;
   }
 
-  pub fn with_updated(mut self, updated: DateTime<Utc>) -> AnalystRatings {
+  pub fn with_updated(mut self, updated: String) -> AnalystRatings {
     self.updated = updated;
     self
   }
 
-  pub fn updated(&self) -> &DateTime<Utc> {
+  pub fn updated(&self) -> &String {
     &self.updated
   }
 

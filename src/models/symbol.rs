@@ -20,7 +20,7 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Symbol {
   #[serde(rename = "symbol")]
-  symbol: StockSymbol, 
+  symbol: String,  // AAPL 
   #[serde(rename = "name")]
   name: String,  // Apple Inc 
   #[serde(rename = "type")]
@@ -28,13 +28,13 @@ pub struct Symbol {
   #[serde(rename = "url")]
   url: String,  // https://api.polygon.io/v1/meta/symbols/AAPL 
   #[serde(rename = "updated")]
-  updated: DateTime<Utc>, 
+  updated: String, 
   #[serde(rename = "isOTC")]
   is_otc: bool  // false 
 }
 
 impl Symbol {
-  pub fn new(symbol: StockSymbol, name: String, _type: String, url: String, updated: DateTime<Utc>, is_otc: bool, ) -> Symbol {
+  pub fn new(symbol: String, name: String, _type: String, url: String, updated: String, is_otc: bool, ) -> Symbol {
     Symbol {
       symbol: symbol,
       name: name,
@@ -45,16 +45,16 @@ impl Symbol {
     }
   }
 
-  pub fn set_symbol(&mut self, symbol: StockSymbol) {
+  pub fn set_symbol(&mut self, symbol: String) {
     self.symbol = symbol;
   }
 
-  pub fn with_symbol(mut self, symbol: StockSymbol) -> Symbol {
+  pub fn with_symbol(mut self, symbol: String) -> Symbol {
     self.symbol = symbol;
     self
   }
 
-  pub fn symbol(&self) -> &StockSymbol {
+  pub fn symbol(&self) -> &String {
     &self.symbol
   }
 
@@ -101,16 +101,16 @@ impl Symbol {
   }
 
 
-  pub fn set_updated(&mut self, updated: DateTime<Utc>) {
+  pub fn set_updated(&mut self, updated: String) {
     self.updated = updated;
   }
 
-  pub fn with_updated(mut self, updated: DateTime<Utc>) -> Symbol {
+  pub fn with_updated(mut self, updated: String) -> Symbol {
     self.updated = updated;
     self
   }
 
-  pub fn updated(&self) -> &DateTime<Utc> {
+  pub fn updated(&self) -> &String {
     &self.updated
   }
 

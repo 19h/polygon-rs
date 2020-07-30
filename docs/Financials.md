@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ticker** | **TickerSymbol** |  | [default to null]
+**ticker** | **String** | An actual exchange traded ticker. | [default to null]
 **period** | **String** | Reporting period. | [optional] [default to null]
-**calendar_date** | **DateTime<Utc>** |  | [optional] [default to null]
-**report_period** | **DateTime<Utc>** |  | [optional] [default to null]
-**updated** | **DateTime<Utc>** |  | [optional] [default to null]
+**calendar_date** | **String** |  | [optional] [default to null]
+**report_period** | **String** |  | [optional] [default to null]
+**updated** | **String** |  | [optional] [default to null]
 **accumulated_other_comprehensive_income** | **i64** |  | [optional] [default to null]
 **assets** | **i64** |  | [optional] [default to null]
 **assets_average** | **i64** |  | [optional] [default to null]

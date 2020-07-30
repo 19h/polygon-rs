@@ -17,7 +17,7 @@ Method | HTTP request | Description
 > InlineResponse20013 v1_conversion_from_to_get(ctx, from, to, optional)
 Real-time Currency Conversion
 
-Convert currencies using the latest market conversion rates. Note than you can convert in both directions. For example USD-&gt;CAD or CAD-&gt;USD. 
+Convert currencies using the latest market conversion rates. Note than you can convert in both directions. For example USD->CAD or CAD->USD. 
 
 ### Required Parameters
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 > AggResponse v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(ctx, ticker, multiplier, timespan, from, to, optional)
 Aggregates ( Bars )
 
-Get aggregates for a date range, in custom time window sizes.  Some tickers require a prefix, see examples below&amp;#58; - Stocks&amp;#58; **AAPL** - Currencies&amp;#58; **C&amp;#58;EURUSD** - Crypto&amp;#58; **X&amp;#58;BTCUSD** 
+Get aggregates for a date range, in custom time window sizes.  Some tickers require a prefix, see examples below&#58; - Stocks&#58; **AAPL** - Currencies&#58; **C&#58;EURUSD** - Crypto&#58; **X&#58;BTCUSD** 
 
 ### Required Parameters
 

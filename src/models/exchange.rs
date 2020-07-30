@@ -24,7 +24,7 @@ pub struct Exchange {
   #[serde(rename = "type")]
   _type: String,  // exchange 
   #[serde(rename = "market")]
-  market: Option<String>,  // equities 
+  market: String,  // equities 
   #[serde(rename = "mic")]
   mic: String,  // XASE 
   #[serde(rename = "name")]
@@ -34,11 +34,11 @@ pub struct Exchange {
 }
 
 impl Exchange {
-  pub fn new(id: f32, _type: String, mic: String, name: String, tape: String, ) -> Exchange {
+  pub fn new(id: f32, _type: String, market: String, mic: String, name: String, tape: String, ) -> Exchange {
     Exchange {
       id: id,
       _type: _type,
-      market: None,
+      market: market,
       mic: mic,
       name: name,
       tape: tape
@@ -74,21 +74,18 @@ impl Exchange {
 
 
   pub fn set_market(&mut self, market: String) {
-    self.market = Some(market);
+    self.market = market;
   }
 
   pub fn with_market(mut self, market: String) -> Exchange {
-    self.market = Some(market);
+    self.market = market;
     self
   }
 
-  pub fn market(&self) -> Option<&String> {
-    self.market.as_ref()
+  pub fn market(&self) -> &String {
+    &self.market
   }
 
-  pub fn reset_market(&mut self) {
-    self.market = None;
-  }
 
   pub fn set_mic(&mut self, mic: String) {
     self.mic = mic;
