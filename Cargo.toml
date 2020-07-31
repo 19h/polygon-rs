@@ -1,6 +1,6 @@
 [package]
 name = "pt"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Kenan Sulayman <kenan@sig.dev"]
 edition = "2018"
 description = "A client for polygon.io, a financial data platform for stocks, forex and crypto."
