@@ -1,8 +1,9 @@
 /target/
 **/*.rs.bk
 Cargo.lock
+target/
+.idea/
 .DS_Store
 /.idea/
-git_push.sh
 /.swagger-codegen/
 .swagger-codegen-ignore

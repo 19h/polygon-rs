@@ -3,20 +3,22 @@ name = "pt"
 version = "0.2.0"
 authors = ["Kenan Sulayman <kenan@sig.dev"]
 edition = "2018"
+description = "A client for polygon.io, a financial data platform for stocks, forex and crypto."
+license = "MIT"
 
 [dependencies]
-serde = "^1.0.113"
-serde_derive = "^1.0.113"
+serde = "^1.0.114"
+serde_derive = "^1.0.114"
 serde_yaml = "^0.8.13"
-serde_json = "^1.0.55"
-base64 = "^0.12.2"
+serde_json = "^1.0.56"
+base64 = "^0.12.3"
 futures = "^0.3.5"
 hyper = "^0.13.6"
 url = "^2.1.1"
 headers = "^0.3.2"
 tokio = { version = "^0.2.21", features = ["full"] }
 bigdecimal = { version = "^0.1.2", features = ["serde"] }
-chrono = { version = "^0.4.11", features = ["serde"] }
+chrono = { version = "^0.4.13", features = ["serde"] }
 async-trait = "^0.1.36"
 
 [dev-dependencies]
