@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol** | **String** | An actual exchange symbol this item is traded under. | [default to null]
-**_type** | **String** | Refers to the dividend payment type&lt;br/&gt; - Dividend income&lt;br/&gt; - Interest income&lt;br/&gt; - Stock dividend&lt;br/&gt; - Short term capital gain&lt;br/&gt; - Medium term capital gain&lt;br/&gt; - Long term capital gain&lt;br/&gt; - Unspecified term capital gain&lt;br/&gt;  | [default to null]
+**symbol** | **String** | An actual exchange symbol this item is traded under. | [optional] [default to null]
+**_type** | **String** | Refers to the dividend payment type&lt;br/&gt; - Dividend income&lt;br/&gt; - Interest income&lt;br/&gt; - Stock dividend&lt;br/&gt; - Short term capital gain&lt;br/&gt; - Medium term capital gain&lt;br/&gt; - Long term capital gain&lt;br/&gt; - Unspecified term capital gain&lt;br/&gt;  | [optional] [default to null]
 **ex_date** | **String** | Execution date of the trade | [default to null]
 **payment_date** | **String** | Payment date of the trade | [optional] [default to null]
 **record_date** | **String** | Record date of the trade | [optional] [default to null]

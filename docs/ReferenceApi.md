@@ -111,8 +111,8 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Ticker we want details for  | 
- **perpage** | **f32**| How many items to be on each page during pagination. Max 50  | [default to 50.0]
- **page** | **f32**| Which page of results to return  | [default to 1.0]
+ **perpage** | **i64**| How many items to be on each page during pagination. Max 50  | [default to 50]
+ **page** | **i64**| Which page of results to return  | [default to 1]
 
 ### Return type
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_dividends_symbol_get**
-> InlineResponse2004 v2_reference_dividends_symbol_get(ctx, symbol)
+> InlineResponse2005 v2_reference_dividends_symbol_get(ctx, symbol)
 Stock Dividends
 
 Get the historical divdends for this ticker. 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](inline_response_200_4.md)
+[**InlineResponse2005**](inline_response_200_5.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_financials_symbol_get**
-> InlineResponse2005 v2_reference_financials_symbol_get(ctx, symbol, optional)
+> InlineResponse2006 v2_reference_financials_symbol_get(ctx, symbol, optional)
 Stock Financials
 
 Get the historical financials for this ticker. 
@@ -176,13 +176,13 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Symbol we want financials for  | 
- **limit** | **f32**| Limit the number of results  | [default to 5.0]
+ **limit** | **i64**| Limit the number of results  | [default to 5]
  **_type** | **String**| Type of reports  | 
  **sort** | **String**| Sort direction  | 
 
 ### Return type
 
-[**InlineResponse2005**](inline_response_200_5.md)
+[**InlineResponse2006**](inline_response_200_6.md)
 
 ### Authorization
 
@@ -196,10 +196,34 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_locales_get**
-> InlineResponse2002 v2_reference_locales_get(ctx, )
+> InlineResponse2003 v2_reference_locales_get(ctx, )
 Locales
 
 Get the list of currently supported locales 
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2003**](inline_response_200_3.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), 
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_reference_markets_get**
+> InlineResponse2002 v2_reference_markets_get(ctx, )
+Markets
+
+Get the list of currently supported markets 
 
 ### Required Parameters
 This endpoint does not need any parameter.
@@ -219,32 +243,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_reference_markets_get**
-> InlineResponse2001 v2_reference_markets_get(ctx, )
-Markets
-
-Get the list of currently supported markets 
-
-### Required Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**InlineResponse2001**](inline_response_200_1.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), 
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **v2_reference_splits_symbol_get**
-> InlineResponse2003 v2_reference_splits_symbol_get(ctx, symbol)
+> InlineResponse2004 v2_reference_splits_symbol_get(ctx, symbol)
 Stock Splits
 
 Get the historical splits for this symbol. 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](inline_response_200_3.md)
+[**InlineResponse2004**](inline_response_200_4.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_tickers_get**
-> Vec<Symbol> v2_reference_tickers_get(ctx, optional)
+> InlineResponse200 v2_reference_tickers_get(ctx, optional)
 Tickers
 
 Query all ticker symbols which are supported by Polygon.io. This API includes Indices, Crypto, FX, and Stocks/Equities. 
@@ -293,13 +293,13 @@ Name | Type | Description  | Notes
  **market** | **String**| Get tickers for a specific market  **Example:** - &#x60;?market&#x3D;stocks&#x60; to get all stock tickers - &#x60;?market&#x3D;indices&#x60; to get all index tickers  | 
  **locale** | **String**| Get tickers for a specific region/locale  **Example:** - &#x60;?locale&#x3D;us&#x60; to get all US tickers - &#x60;?locale&#x3D;g&#x60; to get all Global tickers  | 
  **search** | **String**| Search the name of tickers  **Example:** - &#x60;?search&#x3D;microsoft&#x60; Search tickers for microsoft  | 
- **perpage** | **f32**| How many items to be on each page during pagination. Max 50  | [default to 50.0]
- **page** | **f32**| Which page of results to return  | [default to 1.0]
+ **perpage** | **i64**| How many items to be on each page during pagination. Max 50  | [default to 50]
+ **page** | **i64**| Which page of results to return  | [default to 1]
  **active** | **bool**| Filter for only active or inactive symbols  | 
 
 ### Return type
 
-[**Vec<Symbol>**](Symbol.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_reference_types_get**
-> InlineResponse200 v2_reference_types_get(ctx, )
+> InlineResponse2001 v2_reference_types_get(ctx, )
 Ticker Types
 
 Get the mapping of ticker types to descriptions / long names 
@@ -323,7 +323,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 

@@ -26,11 +26,11 @@ pub struct StocksSnapshotTickerBook {
   #[serde(rename = "asks")]
   asks: Option<Vec<StocksSnapshotBookItem>>, 
   #[serde(rename = "bidCount")]
-  bid_count: Option<i64>, 
+  bid_count: Option<f32>,  // 1242.001 
   #[serde(rename = "askCount")]
-  ask_count: Option<i64>, 
+  ask_count: Option<f32>,  // 1242.001 
   #[serde(rename = "spread")]
-  spread: Option<i64>, 
+  spread: Option<f32>,  // 0.001 
   #[serde(rename = "updated")]
   updated: i64  // 1547787608999 
 }
@@ -96,16 +96,16 @@ impl StocksSnapshotTickerBook {
     self.asks = None;
   }
 
-  pub fn set_bid_count(&mut self, bid_count: i64) {
+  pub fn set_bid_count(&mut self, bid_count: f32) {
     self.bid_count = Some(bid_count);
   }
 
-  pub fn with_bid_count(mut self, bid_count: i64) -> StocksSnapshotTickerBook {
+  pub fn with_bid_count(mut self, bid_count: f32) -> StocksSnapshotTickerBook {
     self.bid_count = Some(bid_count);
     self
   }
 
-  pub fn bid_count(&self) -> Option<&i64> {
+  pub fn bid_count(&self) -> Option<&f32> {
     self.bid_count.as_ref()
   }
 
@@ -113,16 +113,16 @@ impl StocksSnapshotTickerBook {
     self.bid_count = None;
   }
 
-  pub fn set_ask_count(&mut self, ask_count: i64) {
+  pub fn set_ask_count(&mut self, ask_count: f32) {
     self.ask_count = Some(ask_count);
   }
 
-  pub fn with_ask_count(mut self, ask_count: i64) -> StocksSnapshotTickerBook {
+  pub fn with_ask_count(mut self, ask_count: f32) -> StocksSnapshotTickerBook {
     self.ask_count = Some(ask_count);
     self
   }
 
-  pub fn ask_count(&self) -> Option<&i64> {
+  pub fn ask_count(&self) -> Option<&f32> {
     self.ask_count.as_ref()
   }
 
@@ -130,16 +130,16 @@ impl StocksSnapshotTickerBook {
     self.ask_count = None;
   }
 
-  pub fn set_spread(&mut self, spread: i64) {
+  pub fn set_spread(&mut self, spread: f32) {
     self.spread = Some(spread);
   }
 
-  pub fn with_spread(mut self, spread: i64) -> StocksSnapshotTickerBook {
+  pub fn with_spread(mut self, spread: f32) -> StocksSnapshotTickerBook {
     self.spread = Some(spread);
     self
   }
 
-  pub fn spread(&self) -> Option<&i64> {
+  pub fn spread(&self) -> Option<&f32> {
     self.spread.as_ref()
   }
 

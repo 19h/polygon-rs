@@ -19,19 +19,73 @@ use crate::models::*;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse20019 {
+  #[serde(rename = "day")]
+  day: String,  // Wed May 09 02:00:00 CEST 2018 
+  #[serde(rename = "map")]
+  map: Value,  // {"c":"conditions","p":"price","s":"size","x":"exchange","t":"timestamp"} 
+  #[serde(rename = "msLatency")]
+  ms_latency: i64,  // 2 
   #[serde(rename = "status")]
-  status: String,  // OK 
-  #[serde(rename = "tickers")]
-  tickers: Vec<CryptoSnapshotTicker> 
+  status: String,  // success 
+  #[serde(rename = "symbol")]
+  symbol: String,  // BTC-USD 
+  #[serde(rename = "ticks")]
+  ticks: Vec<CryptoTickJson> 
 }
 
 impl InlineResponse20019 {
-  pub fn new(status: String, tickers: Vec<CryptoSnapshotTicker>, ) -> InlineResponse20019 {
+  pub fn new(day: String, map: Value, ms_latency: i64, status: String, symbol: String, ticks: Vec<CryptoTickJson>, ) -> InlineResponse20019 {
     InlineResponse20019 {
+      day: day,
+      map: map,
+      ms_latency: ms_latency,
       status: status,
-      tickers: tickers
+      symbol: symbol,
+      ticks: ticks
     }
   }
+
+  pub fn set_day(&mut self, day: String) {
+    self.day = day;
+  }
+
+  pub fn with_day(mut self, day: String) -> InlineResponse20019 {
+    self.day = day;
+    self
+  }
+
+  pub fn day(&self) -> &String {
+    &self.day
+  }
+
+
+  pub fn set_map(&mut self, map: Value) {
+    self.map = map;
+  }
+
+  pub fn with_map(mut self, map: Value) -> InlineResponse20019 {
+    self.map = map;
+    self
+  }
+
+  pub fn map(&self) -> &Value {
+    &self.map
+  }
+
+
+  pub fn set_ms_latency(&mut self, ms_latency: i64) {
+    self.ms_latency = ms_latency;
+  }
+
+  pub fn with_ms_latency(mut self, ms_latency: i64) -> InlineResponse20019 {
+    self.ms_latency = ms_latency;
+    self
+  }
+
+  pub fn ms_latency(&self) -> &i64 {
+    &self.ms_latency
+  }
+
 
   pub fn set_status(&mut self, status: String) {
     self.status = status;
@@ -47,17 +101,31 @@ impl InlineResponse20019 {
   }
 
 
-  pub fn set_tickers(&mut self, tickers: Vec<CryptoSnapshotTicker>) {
-    self.tickers = tickers;
+  pub fn set_symbol(&mut self, symbol: String) {
+    self.symbol = symbol;
   }
 
-  pub fn with_tickers(mut self, tickers: Vec<CryptoSnapshotTicker>) -> InlineResponse20019 {
-    self.tickers = tickers;
+  pub fn with_symbol(mut self, symbol: String) -> InlineResponse20019 {
+    self.symbol = symbol;
     self
   }
 
-  pub fn tickers(&self) -> &Vec<CryptoSnapshotTicker> {
-    &self.tickers
+  pub fn symbol(&self) -> &String {
+    &self.symbol
+  }
+
+
+  pub fn set_ticks(&mut self, ticks: Vec<CryptoTickJson>) {
+    self.ticks = ticks;
+  }
+
+  pub fn with_ticks(mut self, ticks: Vec<CryptoTickJson>) -> InlineResponse20019 {
+    self.ticks = ticks;
+    self
+  }
+
+  pub fn ticks(&self) -> &Vec<CryptoTickJson> {
+    &self.ticks
   }
 
 

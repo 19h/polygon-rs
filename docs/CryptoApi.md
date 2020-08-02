@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**v2_snapshot_locale_global_markets_crypto_tickers_ticker_get**](CryptoApi.md#v2_snapshot_locale_global_markets_crypto_tickers_ticker_get) | **GET** v2/snapshot/locale/global/markets/crypto/tickers/{ticker} | Snapshot - Single Ticker
 
 # **v1_historic_crypto_from_to_date_get**
-> InlineResponse20018 v1_historic_crypto_from_to_date_get(ctx, from, to, date, optional)
+> InlineResponse20019 v1_historic_crypto_from_to_date_get(ctx, from, to, date, optional)
 Historic Crypto Trades
 
 Get historic trade ticks for a crypto pair. 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](inline_response_200_18.md)
+[**InlineResponse20019**](inline_response_200_19.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_last_crypto_from_to_get**
-> InlineResponse20016 v1_last_crypto_from_to_get(ctx, from, to)
+> InlineResponse20017 v1_last_crypto_from_to_get(ctx, from, to)
 Last Trade for a Crypto Pair
 
 Get Last Trade Tick for a Currency Pair. 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](inline_response_200_16.md)
+[**InlineResponse20017**](inline_response_200_17.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_open_close_crypto_from_to_date_get**
-> InlineResponse20017 v1_open_close_crypto_from_to_date_get(ctx, from, to, date)
+> InlineResponse20018 v1_open_close_crypto_from_to_date_get(ctx, from, to, date)
 Daily Open / Close
 
 Get the open, close prices of a symbol on a certain day. 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](inline_response_200_17.md)
+[**InlineResponse20018**](inline_response_200_18.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
   **ticker** | **String**| Ticker symbol of the request | 
-  **multiplier** | **f32**| Size of the timespan multiplier | 
+  **multiplier** | **i64**| Size of the timespan multiplier | 
   **timespan** | **String**| Size of the time window | 
   **from** | **String**| From date | 
   **to** | **String**| To date | 
@@ -239,7 +239,7 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ticker** | **String**| Ticker symbol of the request | 
- **multiplier** | **f32**| Size of the timespan multiplier | 
+ **multiplier** | **i64**| Size of the timespan multiplier | 
  **timespan** | **String**| Size of the time window | 
  **from** | **String**| From date | 
  **to** | **String**| To date | 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_snapshot_locale_global_markets_crypto_direction_get**
-> InlineResponse20019 v2_snapshot_locale_global_markets_crypto_direction_get(ctx, direction)
+> InlineResponse20020 v2_snapshot_locale_global_markets_crypto_direction_get(ctx, direction)
 Snapshot - Gainers / Losers
 
 See the current snapshot of the top 20 gainers or losers of the day at the moment. 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](inline_response_200_19.md)
+[**InlineResponse20020**](inline_response_200_20.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_snapshot_locale_global_markets_crypto_tickers_get**
-> InlineResponse20019 v2_snapshot_locale_global_markets_crypto_tickers_get(ctx, )
+> InlineResponse20020 v2_snapshot_locale_global_markets_crypto_tickers_get(ctx, )
 Snapshot - All Tickers
 
 Snapshot allows you to see all tickers current minute aggregate, daily aggregate and last trade. As well as previous days aggregate and calculated change for today.  ### *** Warning, may cause browser to hang *** The response size is large, and sometimes will cause the browser prettyprint to crash. 
@@ -300,7 +300,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20019**](inline_response_200_19.md)
+[**InlineResponse20020**](inline_response_200_20.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get**
-> InlineResponse20021 v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get(ctx, ticker)
+> InlineResponse20022 v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get(ctx, ticker)
 Snapshot - Single Ticker Full Book ( L2 )
 
 See the current level 2 book of a single ticker. This is the combined book from all the exchanges. 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](inline_response_200_21.md)
+[**InlineResponse20022**](inline_response_200_22.md)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_snapshot_locale_global_markets_crypto_tickers_ticker_get**
-> InlineResponse20020 v2_snapshot_locale_global_markets_crypto_tickers_ticker_get(ctx, ticker)
+> InlineResponse20021 v2_snapshot_locale_global_markets_crypto_tickers_ticker_get(ctx, ticker)
 Snapshot - Single Ticker
 
 See the current snapshot of a single ticker 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](inline_response_200_20.md)
+[**InlineResponse20021**](inline_response_200_21.md)
 
 ### Authorization
 

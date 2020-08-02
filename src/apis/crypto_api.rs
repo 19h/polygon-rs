@@ -45,22 +45,22 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static> CryptoA
 
 #[async_trait::async_trait]
 pub trait CryptoApi {
-    async fn v1_historic_crypto_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20018, Error<serde_json::Value>>;
-    async fn v1_last_crypto_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20016, Error<serde_json::Value>>;
+    async fn v1_historic_crypto_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20019, Error<serde_json::Value>>;
+    async fn v1_last_crypto_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20017, Error<serde_json::Value>>;
     async fn v1_meta_crypto_exchanges_get(&self, ) -> Result<Vec<CryptoExchange>, Error<serde_json::Value>>;
-    async fn v1_open_close_crypto_from_to_date_get(&self, from: &str, to: &str, date: String) -> Result<InlineResponse20017, Error<serde_json::Value>>;
+    async fn v1_open_close_crypto_from_to_date_get(&self, from: &str, to: &str, date: String) -> Result<InlineResponse20018, Error<serde_json::Value>>;
     async fn v2_aggs_grouped_locale_locale_market_market_date_get(&self, locale: &str, market: &str, date: &str, unadjusted: bool) -> Result<AggResponse, Error<serde_json::Value>>;
     async fn v2_aggs_ticker_ticker_prev_get(&self, ticker: &str, unadjusted: bool) -> Result<AggResponse, Error<serde_json::Value>>;
-    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: f32, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_global_markets_crypto_direction_get(&self, direction: &str) -> Result<InlineResponse20019, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_global_markets_crypto_tickers_get(&self, ) -> Result<InlineResponse20019, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get(&self, ticker: &str) -> Result<InlineResponse20021, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20020, Error<serde_json::Value>>;
+    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: i64, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_global_markets_crypto_direction_get(&self, direction: &str) -> Result<InlineResponse20020, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_global_markets_crypto_tickers_get(&self, ) -> Result<InlineResponse20020, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get(&self, ticker: &str) -> Result<InlineResponse20022, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20021, Error<serde_json::Value>>;
 }
 
 #[async_trait::async_trait]
 impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoApi for CryptoApiClient<C> {
-    async fn v1_historic_crypto_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20018, Error<serde_json::Value>> {
+    async fn v1_historic_crypto_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20019, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -148,7 +148,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
         res_body
     }
 
-    async fn v1_last_crypto_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20016, Error<serde_json::Value>> {
+    async fn v1_last_crypto_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20017, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -320,7 +320,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
         res_body
     }
 
-    async fn v1_open_close_crypto_from_to_date_get(&self, from: &str, to: &str, date: String) -> Result<InlineResponse20017, Error<serde_json::Value>> {
+    async fn v1_open_close_crypto_from_to_date_get(&self, from: &str, to: &str, date: String) -> Result<InlineResponse20018, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -580,7 +580,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
         res_body
     }
 
-    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: f32, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>> {
+    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: i64, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -668,7 +668,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
         res_body
     }
 
-    async fn v2_snapshot_locale_global_markets_crypto_direction_get(&self, direction: &str) -> Result<InlineResponse20019, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_global_markets_crypto_direction_get(&self, direction: &str) -> Result<InlineResponse20020, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -754,7 +754,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
         res_body
     }
 
-    async fn v2_snapshot_locale_global_markets_crypto_tickers_get(&self, ) -> Result<InlineResponse20019, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_global_markets_crypto_tickers_get(&self, ) -> Result<InlineResponse20020, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -840,7 +840,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
         res_body
     }
 
-    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get(&self, ticker: &str) -> Result<InlineResponse20021, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_book_get(&self, ticker: &str) -> Result<InlineResponse20022, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -926,7 +926,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>CryptoAp
         res_body
     }
 
-    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20020, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_global_markets_crypto_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20021, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();

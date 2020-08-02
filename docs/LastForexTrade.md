@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**price** | **i64** | Price of the trade | [default to null]
+**price** | **f32** | Price of the trade | [default to null]
 **exchange** | **i64** | Exchange this trade happened on | [default to null]
 **timestamp** | **i64** | Timestamp of this trade | [default to null]
 

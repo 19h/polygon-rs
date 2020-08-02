@@ -20,9 +20,9 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct LastForexQuote {
   #[serde(rename = "ask")]
-  ask: i64, 
+  ask: f32,  // 0.7817 
   #[serde(rename = "bid")]
-  bid: i64, 
+  bid: f32,  // 0.78154 
   #[serde(rename = "exchange")]
   exchange: i64,  // 20 
   #[serde(rename = "timestamp")]
@@ -30,7 +30,7 @@ pub struct LastForexQuote {
 }
 
 impl LastForexQuote {
-  pub fn new(ask: i64, bid: i64, exchange: i64, timestamp: i64, ) -> LastForexQuote {
+  pub fn new(ask: f32, bid: f32, exchange: i64, timestamp: i64, ) -> LastForexQuote {
     LastForexQuote {
       ask: ask,
       bid: bid,
@@ -39,30 +39,30 @@ impl LastForexQuote {
     }
   }
 
-  pub fn set_ask(&mut self, ask: i64) {
+  pub fn set_ask(&mut self, ask: f32) {
     self.ask = ask;
   }
 
-  pub fn with_ask(mut self, ask: i64) -> LastForexQuote {
+  pub fn with_ask(mut self, ask: f32) -> LastForexQuote {
     self.ask = ask;
     self
   }
 
-  pub fn ask(&self) -> &i64 {
+  pub fn ask(&self) -> &f32 {
     &self.ask
   }
 
 
-  pub fn set_bid(&mut self, bid: i64) {
+  pub fn set_bid(&mut self, bid: f32) {
     self.bid = bid;
   }
 
-  pub fn with_bid(mut self, bid: i64) -> LastForexQuote {
+  pub fn with_bid(mut self, bid: f32) -> LastForexQuote {
     self.bid = bid;
     self
   }
 
-  pub fn bid(&self) -> &i64 {
+  pub fn bid(&self) -> &f32 {
     &self.bid
   }
 

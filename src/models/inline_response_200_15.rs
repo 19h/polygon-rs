@@ -20,16 +20,19 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse20015 {
   #[serde(rename = "status")]
-  status: String,  // OK 
-  #[serde(rename = "tickers")]
-  tickers: Vec<ForexSnapshotTicker> 
+  status: String,  // success 
+  #[serde(rename = "symbol")]
+  symbol: String,  // AUD/USD 
+  #[serde(rename = "last")]
+  last: LastForexQuote 
 }
 
 impl InlineResponse20015 {
-  pub fn new(status: String, tickers: Vec<ForexSnapshotTicker>, ) -> InlineResponse20015 {
+  pub fn new(status: String, symbol: String, last: LastForexQuote, ) -> InlineResponse20015 {
     InlineResponse20015 {
       status: status,
-      tickers: tickers
+      symbol: symbol,
+      last: last
     }
   }
 
@@ -47,17 +50,31 @@ impl InlineResponse20015 {
   }
 
 
-  pub fn set_tickers(&mut self, tickers: Vec<ForexSnapshotTicker>) {
-    self.tickers = tickers;
+  pub fn set_symbol(&mut self, symbol: String) {
+    self.symbol = symbol;
   }
 
-  pub fn with_tickers(mut self, tickers: Vec<ForexSnapshotTicker>) -> InlineResponse20015 {
-    self.tickers = tickers;
+  pub fn with_symbol(mut self, symbol: String) -> InlineResponse20015 {
+    self.symbol = symbol;
     self
   }
 
-  pub fn tickers(&self) -> &Vec<ForexSnapshotTicker> {
-    &self.tickers
+  pub fn symbol(&self) -> &String {
+    &self.symbol
+  }
+
+
+  pub fn set_last(&mut self, last: LastForexQuote) {
+    self.last = last;
+  }
+
+  pub fn with_last(mut self, last: LastForexQuote) -> InlineResponse20015 {
+    self.last = last;
+    self
+  }
+
+  pub fn last(&self) -> &LastForexQuote {
+    &self.last
   }
 
 

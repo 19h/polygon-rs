@@ -22,9 +22,9 @@ pub struct InlineResponse2004 {
   #[serde(rename = "status")]
   status: Option<String>,  // OK 
   #[serde(rename = "count")]
-  count: Option<f32>,  // 1.0 
+  count: Option<i64>,  // 1 
   #[serde(rename = "results")]
-  results: Option<Vec<Dividend>> 
+  results: Option<Vec<Split>> 
 }
 
 impl InlineResponse2004 {
@@ -53,16 +53,16 @@ impl InlineResponse2004 {
     self.status = None;
   }
 
-  pub fn set_count(&mut self, count: f32) {
+  pub fn set_count(&mut self, count: i64) {
     self.count = Some(count);
   }
 
-  pub fn with_count(mut self, count: f32) -> InlineResponse2004 {
+  pub fn with_count(mut self, count: i64) -> InlineResponse2004 {
     self.count = Some(count);
     self
   }
 
-  pub fn count(&self) -> Option<&f32> {
+  pub fn count(&self) -> Option<&i64> {
     self.count.as_ref()
   }
 
@@ -70,16 +70,16 @@ impl InlineResponse2004 {
     self.count = None;
   }
 
-  pub fn set_results(&mut self, results: Vec<Dividend>) {
+  pub fn set_results(&mut self, results: Vec<Split>) {
     self.results = Some(results);
   }
 
-  pub fn with_results(mut self, results: Vec<Dividend>) -> InlineResponse2004 {
+  pub fn with_results(mut self, results: Vec<Split>) -> InlineResponse2004 {
     self.results = Some(results);
     self
   }
 
-  pub fn results(&self) -> Option<&Vec<Dividend>> {
+  pub fn results(&self) -> Option<&Vec<Split>> {
     self.results.as_ref()
   }
 

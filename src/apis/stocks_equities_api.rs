@@ -45,24 +45,24 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static> StocksE
 
 #[async_trait::async_trait]
 pub trait StocksEquitiesApi {
-    async fn v1_last_quote_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse2009, Error<serde_json::Value>>;
-    async fn v1_last_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse2008, Error<serde_json::Value>>;
+    async fn v1_last_quote_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse20010, Error<serde_json::Value>>;
+    async fn v1_last_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse2009, Error<serde_json::Value>>;
     async fn v1_meta_conditions_ticktype_get(&self, ticktype: &str) -> Result<ConditionTypeMap, Error<serde_json::Value>>;
     async fn v1_meta_exchanges_get(&self, ) -> Result<Vec<Exchange>, Error<serde_json::Value>>;
     async fn v1_open_close_symbol_date_get(&self, symbol: &str, date: String) -> Result<StocksOpenClose, Error<serde_json::Value>>;
     async fn v2_aggs_grouped_locale_locale_market_market_date_get(&self, locale: &str, market: &str, date: &str, unadjusted: bool) -> Result<AggResponse, Error<serde_json::Value>>;
     async fn v2_aggs_ticker_ticker_prev_get(&self, ticker: &str, unadjusted: bool) -> Result<AggResponse, Error<serde_json::Value>>;
-    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: f32, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_us_markets_stocks_direction_get(&self, direction: &str) -> Result<InlineResponse20010, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_us_markets_stocks_tickers_get(&self, ) -> Result<InlineResponse20010, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_us_markets_stocks_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20011, Error<serde_json::Value>>;
-    async fn v2_ticks_stocks_nbbo_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2007, Error<serde_json::Value>>;
-    async fn v2_ticks_stocks_trades_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2006, Error<serde_json::Value>>;
+    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: i64, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_us_markets_stocks_direction_get(&self, direction: &str) -> Result<InlineResponse20011, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_us_markets_stocks_tickers_get(&self, ) -> Result<InlineResponse20011, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_us_markets_stocks_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20012, Error<serde_json::Value>>;
+    async fn v2_ticks_stocks_nbbo_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2008, Error<serde_json::Value>>;
+    async fn v2_ticks_stocks_trades_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2007, Error<serde_json::Value>>;
 }
 
 #[async_trait::async_trait]
 impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEquitiesApi for StocksEquitiesApiClient<C> {
-    async fn v1_last_quote_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse2009, Error<serde_json::Value>> {
+    async fn v1_last_quote_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse20010, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -148,7 +148,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEq
         res_body
     }
 
-    async fn v1_last_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse2008, Error<serde_json::Value>> {
+    async fn v1_last_stocks_symbol_get(&self, symbol: &str) -> Result<InlineResponse2009, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -666,7 +666,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEq
         res_body
     }
 
-    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: f32, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>> {
+    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: i64, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -754,7 +754,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEq
         res_body
     }
 
-    async fn v2_snapshot_locale_us_markets_stocks_direction_get(&self, direction: &str) -> Result<InlineResponse20010, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_us_markets_stocks_direction_get(&self, direction: &str) -> Result<InlineResponse20011, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -840,7 +840,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEq
         res_body
     }
 
-    async fn v2_snapshot_locale_us_markets_stocks_tickers_get(&self, ) -> Result<InlineResponse20010, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_us_markets_stocks_tickers_get(&self, ) -> Result<InlineResponse20011, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -926,7 +926,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEq
         res_body
     }
 
-    async fn v2_snapshot_locale_us_markets_stocks_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20011, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_us_markets_stocks_tickers_ticker_get(&self, ticker: &str) -> Result<InlineResponse20012, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -1012,7 +1012,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEq
         res_body
     }
 
-    async fn v2_ticks_stocks_nbbo_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2007, Error<serde_json::Value>> {
+    async fn v2_ticks_stocks_nbbo_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2008, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -1102,7 +1102,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>StocksEq
         res_body
     }
 
-    async fn v2_ticks_stocks_trades_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2006, Error<serde_json::Value>> {
+    async fn v2_ticks_stocks_trades_ticker_date_get(&self, ticker: &str, date: String, timestamp: i64, timestamp_limit: i64, reverse: bool, limit: i64) -> Result<InlineResponse2007, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();

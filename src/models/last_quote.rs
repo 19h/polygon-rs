@@ -20,13 +20,13 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct LastQuote {
   #[serde(rename = "askprice")]
-  askprice: i64, 
+  askprice: f32,  // 159.59 
   #[serde(rename = "asksize")]
   asksize: i64,  // 2 
   #[serde(rename = "askexchange")]
   askexchange: i64,  // 11 
   #[serde(rename = "bidprice")]
-  bidprice: i64, 
+  bidprice: f32,  // 159.45 
   #[serde(rename = "bidsize")]
   bidsize: i64,  // 20 
   #[serde(rename = "bidexchange")]
@@ -36,7 +36,7 @@ pub struct LastQuote {
 }
 
 impl LastQuote {
-  pub fn new(askprice: i64, asksize: i64, askexchange: i64, bidprice: i64, bidsize: i64, bidexchange: i64, timestamp: i64, ) -> LastQuote {
+  pub fn new(askprice: f32, asksize: i64, askexchange: i64, bidprice: f32, bidsize: i64, bidexchange: i64, timestamp: i64, ) -> LastQuote {
     LastQuote {
       askprice: askprice,
       asksize: asksize,
@@ -48,16 +48,16 @@ impl LastQuote {
     }
   }
 
-  pub fn set_askprice(&mut self, askprice: i64) {
+  pub fn set_askprice(&mut self, askprice: f32) {
     self.askprice = askprice;
   }
 
-  pub fn with_askprice(mut self, askprice: i64) -> LastQuote {
+  pub fn with_askprice(mut self, askprice: f32) -> LastQuote {
     self.askprice = askprice;
     self
   }
 
-  pub fn askprice(&self) -> &i64 {
+  pub fn askprice(&self) -> &f32 {
     &self.askprice
   }
 
@@ -90,16 +90,16 @@ impl LastQuote {
   }
 
 
-  pub fn set_bidprice(&mut self, bidprice: i64) {
+  pub fn set_bidprice(&mut self, bidprice: f32) {
     self.bidprice = bidprice;
   }
 
-  pub fn with_bidprice(mut self, bidprice: i64) -> LastQuote {
+  pub fn with_bidprice(mut self, bidprice: f32) -> LastQuote {
     self.bidprice = bidprice;
     self
   }
 
-  pub fn bidprice(&self) -> &i64 {
+  pub fn bidprice(&self) -> &f32 {
     &self.bidprice
   }
 

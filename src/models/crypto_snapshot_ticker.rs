@@ -30,15 +30,15 @@ pub struct CryptoSnapshotTicker {
   #[serde(rename = "prevDay")]
   prev_day: CryptoSnapshotAgg, 
   #[serde(rename = "todaysChange")]
-  todays_change: i64, 
+  todays_change: f32,  // 0.001 
   #[serde(rename = "todaysChangePerc")]
-  todays_change_perc: i64, 
+  todays_change_perc: f32,  // 2.55 
   #[serde(rename = "updated")]
   updated: i64  // 1547787608999 
 }
 
 impl CryptoSnapshotTicker {
-  pub fn new(ticker: String, day: CryptoSnapshotAgg, last_trade: CryptoTickJson, min: CryptoSnapshotAgg, prev_day: CryptoSnapshotAgg, todays_change: i64, todays_change_perc: i64, updated: i64, ) -> CryptoSnapshotTicker {
+  pub fn new(ticker: String, day: CryptoSnapshotAgg, last_trade: CryptoTickJson, min: CryptoSnapshotAgg, prev_day: CryptoSnapshotAgg, todays_change: f32, todays_change_perc: f32, updated: i64, ) -> CryptoSnapshotTicker {
     CryptoSnapshotTicker {
       ticker: ticker,
       day: day,
@@ -121,30 +121,30 @@ impl CryptoSnapshotTicker {
   }
 
 
-  pub fn set_todays_change(&mut self, todays_change: i64) {
+  pub fn set_todays_change(&mut self, todays_change: f32) {
     self.todays_change = todays_change;
   }
 
-  pub fn with_todays_change(mut self, todays_change: i64) -> CryptoSnapshotTicker {
+  pub fn with_todays_change(mut self, todays_change: f32) -> CryptoSnapshotTicker {
     self.todays_change = todays_change;
     self
   }
 
-  pub fn todays_change(&self) -> &i64 {
+  pub fn todays_change(&self) -> &f32 {
     &self.todays_change
   }
 
 
-  pub fn set_todays_change_perc(&mut self, todays_change_perc: i64) {
+  pub fn set_todays_change_perc(&mut self, todays_change_perc: f32) {
     self.todays_change_perc = todays_change_perc;
   }
 
-  pub fn with_todays_change_perc(mut self, todays_change_perc: i64) -> CryptoSnapshotTicker {
+  pub fn with_todays_change_perc(mut self, todays_change_perc: f32) -> CryptoSnapshotTicker {
     self.todays_change_perc = todays_change_perc;
     self
   }
 
-  pub fn todays_change_perc(&self) -> &i64 {
+  pub fn todays_change_perc(&self) -> &f32 {
     &self.todays_change_perc
   }
 

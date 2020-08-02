@@ -20,7 +20,7 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct LastForexTrade {
   #[serde(rename = "price")]
-  price: i64, 
+  price: f32,  // 0.78131 
   #[serde(rename = "exchange")]
   exchange: i64,  // 20 
   #[serde(rename = "timestamp")]
@@ -28,7 +28,7 @@ pub struct LastForexTrade {
 }
 
 impl LastForexTrade {
-  pub fn new(price: i64, exchange: i64, timestamp: i64, ) -> LastForexTrade {
+  pub fn new(price: f32, exchange: i64, timestamp: i64, ) -> LastForexTrade {
     LastForexTrade {
       price: price,
       exchange: exchange,
@@ -36,16 +36,16 @@ impl LastForexTrade {
     }
   }
 
-  pub fn set_price(&mut self, price: i64) {
+  pub fn set_price(&mut self, price: f32) {
     self.price = price;
   }
 
-  pub fn with_price(mut self, price: i64) -> LastForexTrade {
+  pub fn with_price(mut self, price: f32) -> LastForexTrade {
     self.price = price;
     self
   }
 
-  pub fn price(&self) -> &i64 {
+  pub fn price(&self) -> &f32 {
     &self.price
   }
 

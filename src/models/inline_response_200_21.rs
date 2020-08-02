@@ -21,15 +21,15 @@ use crate::models::*;
 pub struct InlineResponse20021 {
   #[serde(rename = "status")]
   status: String,  // OK 
-  #[serde(rename = "data")]
-  data: Option<CryptoSnapshotTickerBook> 
+  #[serde(rename = "ticker")]
+  ticker: Option<CryptoSnapshotTicker> 
 }
 
 impl InlineResponse20021 {
   pub fn new(status: String, ) -> InlineResponse20021 {
     InlineResponse20021 {
       status: status,
-      data: None
+      ticker: None
     }
   }
 
@@ -47,21 +47,21 @@ impl InlineResponse20021 {
   }
 
 
-  pub fn set_data(&mut self, data: CryptoSnapshotTickerBook) {
-    self.data = Some(data);
+  pub fn set_ticker(&mut self, ticker: CryptoSnapshotTicker) {
+    self.ticker = Some(ticker);
   }
 
-  pub fn with_data(mut self, data: CryptoSnapshotTickerBook) -> InlineResponse20021 {
-    self.data = Some(data);
+  pub fn with_ticker(mut self, ticker: CryptoSnapshotTicker) -> InlineResponse20021 {
+    self.ticker = Some(ticker);
     self
   }
 
-  pub fn data(&self) -> Option<&CryptoSnapshotTickerBook> {
-    self.data.as_ref()
+  pub fn ticker(&self) -> Option<&CryptoSnapshotTicker> {
+    self.ticker.as_ref()
   }
 
-  pub fn reset_data(&mut self) {
-    self.data = None;
+  pub fn reset_ticker(&mut self) {
+    self.ticker = None;
   }
 
 }

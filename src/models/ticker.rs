@@ -24,23 +24,21 @@ pub struct Ticker {
   #[serde(rename = "name")]
   name: String,  // Apple Inc 
   #[serde(rename = "market")]
-  market: String,  // STOCKS 
+  market: String,  // STOCKS, INDICES, MF 
   #[serde(rename = "locale")]
-  locale: String,  // US 
+  locale: String,  // G, US, GB, CA 
   #[serde(rename = "currency")]
-  currency: Option<String>,  // USD 
+  currency: Option<String>,  // USD, EUR, GBP 
   #[serde(rename = "active")]
-  active: Option<bool>,  // true 
+  active: Option<bool>,  // false 
   #[serde(rename = "primaryExch")]
-  primary_exch: Option<String>,  // NGS 
-  #[serde(rename = "url")]
-  url: Option<String>,  // https://api.polygon.io/v2/reference/tickers/AAPL 
-  #[serde(rename = "updated")]
-  updated: String,  // 2019-01-25 
-  #[serde(rename = "attrs")]
-  attrs: Option<Value>, 
+  primary_exch: Option<String>,  // NYE, FX, NGS 
   #[serde(rename = "codes")]
-  codes: Option<TickerCodes> 
+  codes: Option<TickerCodes>, 
+  #[serde(rename = "url")]
+  url: Option<String>,  // https://api.polygon.io/v1/meta/symbols/AAPL 
+  #[serde(rename = "updated")]
+  updated: String 
 }
 
 impl Ticker {
@@ -53,10 +51,9 @@ impl Ticker {
       currency: None,
       active: None,
       primary_exch: None,
+      codes: None,
       url: None,
-      updated: updated,
-      attrs: None,
-      codes: None
+      updated: updated
     }
   }
 
@@ -167,6 +164,23 @@ impl Ticker {
     self.primary_exch = None;
   }
 
+  pub fn set_codes(&mut self, codes: TickerCodes) {
+    self.codes = Some(codes);
+  }
+
+  pub fn with_codes(mut self, codes: TickerCodes) -> Ticker {
+    self.codes = Some(codes);
+    self
+  }
+
+  pub fn codes(&self) -> Option<&TickerCodes> {
+    self.codes.as_ref()
+  }
+
+  pub fn reset_codes(&mut self) {
+    self.codes = None;
+  }
+
   pub fn set_url(&mut self, url: String) {
     self.url = Some(url);
   }
@@ -197,40 +211,6 @@ impl Ticker {
     &self.updated
   }
 
-
-  pub fn set_attrs(&mut self, attrs: Value) {
-    self.attrs = Some(attrs);
-  }
-
-  pub fn with_attrs(mut self, attrs: Value) -> Ticker {
-    self.attrs = Some(attrs);
-    self
-  }
-
-  pub fn attrs(&self) -> Option<&Value> {
-    self.attrs.as_ref()
-  }
-
-  pub fn reset_attrs(&mut self) {
-    self.attrs = None;
-  }
-
-  pub fn set_codes(&mut self, codes: TickerCodes) {
-    self.codes = Some(codes);
-  }
-
-  pub fn with_codes(mut self, codes: TickerCodes) -> Ticker {
-    self.codes = Some(codes);
-    self
-  }
-
-  pub fn codes(&self) -> Option<&TickerCodes> {
-    self.codes.as_ref()
-  }
-
-  pub fn reset_codes(&mut self) {
-    self.codes = None;
-  }
 
 }
 

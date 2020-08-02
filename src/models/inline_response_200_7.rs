@@ -28,7 +28,7 @@ pub struct InlineResponse2007 {
   #[serde(rename = "ticker")]
   ticker: String,  // AAPL 
   #[serde(rename = "results")]
-  results: Option<Vec<StocksV2Nbbo>> 
+  results: Option<Vec<StocksV2Trade>> 
 }
 
 impl InlineResponse2007 {
@@ -104,16 +104,16 @@ impl InlineResponse2007 {
   }
 
 
-  pub fn set_results(&mut self, results: Vec<StocksV2Nbbo>) {
+  pub fn set_results(&mut self, results: Vec<StocksV2Trade>) {
     self.results = Some(results);
   }
 
-  pub fn with_results(mut self, results: Vec<StocksV2Nbbo>) -> InlineResponse2007 {
+  pub fn with_results(mut self, results: Vec<StocksV2Trade>) -> InlineResponse2007 {
     self.results = Some(results);
     self
   }
 
-  pub fn results(&self) -> Option<&Vec<StocksV2Nbbo>> {
+  pub fn results(&self) -> Option<&Vec<StocksV2Trade>> {
     self.results.as_ref()
   }
 

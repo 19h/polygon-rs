@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**v2_ticks_stocks_trades_ticker_date_get**](StocksEquitiesApi.md#v2_ticks_stocks_trades_ticker_date_get) | **GET** v2/ticks/stocks/trades/{ticker}/{date} | Historic Trades
 
 # **v1_last_quote_stocks_symbol_get**
-> InlineResponse2009 v1_last_quote_stocks_symbol_get(ctx, symbol)
+> InlineResponse20010 v1_last_quote_stocks_symbol_get(ctx, symbol)
 Last Quote for a Symbol
 
 Get the last quote tick for a given stock. 
@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](inline_response_200_9.md)
+[**InlineResponse20010**](inline_response_200_10.md)
 
 ### Authorization
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_last_stocks_symbol_get**
-> InlineResponse2008 v1_last_stocks_symbol_get(ctx, symbol)
+> InlineResponse2009 v1_last_stocks_symbol_get(ctx, symbol)
 Last Trade for a Symbol
 
 Get the last trade for a given stock. 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](inline_response_200_8.md)
+[**InlineResponse2009**](inline_response_200_9.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
   **ticker** | **String**| Ticker symbol of the request | 
-  **multiplier** | **f32**| Size of the timespan multiplier | 
+  **multiplier** | **i64**| Size of the timespan multiplier | 
   **timespan** | **String**| Size of the time window | 
   **from** | **String**| From date | 
   **to** | **String**| To date | 
@@ -254,7 +254,7 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ticker** | **String**| Ticker symbol of the request | 
- **multiplier** | **f32**| Size of the timespan multiplier | 
+ **multiplier** | **i64**| Size of the timespan multiplier | 
  **timespan** | **String**| Size of the time window | 
  **from** | **String**| From date | 
  **to** | **String**| To date | 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_snapshot_locale_us_markets_stocks_direction_get**
-> InlineResponse20010 v2_snapshot_locale_us_markets_stocks_direction_get(ctx, direction)
+> InlineResponse20011 v2_snapshot_locale_us_markets_stocks_direction_get(ctx, direction)
 Snapshot - Gainers / Losers
 
 See the current snapshot of the top 20 gainers or losers of the day at the moment. 
@@ -288,58 +288,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context containing the authentication | nil if no authentication
   **direction** | **String**| Direction we want  | 
-
-### Return type
-
-[**InlineResponse20010**](inline_response_200_10.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), 
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_snapshot_locale_us_markets_stocks_tickers_get**
-> InlineResponse20010 v2_snapshot_locale_us_markets_stocks_tickers_get(ctx, )
-Snapshot - All Tickers
-
-Snapshot allows you to see all tickers current minute aggregate, daily aggregate and last trade. As well as previous days aggregate and calculated change for today.  ### *** Warning, may cause browser to hang *** The response size is large, and sometimes will cause the browser prettyprint to crash. 
-
-### Required Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**InlineResponse20010**](inline_response_200_10.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), 
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_snapshot_locale_us_markets_stocks_tickers_ticker_get**
-> InlineResponse20011 v2_snapshot_locale_us_markets_stocks_tickers_ticker_get(ctx, ticker)
-Snapshot - Single Ticker
-
-See the current snapshot of a single ticker 
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context containing the authentication | nil if no authentication
-  **ticker** | **String**| Ticker of the snapshot | 
 
 ### Return type
 
@@ -356,8 +304,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **v2_snapshot_locale_us_markets_stocks_tickers_get**
+> InlineResponse20011 v2_snapshot_locale_us_markets_stocks_tickers_get(ctx, )
+Snapshot - All Tickers
+
+Snapshot allows you to see all tickers current minute aggregate, daily aggregate and last trade. As well as previous days aggregate and calculated change for today.  ### *** Warning, may cause browser to hang *** The response size is large, and sometimes will cause the browser prettyprint to crash. 
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse20011**](inline_response_200_11.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), 
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_snapshot_locale_us_markets_stocks_tickers_ticker_get**
+> InlineResponse20012 v2_snapshot_locale_us_markets_stocks_tickers_ticker_get(ctx, ticker)
+Snapshot - Single Ticker
+
+See the current snapshot of a single ticker 
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **ticker** | **String**| Ticker of the snapshot | 
+
+### Return type
+
+[**InlineResponse20012**](inline_response_200_12.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), 
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **v2_ticks_stocks_nbbo_ticker_date_get**
-> InlineResponse2007 v2_ticks_stocks_nbbo_ticker_date_get(ctx, ticker, date, optional)
+> InlineResponse2008 v2_ticks_stocks_nbbo_ticker_date_get(ctx, ticker, date, optional)
 Historic Quotes ( NBBO )
 
 Get historic NBBO quotes for a ticker. 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](inline_response_200_7.md)
+[**InlineResponse2008**](inline_response_200_8.md)
 
 ### Authorization
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_ticks_stocks_trades_ticker_date_get**
-> InlineResponse2006 v2_ticks_stocks_trades_ticker_date_get(ctx, ticker, date, optional)
+> InlineResponse2007 v2_ticks_stocks_trades_ticker_date_get(ctx, ticker, date, optional)
 Historic Trades
 
 Get historic trades for a ticker. 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](inline_response_200_6.md)
+[**InlineResponse2007**](inline_response_200_7.md)
 
 ### Authorization
 

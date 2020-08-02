@@ -26,22 +26,22 @@ pub struct Exchange {
   #[serde(rename = "market")]
   market: String,  // equities 
   #[serde(rename = "mic")]
-  mic: String,  // XASE 
+  mic: Option<String>,  // XASE 
   #[serde(rename = "name")]
   name: String,  // NYSE American (AMEX) 
   #[serde(rename = "tape")]
-  tape: String  // A 
+  tape: Option<String>  // A 
 }
 
 impl Exchange {
-  pub fn new(id: f32, _type: String, market: String, mic: String, name: String, tape: String, ) -> Exchange {
+  pub fn new(id: f32, _type: String, market: String, name: String, ) -> Exchange {
     Exchange {
       id: id,
       _type: _type,
       market: market,
-      mic: mic,
+      mic: None,
       name: name,
-      tape: tape
+      tape: None
     }
   }
 
@@ -88,18 +88,21 @@ impl Exchange {
 
 
   pub fn set_mic(&mut self, mic: String) {
-    self.mic = mic;
+    self.mic = Some(mic);
   }
 
   pub fn with_mic(mut self, mic: String) -> Exchange {
-    self.mic = mic;
+    self.mic = Some(mic);
     self
   }
 
-  pub fn mic(&self) -> &String {
-    &self.mic
+  pub fn mic(&self) -> Option<&String> {
+    self.mic.as_ref()
   }
 
+  pub fn reset_mic(&mut self) {
+    self.mic = None;
+  }
 
   pub fn set_name(&mut self, name: String) {
     self.name = name;
@@ -116,18 +119,21 @@ impl Exchange {
 
 
   pub fn set_tape(&mut self, tape: String) {
-    self.tape = tape;
+    self.tape = Some(tape);
   }
 
   pub fn with_tape(mut self, tape: String) -> Exchange {
-    self.tape = tape;
+    self.tape = Some(tape);
     self
   }
 
-  pub fn tape(&self) -> &String {
-    &self.tape
+  pub fn tape(&self) -> Option<&String> {
+    self.tape.as_ref()
   }
 
+  pub fn reset_tape(&mut self) {
+    self.tape = None;
+  }
 
 }
 

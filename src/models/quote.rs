@@ -26,9 +26,9 @@ pub struct Quote {
   #[serde(rename = "aE")]
   a_e: String,  // 12 
   #[serde(rename = "aP")]
-  a_p: i64, 
+  a_p: f32,  // 173.15 
   #[serde(rename = "bP")]
-  b_p: i64, 
+  b_p: f32,  // 173.13 
   #[serde(rename = "bS")]
   b_s: i64,  // 25 
   #[serde(rename = "aS")]
@@ -38,7 +38,7 @@ pub struct Quote {
 }
 
 impl Quote {
-  pub fn new(c: i64, b_e: String, a_e: String, a_p: i64, b_p: i64, b_s: i64, a_s: i64, t: i64, ) -> Quote {
+  pub fn new(c: i64, b_e: String, a_e: String, a_p: f32, b_p: f32, b_s: i64, a_s: i64, t: i64, ) -> Quote {
     Quote {
       c: c,
       b_e: b_e,
@@ -93,30 +93,30 @@ impl Quote {
   }
 
 
-  pub fn set_a_p(&mut self, a_p: i64) {
+  pub fn set_a_p(&mut self, a_p: f32) {
     self.a_p = a_p;
   }
 
-  pub fn with_a_p(mut self, a_p: i64) -> Quote {
+  pub fn with_a_p(mut self, a_p: f32) -> Quote {
     self.a_p = a_p;
     self
   }
 
-  pub fn a_p(&self) -> &i64 {
+  pub fn a_p(&self) -> &f32 {
     &self.a_p
   }
 
 
-  pub fn set_b_p(&mut self, b_p: i64) {
+  pub fn set_b_p(&mut self, b_p: f32) {
     self.b_p = b_p;
   }
 
-  pub fn with_b_p(mut self, b_p: i64) -> Quote {
+  pub fn with_b_p(mut self, b_p: f32) -> Quote {
     self.b_p = b_p;
     self
   }
 
-  pub fn b_p(&self) -> &i64 {
+  pub fn b_p(&self) -> &f32 {
     &self.b_p
   }
 

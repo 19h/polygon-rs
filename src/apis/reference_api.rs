@@ -48,14 +48,14 @@ pub trait ReferenceApi {
     async fn v1_marketstatus_now_get(&self, ) -> Result<MarketStatus, Error<serde_json::Value>>;
     async fn v1_marketstatus_upcoming_get(&self, ) -> Result<Vec<MarketHoliday>, Error<serde_json::Value>>;
     async fn v1_meta_symbols_symbol_company_get(&self, symbol: &str) -> Result<Company, Error<serde_json::Value>>;
-    async fn v1_meta_symbols_symbol_news_get(&self, symbol: &str, perpage: f32, page: f32) -> Result<Vec<News>, Error<serde_json::Value>>;
-    async fn v2_reference_dividends_symbol_get(&self, symbol: &str) -> Result<InlineResponse2004, Error<serde_json::Value>>;
-    async fn v2_reference_financials_symbol_get(&self, symbol: &str, limit: f32, _type: &str, sort: &str) -> Result<InlineResponse2005, Error<serde_json::Value>>;
-    async fn v2_reference_locales_get(&self, ) -> Result<InlineResponse2002, Error<serde_json::Value>>;
-    async fn v2_reference_markets_get(&self, ) -> Result<InlineResponse2001, Error<serde_json::Value>>;
-    async fn v2_reference_splits_symbol_get(&self, symbol: &str) -> Result<InlineResponse2003, Error<serde_json::Value>>;
-    async fn v2_reference_tickers_get(&self, sort: &str, _type: &str, market: &str, locale: &str, search: &str, perpage: f32, page: f32, active: bool) -> Result<Vec<Symbol>, Error<serde_json::Value>>;
-    async fn v2_reference_types_get(&self, ) -> Result<InlineResponse200, Error<serde_json::Value>>;
+    async fn v1_meta_symbols_symbol_news_get(&self, symbol: &str, perpage: i64, page: i64) -> Result<Vec<News>, Error<serde_json::Value>>;
+    async fn v2_reference_dividends_symbol_get(&self, symbol: &str) -> Result<InlineResponse2005, Error<serde_json::Value>>;
+    async fn v2_reference_financials_symbol_get(&self, symbol: &str, limit: i64, _type: &str, sort: &str) -> Result<InlineResponse2006, Error<serde_json::Value>>;
+    async fn v2_reference_locales_get(&self, ) -> Result<InlineResponse2003, Error<serde_json::Value>>;
+    async fn v2_reference_markets_get(&self, ) -> Result<InlineResponse2002, Error<serde_json::Value>>;
+    async fn v2_reference_splits_symbol_get(&self, symbol: &str) -> Result<InlineResponse2004, Error<serde_json::Value>>;
+    async fn v2_reference_tickers_get(&self, sort: &str, _type: &str, market: &str, locale: &str, search: &str, perpage: i64, page: i64, active: bool) -> Result<InlineResponse200, Error<serde_json::Value>>;
+    async fn v2_reference_types_get(&self, ) -> Result<InlineResponse2001, Error<serde_json::Value>>;
 }
 
 #[async_trait::async_trait]
@@ -318,7 +318,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v1_meta_symbols_symbol_news_get(&self, symbol: &str, perpage: f32, page: f32) -> Result<Vec<News>, Error<serde_json::Value>> {
+    async fn v1_meta_symbols_symbol_news_get(&self, symbol: &str, perpage: i64, page: i64) -> Result<Vec<News>, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -406,7 +406,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v2_reference_dividends_symbol_get(&self, symbol: &str) -> Result<InlineResponse2004, Error<serde_json::Value>> {
+    async fn v2_reference_dividends_symbol_get(&self, symbol: &str) -> Result<InlineResponse2005, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -492,7 +492,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v2_reference_financials_symbol_get(&self, symbol: &str, limit: f32, _type: &str, sort: &str) -> Result<InlineResponse2005, Error<serde_json::Value>> {
+    async fn v2_reference_financials_symbol_get(&self, symbol: &str, limit: i64, _type: &str, sort: &str) -> Result<InlineResponse2006, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -581,7 +581,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v2_reference_locales_get(&self, ) -> Result<InlineResponse2002, Error<serde_json::Value>> {
+    async fn v2_reference_locales_get(&self, ) -> Result<InlineResponse2003, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -667,7 +667,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v2_reference_markets_get(&self, ) -> Result<InlineResponse2001, Error<serde_json::Value>> {
+    async fn v2_reference_markets_get(&self, ) -> Result<InlineResponse2002, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -753,7 +753,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v2_reference_splits_symbol_get(&self, symbol: &str) -> Result<InlineResponse2003, Error<serde_json::Value>> {
+    async fn v2_reference_splits_symbol_get(&self, symbol: &str) -> Result<InlineResponse2004, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -839,7 +839,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v2_reference_tickers_get(&self, sort: &str, _type: &str, market: &str, locale: &str, search: &str, perpage: f32, page: f32, active: bool) -> Result<Vec<Symbol>, Error<serde_json::Value>> {
+    async fn v2_reference_tickers_get(&self, sort: &str, _type: &str, market: &str, locale: &str, search: &str, perpage: i64, page: i64, active: bool) -> Result<InlineResponse200, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -933,7 +933,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>Referenc
         res_body
     }
 
-    async fn v2_reference_types_get(&self, ) -> Result<InlineResponse200, Error<serde_json::Value>> {
+    async fn v2_reference_types_get(&self, ) -> Result<InlineResponse2001, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();

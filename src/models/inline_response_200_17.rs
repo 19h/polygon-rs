@@ -19,28 +19,39 @@ use crate::models::*;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse20017 {
+  #[serde(rename = "status")]
+  status: String,  // success 
   #[serde(rename = "symbol")]
   symbol: String,  // BTC-USD 
-  #[serde(rename = "isUTC")]
-  is_utc: Option<bool>,  // true 
-  #[serde(rename = "day")]
-  day: Option<String>,  // Wed May 09 02:00:00 CEST 2018 
-  #[serde(rename = "openTrades")]
-  open_trades: Option<Vec<CryptoTickJson>>, 
-  #[serde(rename = "closingTrades")]
-  closing_trades: Option<Vec<CryptoTickJson>> 
+  #[serde(rename = "last")]
+  last: CryptoTick, 
+  #[serde(rename = "lastAverage")]
+  last_average: Option<InlineResponse20017LastAverage> 
 }
 
 impl InlineResponse20017 {
-  pub fn new(symbol: String, ) -> InlineResponse20017 {
+  pub fn new(status: String, symbol: String, last: CryptoTick, ) -> InlineResponse20017 {
     InlineResponse20017 {
+      status: status,
       symbol: symbol,
-      is_utc: None,
-      day: None,
-      open_trades: None,
-      closing_trades: None
+      last: last,
+      last_average: None
     }
   }
+
+  pub fn set_status(&mut self, status: String) {
+    self.status = status;
+  }
+
+  pub fn with_status(mut self, status: String) -> InlineResponse20017 {
+    self.status = status;
+    self
+  }
+
+  pub fn status(&self) -> &String {
+    &self.status
+  }
+
 
   pub fn set_symbol(&mut self, symbol: String) {
     self.symbol = symbol;
@@ -56,72 +67,35 @@ impl InlineResponse20017 {
   }
 
 
-  pub fn set_is_utc(&mut self, is_utc: bool) {
-    self.is_utc = Some(is_utc);
+  pub fn set_last(&mut self, last: CryptoTick) {
+    self.last = last;
   }
 
-  pub fn with_is_utc(mut self, is_utc: bool) -> InlineResponse20017 {
-    self.is_utc = Some(is_utc);
+  pub fn with_last(mut self, last: CryptoTick) -> InlineResponse20017 {
+    self.last = last;
     self
   }
 
-  pub fn is_utc(&self) -> Option<&bool> {
-    self.is_utc.as_ref()
+  pub fn last(&self) -> &CryptoTick {
+    &self.last
   }
 
-  pub fn reset_is_utc(&mut self) {
-    self.is_utc = None;
+
+  pub fn set_last_average(&mut self, last_average: InlineResponse20017LastAverage) {
+    self.last_average = Some(last_average);
   }
 
-  pub fn set_day(&mut self, day: String) {
-    self.day = Some(day);
-  }
-
-  pub fn with_day(mut self, day: String) -> InlineResponse20017 {
-    self.day = Some(day);
+  pub fn with_last_average(mut self, last_average: InlineResponse20017LastAverage) -> InlineResponse20017 {
+    self.last_average = Some(last_average);
     self
   }
 
-  pub fn day(&self) -> Option<&String> {
-    self.day.as_ref()
+  pub fn last_average(&self) -> Option<&InlineResponse20017LastAverage> {
+    self.last_average.as_ref()
   }
 
-  pub fn reset_day(&mut self) {
-    self.day = None;
-  }
-
-  pub fn set_open_trades(&mut self, open_trades: Vec<CryptoTickJson>) {
-    self.open_trades = Some(open_trades);
-  }
-
-  pub fn with_open_trades(mut self, open_trades: Vec<CryptoTickJson>) -> InlineResponse20017 {
-    self.open_trades = Some(open_trades);
-    self
-  }
-
-  pub fn open_trades(&self) -> Option<&Vec<CryptoTickJson>> {
-    self.open_trades.as_ref()
-  }
-
-  pub fn reset_open_trades(&mut self) {
-    self.open_trades = None;
-  }
-
-  pub fn set_closing_trades(&mut self, closing_trades: Vec<CryptoTickJson>) {
-    self.closing_trades = Some(closing_trades);
-  }
-
-  pub fn with_closing_trades(mut self, closing_trades: Vec<CryptoTickJson>) -> InlineResponse20017 {
-    self.closing_trades = Some(closing_trades);
-    self
-  }
-
-  pub fn closing_trades(&self) -> Option<&Vec<CryptoTickJson>> {
-    self.closing_trades.as_ref()
-  }
-
-  pub fn reset_closing_trades(&mut self) {
-    self.closing_trades = None;
+  pub fn reset_last_average(&mut self) {
+    self.last_average = None;
   }
 
 }

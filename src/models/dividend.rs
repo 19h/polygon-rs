@@ -21,9 +21,9 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Dividend {
   #[serde(rename = "symbol")]
-  symbol: String,  // AAPL 
+  symbol: Option<String>,  // AAPL 
   #[serde(rename = "type")]
-  _type: String,  // Dividend income 
+  _type: Option<String>,  // Dividend income 
   #[serde(rename = "exDate")]
   ex_date: String,  // 2016-11-03T04:00:00.000Z 
   #[serde(rename = "paymentDate")]
@@ -41,10 +41,10 @@ pub struct Dividend {
 }
 
 impl Dividend {
-  pub fn new(symbol: String, _type: String, ex_date: String, amount: f32, ) -> Dividend {
+  pub fn new(ex_date: String, amount: f32, ) -> Dividend {
     Dividend {
-      symbol: symbol,
-      _type: _type,
+      symbol: None,
+      _type: None,
       ex_date: ex_date,
       payment_date: None,
       record_date: None,
@@ -56,32 +56,38 @@ impl Dividend {
   }
 
   pub fn set_symbol(&mut self, symbol: String) {
-    self.symbol = symbol;
+    self.symbol = Some(symbol);
   }
 
   pub fn with_symbol(mut self, symbol: String) -> Dividend {
-    self.symbol = symbol;
+    self.symbol = Some(symbol);
     self
   }
 
-  pub fn symbol(&self) -> &String {
-    &self.symbol
+  pub fn symbol(&self) -> Option<&String> {
+    self.symbol.as_ref()
   }
 
+  pub fn reset_symbol(&mut self) {
+    self.symbol = None;
+  }
 
   pub fn set__type(&mut self, _type: String) {
-    self._type = _type;
+    self._type = Some(_type);
   }
 
   pub fn with__type(mut self, _type: String) -> Dividend {
-    self._type = _type;
+    self._type = Some(_type);
     self
   }
 
-  pub fn _type(&self) -> &String {
-    &self._type
+  pub fn _type(&self) -> Option<&String> {
+    self._type.as_ref()
   }
 
+  pub fn reset__type(&mut self) {
+    self._type = None;
+  }
 
   pub fn set_ex_date(&mut self, ex_date: String) {
     self.ex_date = ex_date;

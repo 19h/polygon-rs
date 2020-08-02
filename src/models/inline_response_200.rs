@@ -19,18 +19,78 @@ use crate::models::*;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse200 {
+  #[serde(rename = "page")]
+  page: Option<i64>,  // 1 
+  #[serde(rename = "perpage")]
+  perpage: Option<i64>,  // 50 
+  #[serde(rename = "count")]
+  count: Option<i64>,  // 50 
   #[serde(rename = "status")]
   status: Option<String>,  // OK 
-  #[serde(rename = "results")]
-  results: Option<Value>  // {"types":{"CS":"Common Stock","ADR":"American Depository Receipt","NVDR":"Non-Voting Depository Receipt","GDR":"Global Depositary Receipt"},"indexTypes":{"INDEX":"Index","ETF":"Exchange Traded Fund (ETF)","ETN":"Exchange Traded Note (ETN)"}} 
+  #[serde(rename = "tickers")]
+  tickers: Option<Vec<Ticker>>  // [{"ticker":"AAPL","name":"Apple Inc.","market":"STOCKS","locale":"US","currency":"USD","active":true,"primaryExch":"NGS","type":"cs","codes":{"cik":"0000320193","figiuid":"EQ0010169500001000","scfigi":"BBG001S5N8V8","cfigi":"BBG000B9XRY4","figi":"BBG000B9Y5X2"},"updated":"2019-01-15T05:21:28.437Z","url":"https://api.polygon.io/v2/reference/tickers/AAPL"},{"ticker":"$AEDAUD","name":"United Arab Emirates dirham - Australian dollar","market":"FX","locale":"G","currency":"AUD","active":true,"primaryExch":"FX","updated":"2019-01-25T00:00:00.000Z","attrs":{"currencyName":"Australian dollar,","currency":"AUD,","baseName":"United Arab Emirates dirham,","base":"AED"},"url":"https://api.polygon.io/v2/tickers/$AEDAUD"}] 
 }
 
 impl InlineResponse200 {
   pub fn new() -> InlineResponse200 {
     InlineResponse200 {
+      page: None,
+      perpage: None,
+      count: None,
       status: None,
-      results: None
+      tickers: None
     }
+  }
+
+  pub fn set_page(&mut self, page: i64) {
+    self.page = Some(page);
+  }
+
+  pub fn with_page(mut self, page: i64) -> InlineResponse200 {
+    self.page = Some(page);
+    self
+  }
+
+  pub fn page(&self) -> Option<&i64> {
+    self.page.as_ref()
+  }
+
+  pub fn reset_page(&mut self) {
+    self.page = None;
+  }
+
+  pub fn set_perpage(&mut self, perpage: i64) {
+    self.perpage = Some(perpage);
+  }
+
+  pub fn with_perpage(mut self, perpage: i64) -> InlineResponse200 {
+    self.perpage = Some(perpage);
+    self
+  }
+
+  pub fn perpage(&self) -> Option<&i64> {
+    self.perpage.as_ref()
+  }
+
+  pub fn reset_perpage(&mut self) {
+    self.perpage = None;
+  }
+
+  pub fn set_count(&mut self, count: i64) {
+    self.count = Some(count);
+  }
+
+  pub fn with_count(mut self, count: i64) -> InlineResponse200 {
+    self.count = Some(count);
+    self
+  }
+
+  pub fn count(&self) -> Option<&i64> {
+    self.count.as_ref()
+  }
+
+  pub fn reset_count(&mut self) {
+    self.count = None;
   }
 
   pub fn set_status(&mut self, status: String) {
@@ -50,21 +110,21 @@ impl InlineResponse200 {
     self.status = None;
   }
 
-  pub fn set_results(&mut self, results: Value) {
-    self.results = Some(results);
+  pub fn set_tickers(&mut self, tickers: Vec<Ticker>) {
+    self.tickers = Some(tickers);
   }
 
-  pub fn with_results(mut self, results: Value) -> InlineResponse200 {
-    self.results = Some(results);
+  pub fn with_tickers(mut self, tickers: Vec<Ticker>) -> InlineResponse200 {
+    self.tickers = Some(tickers);
     self
   }
 
-  pub fn results(&self) -> Option<&Value> {
-    self.results.as_ref()
+  pub fn tickers(&self) -> Option<&Vec<Ticker>> {
+    self.tickers.as_ref()
   }
 
-  pub fn reset_results(&mut self) {
-    self.results = None;
+  pub fn reset_tickers(&mut self) {
+    self.tickers = None;
   }
 
 }

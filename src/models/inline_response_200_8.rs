@@ -19,64 +19,107 @@ use crate::models::*;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse2008 {
-  #[serde(rename = "status")]
-  status: String,  // success 
-  #[serde(rename = "symbol")]
-  symbol: String,  // AAPL 
-  #[serde(rename = "last")]
-  last: LastTrade 
+  #[serde(rename = "results_count")]
+  results_count: Option<i64>,  // 10 
+  #[serde(rename = "db_latency")]
+  db_latency: Option<i64>,  // 2 
+  #[serde(rename = "success")]
+  success: bool,  // true 
+  #[serde(rename = "ticker")]
+  ticker: String,  // AAPL 
+  #[serde(rename = "results")]
+  results: Option<Vec<StocksV2Nbbo>> 
 }
 
 impl InlineResponse2008 {
-  pub fn new(status: String, symbol: String, last: LastTrade, ) -> InlineResponse2008 {
+  pub fn new(success: bool, ticker: String, ) -> InlineResponse2008 {
     InlineResponse2008 {
-      status: status,
-      symbol: symbol,
-      last: last
+      results_count: None,
+      db_latency: None,
+      success: success,
+      ticker: ticker,
+      results: None
     }
   }
 
-  pub fn set_status(&mut self, status: String) {
-    self.status = status;
+  pub fn set_results_count(&mut self, results_count: i64) {
+    self.results_count = Some(results_count);
   }
 
-  pub fn with_status(mut self, status: String) -> InlineResponse2008 {
-    self.status = status;
+  pub fn with_results_count(mut self, results_count: i64) -> InlineResponse2008 {
+    self.results_count = Some(results_count);
     self
   }
 
-  pub fn status(&self) -> &String {
-    &self.status
+  pub fn results_count(&self) -> Option<&i64> {
+    self.results_count.as_ref()
   }
 
-
-  pub fn set_symbol(&mut self, symbol: String) {
-    self.symbol = symbol;
+  pub fn reset_results_count(&mut self) {
+    self.results_count = None;
   }
 
-  pub fn with_symbol(mut self, symbol: String) -> InlineResponse2008 {
-    self.symbol = symbol;
+  pub fn set_db_latency(&mut self, db_latency: i64) {
+    self.db_latency = Some(db_latency);
+  }
+
+  pub fn with_db_latency(mut self, db_latency: i64) -> InlineResponse2008 {
+    self.db_latency = Some(db_latency);
     self
   }
 
-  pub fn symbol(&self) -> &String {
-    &self.symbol
+  pub fn db_latency(&self) -> Option<&i64> {
+    self.db_latency.as_ref()
   }
 
-
-  pub fn set_last(&mut self, last: LastTrade) {
-    self.last = last;
+  pub fn reset_db_latency(&mut self) {
+    self.db_latency = None;
   }
 
-  pub fn with_last(mut self, last: LastTrade) -> InlineResponse2008 {
-    self.last = last;
+  pub fn set_success(&mut self, success: bool) {
+    self.success = success;
+  }
+
+  pub fn with_success(mut self, success: bool) -> InlineResponse2008 {
+    self.success = success;
     self
   }
 
-  pub fn last(&self) -> &LastTrade {
-    &self.last
+  pub fn success(&self) -> &bool {
+    &self.success
   }
 
+
+  pub fn set_ticker(&mut self, ticker: String) {
+    self.ticker = ticker;
+  }
+
+  pub fn with_ticker(mut self, ticker: String) -> InlineResponse2008 {
+    self.ticker = ticker;
+    self
+  }
+
+  pub fn ticker(&self) -> &String {
+    &self.ticker
+  }
+
+
+  pub fn set_results(&mut self, results: Vec<StocksV2Nbbo>) {
+    self.results = Some(results);
+  }
+
+  pub fn with_results(mut self, results: Vec<StocksV2Nbbo>) -> InlineResponse2008 {
+    self.results = Some(results);
+    self
+  }
+
+  pub fn results(&self) -> Option<&Vec<StocksV2Nbbo>> {
+    self.results.as_ref()
+  }
+
+  pub fn reset_results(&mut self) {
+    self.results = None;
+  }
 
 }
 

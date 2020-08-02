@@ -20,7 +20,7 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct LastTrade {
   #[serde(rename = "price")]
-  price: i64, 
+  price: f32,  // 159.59 
   #[serde(rename = "size")]
   size: i64,  // 20 
   #[serde(rename = "exchange")]
@@ -32,13 +32,13 @@ pub struct LastTrade {
   #[serde(rename = "cond3")]
   cond3: i64,  // 0 
   #[serde(rename = "cond4")]
-  cond4: i64,  // 0 
+  cond4: Option<i64>,  // 0 
   #[serde(rename = "timestamp")]
   timestamp: i64  // 1518086464720 
 }
 
 impl LastTrade {
-  pub fn new(price: i64, size: i64, exchange: i64, cond1: i64, cond2: i64, cond3: i64, cond4: i64, timestamp: i64, ) -> LastTrade {
+  pub fn new(price: f32, size: i64, exchange: i64, cond1: i64, cond2: i64, cond3: i64, timestamp: i64, ) -> LastTrade {
     LastTrade {
       price: price,
       size: size,
@@ -46,21 +46,21 @@ impl LastTrade {
       cond1: cond1,
       cond2: cond2,
       cond3: cond3,
-      cond4: cond4,
+      cond4: None,
       timestamp: timestamp
     }
   }
 
-  pub fn set_price(&mut self, price: i64) {
+  pub fn set_price(&mut self, price: f32) {
     self.price = price;
   }
 
-  pub fn with_price(mut self, price: i64) -> LastTrade {
+  pub fn with_price(mut self, price: f32) -> LastTrade {
     self.price = price;
     self
   }
 
-  pub fn price(&self) -> &i64 {
+  pub fn price(&self) -> &f32 {
     &self.price
   }
 
@@ -136,18 +136,21 @@ impl LastTrade {
 
 
   pub fn set_cond4(&mut self, cond4: i64) {
-    self.cond4 = cond4;
+    self.cond4 = Some(cond4);
   }
 
   pub fn with_cond4(mut self, cond4: i64) -> LastTrade {
-    self.cond4 = cond4;
+    self.cond4 = Some(cond4);
     self
   }
 
-  pub fn cond4(&self) -> &i64 {
-    &self.cond4
+  pub fn cond4(&self) -> Option<&i64> {
+    self.cond4.as_ref()
   }
 
+  pub fn reset_cond4(&mut self) {
+    self.cond4 = None;
+  }
 
   pub fn set_timestamp(&mut self, timestamp: i64) {
     self.timestamp = timestamp;

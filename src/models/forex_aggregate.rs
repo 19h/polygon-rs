@@ -20,13 +20,13 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ForexAggregate {
   #[serde(rename = "o")]
-  o: i64, 
+  o: f32,  // 0.81151 
   #[serde(rename = "c")]
-  c: i64, 
+  c: f32,  // 0.81287 
   #[serde(rename = "l")]
-  l: i64, 
+  l: f32,  // 0.81 
   #[serde(rename = "h")]
-  h: i64, 
+  h: f32,  // 0.8141 
   #[serde(rename = "v")]
   v: i64,  // 3988 
   #[serde(rename = "t")]
@@ -34,7 +34,7 @@ pub struct ForexAggregate {
 }
 
 impl ForexAggregate {
-  pub fn new(o: i64, c: i64, l: i64, h: i64, v: i64, t: i64, ) -> ForexAggregate {
+  pub fn new(o: f32, c: f32, l: f32, h: f32, v: i64, t: i64, ) -> ForexAggregate {
     ForexAggregate {
       o: o,
       c: c,
@@ -45,58 +45,58 @@ impl ForexAggregate {
     }
   }
 
-  pub fn set_o(&mut self, o: i64) {
+  pub fn set_o(&mut self, o: f32) {
     self.o = o;
   }
 
-  pub fn with_o(mut self, o: i64) -> ForexAggregate {
+  pub fn with_o(mut self, o: f32) -> ForexAggregate {
     self.o = o;
     self
   }
 
-  pub fn o(&self) -> &i64 {
+  pub fn o(&self) -> &f32 {
     &self.o
   }
 
 
-  pub fn set_c(&mut self, c: i64) {
+  pub fn set_c(&mut self, c: f32) {
     self.c = c;
   }
 
-  pub fn with_c(mut self, c: i64) -> ForexAggregate {
+  pub fn with_c(mut self, c: f32) -> ForexAggregate {
     self.c = c;
     self
   }
 
-  pub fn c(&self) -> &i64 {
+  pub fn c(&self) -> &f32 {
     &self.c
   }
 
 
-  pub fn set_l(&mut self, l: i64) {
+  pub fn set_l(&mut self, l: f32) {
     self.l = l;
   }
 
-  pub fn with_l(mut self, l: i64) -> ForexAggregate {
+  pub fn with_l(mut self, l: f32) -> ForexAggregate {
     self.l = l;
     self
   }
 
-  pub fn l(&self) -> &i64 {
+  pub fn l(&self) -> &f32 {
     &self.l
   }
 
 
-  pub fn set_h(&mut self, h: i64) {
+  pub fn set_h(&mut self, h: f32) {
     self.h = h;
   }
 
-  pub fn with_h(mut self, h: i64) -> ForexAggregate {
+  pub fn with_h(mut self, h: f32) -> ForexAggregate {
     self.h = h;
     self
   }
 
-  pub fn h(&self) -> &i64 {
+  pub fn h(&self) -> &f32 {
     &self.h
   }
 

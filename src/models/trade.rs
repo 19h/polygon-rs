@@ -30,7 +30,7 @@ pub struct Trade {
   #[serde(rename = "e")]
   e: String,  // 12 
   #[serde(rename = "p")]
-  p: i64, 
+  p: f32,  // 172.17 
   #[serde(rename = "s")]
   s: i64,  // 50 
   #[serde(rename = "t")]
@@ -38,7 +38,7 @@ pub struct Trade {
 }
 
 impl Trade {
-  pub fn new(c1: i64, c2: i64, c3: i64, c4: i64, e: String, p: i64, s: i64, t: i64, ) -> Trade {
+  pub fn new(c1: i64, c2: i64, c3: i64, c4: i64, e: String, p: f32, s: i64, t: i64, ) -> Trade {
     Trade {
       c1: c1,
       c2: c2,
@@ -121,16 +121,16 @@ impl Trade {
   }
 
 
-  pub fn set_p(&mut self, p: i64) {
+  pub fn set_p(&mut self, p: f32) {
     self.p = p;
   }
 
-  pub fn with_p(mut self, p: i64) -> Trade {
+  pub fn with_p(mut self, p: f32) -> Trade {
     self.p = p;
     self
   }
 
-  pub fn p(&self) -> &i64 {
+  pub fn p(&self) -> &f32 {
     &self.p
   }
 

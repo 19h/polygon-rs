@@ -19,87 +19,34 @@ use crate::models::*;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse20018 {
-  #[serde(rename = "day")]
-  day: String,  // Wed May 09 02:00:00 CEST 2018 
-  #[serde(rename = "map")]
-  map: Value,  // {"c":"conditions","p":"price","s":"size","x":"exchange","t":"timestamp"} 
-  #[serde(rename = "msLatency")]
-  ms_latency: i64,  // 2 
-  #[serde(rename = "status")]
-  status: String,  // success 
   #[serde(rename = "symbol")]
   symbol: String,  // BTC-USD 
-  #[serde(rename = "ticks")]
-  ticks: Vec<CryptoTickJson> 
+  #[serde(rename = "isUTC")]
+  is_utc: Option<bool>,  // true 
+  #[serde(rename = "day")]
+  day: Option<String>,  // Wed May 09 02:00:00 CEST 2018 
+  #[serde(rename = "open")]
+  open: Option<f32>,  // 9228.1801 
+  #[serde(rename = "close")]
+  close: Option<f32>,  // 9300.40000001 
+  #[serde(rename = "openTrades")]
+  open_trades: Option<Vec<CryptoTickJson>>, 
+  #[serde(rename = "closingTrades")]
+  closing_trades: Option<Vec<CryptoTickJson>> 
 }
 
 impl InlineResponse20018 {
-  pub fn new(day: String, map: Value, ms_latency: i64, status: String, symbol: String, ticks: Vec<CryptoTickJson>, ) -> InlineResponse20018 {
+  pub fn new(symbol: String, ) -> InlineResponse20018 {
     InlineResponse20018 {
-      day: day,
-      map: map,
-      ms_latency: ms_latency,
-      status: status,
       symbol: symbol,
-      ticks: ticks
+      is_utc: None,
+      day: None,
+      open: None,
+      close: None,
+      open_trades: None,
+      closing_trades: None
     }
   }
-
-  pub fn set_day(&mut self, day: String) {
-    self.day = day;
-  }
-
-  pub fn with_day(mut self, day: String) -> InlineResponse20018 {
-    self.day = day;
-    self
-  }
-
-  pub fn day(&self) -> &String {
-    &self.day
-  }
-
-
-  pub fn set_map(&mut self, map: Value) {
-    self.map = map;
-  }
-
-  pub fn with_map(mut self, map: Value) -> InlineResponse20018 {
-    self.map = map;
-    self
-  }
-
-  pub fn map(&self) -> &Value {
-    &self.map
-  }
-
-
-  pub fn set_ms_latency(&mut self, ms_latency: i64) {
-    self.ms_latency = ms_latency;
-  }
-
-  pub fn with_ms_latency(mut self, ms_latency: i64) -> InlineResponse20018 {
-    self.ms_latency = ms_latency;
-    self
-  }
-
-  pub fn ms_latency(&self) -> &i64 {
-    &self.ms_latency
-  }
-
-
-  pub fn set_status(&mut self, status: String) {
-    self.status = status;
-  }
-
-  pub fn with_status(mut self, status: String) -> InlineResponse20018 {
-    self.status = status;
-    self
-  }
-
-  pub fn status(&self) -> &String {
-    &self.status
-  }
-
 
   pub fn set_symbol(&mut self, symbol: String) {
     self.symbol = symbol;
@@ -115,19 +62,107 @@ impl InlineResponse20018 {
   }
 
 
-  pub fn set_ticks(&mut self, ticks: Vec<CryptoTickJson>) {
-    self.ticks = ticks;
+  pub fn set_is_utc(&mut self, is_utc: bool) {
+    self.is_utc = Some(is_utc);
   }
 
-  pub fn with_ticks(mut self, ticks: Vec<CryptoTickJson>) -> InlineResponse20018 {
-    self.ticks = ticks;
+  pub fn with_is_utc(mut self, is_utc: bool) -> InlineResponse20018 {
+    self.is_utc = Some(is_utc);
     self
   }
 
-  pub fn ticks(&self) -> &Vec<CryptoTickJson> {
-    &self.ticks
+  pub fn is_utc(&self) -> Option<&bool> {
+    self.is_utc.as_ref()
   }
 
+  pub fn reset_is_utc(&mut self) {
+    self.is_utc = None;
+  }
+
+  pub fn set_day(&mut self, day: String) {
+    self.day = Some(day);
+  }
+
+  pub fn with_day(mut self, day: String) -> InlineResponse20018 {
+    self.day = Some(day);
+    self
+  }
+
+  pub fn day(&self) -> Option<&String> {
+    self.day.as_ref()
+  }
+
+  pub fn reset_day(&mut self) {
+    self.day = None;
+  }
+
+  pub fn set_open(&mut self, open: f32) {
+    self.open = Some(open);
+  }
+
+  pub fn with_open(mut self, open: f32) -> InlineResponse20018 {
+    self.open = Some(open);
+    self
+  }
+
+  pub fn open(&self) -> Option<&f32> {
+    self.open.as_ref()
+  }
+
+  pub fn reset_open(&mut self) {
+    self.open = None;
+  }
+
+  pub fn set_close(&mut self, close: f32) {
+    self.close = Some(close);
+  }
+
+  pub fn with_close(mut self, close: f32) -> InlineResponse20018 {
+    self.close = Some(close);
+    self
+  }
+
+  pub fn close(&self) -> Option<&f32> {
+    self.close.as_ref()
+  }
+
+  pub fn reset_close(&mut self) {
+    self.close = None;
+  }
+
+  pub fn set_open_trades(&mut self, open_trades: Vec<CryptoTickJson>) {
+    self.open_trades = Some(open_trades);
+  }
+
+  pub fn with_open_trades(mut self, open_trades: Vec<CryptoTickJson>) -> InlineResponse20018 {
+    self.open_trades = Some(open_trades);
+    self
+  }
+
+  pub fn open_trades(&self) -> Option<&Vec<CryptoTickJson>> {
+    self.open_trades.as_ref()
+  }
+
+  pub fn reset_open_trades(&mut self) {
+    self.open_trades = None;
+  }
+
+  pub fn set_closing_trades(&mut self, closing_trades: Vec<CryptoTickJson>) {
+    self.closing_trades = Some(closing_trades);
+  }
+
+  pub fn with_closing_trades(mut self, closing_trades: Vec<CryptoTickJson>) -> InlineResponse20018 {
+    self.closing_trades = Some(closing_trades);
+    self
+  }
+
+  pub fn closing_trades(&self) -> Option<&Vec<CryptoTickJson>> {
+    self.closing_trades.as_ref()
+  }
+
+  pub fn reset_closing_trades(&mut self) {
+    self.closing_trades = None;
+  }
 
 }
 

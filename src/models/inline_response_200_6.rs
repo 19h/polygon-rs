@@ -19,101 +19,67 @@ use crate::models::*;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse2006 {
-  #[serde(rename = "results_count")]
-  results_count: Option<i64>,  // 10 
-  #[serde(rename = "db_latency")]
-  db_latency: Option<i64>,  // 2 
-  #[serde(rename = "success")]
-  success: bool,  // true 
-  #[serde(rename = "ticker")]
-  ticker: String,  // AAPL 
+  #[serde(rename = "status")]
+  status: Option<String>,  // OK 
+  #[serde(rename = "count")]
+  count: Option<i64>,  // 1 
   #[serde(rename = "results")]
-  results: Option<Vec<StocksV2Trade>> 
+  results: Option<Vec<Financials>> 
 }
 
 impl InlineResponse2006 {
-  pub fn new(success: bool, ticker: String, ) -> InlineResponse2006 {
+  pub fn new() -> InlineResponse2006 {
     InlineResponse2006 {
-      results_count: None,
-      db_latency: None,
-      success: success,
-      ticker: ticker,
+      status: None,
+      count: None,
       results: None
     }
   }
 
-  pub fn set_results_count(&mut self, results_count: i64) {
-    self.results_count = Some(results_count);
+  pub fn set_status(&mut self, status: String) {
+    self.status = Some(status);
   }
 
-  pub fn with_results_count(mut self, results_count: i64) -> InlineResponse2006 {
-    self.results_count = Some(results_count);
+  pub fn with_status(mut self, status: String) -> InlineResponse2006 {
+    self.status = Some(status);
     self
   }
 
-  pub fn results_count(&self) -> Option<&i64> {
-    self.results_count.as_ref()
+  pub fn status(&self) -> Option<&String> {
+    self.status.as_ref()
   }
 
-  pub fn reset_results_count(&mut self) {
-    self.results_count = None;
+  pub fn reset_status(&mut self) {
+    self.status = None;
   }
 
-  pub fn set_db_latency(&mut self, db_latency: i64) {
-    self.db_latency = Some(db_latency);
+  pub fn set_count(&mut self, count: i64) {
+    self.count = Some(count);
   }
 
-  pub fn with_db_latency(mut self, db_latency: i64) -> InlineResponse2006 {
-    self.db_latency = Some(db_latency);
+  pub fn with_count(mut self, count: i64) -> InlineResponse2006 {
+    self.count = Some(count);
     self
   }
 
-  pub fn db_latency(&self) -> Option<&i64> {
-    self.db_latency.as_ref()
+  pub fn count(&self) -> Option<&i64> {
+    self.count.as_ref()
   }
 
-  pub fn reset_db_latency(&mut self) {
-    self.db_latency = None;
+  pub fn reset_count(&mut self) {
+    self.count = None;
   }
 
-  pub fn set_success(&mut self, success: bool) {
-    self.success = success;
-  }
-
-  pub fn with_success(mut self, success: bool) -> InlineResponse2006 {
-    self.success = success;
-    self
-  }
-
-  pub fn success(&self) -> &bool {
-    &self.success
-  }
-
-
-  pub fn set_ticker(&mut self, ticker: String) {
-    self.ticker = ticker;
-  }
-
-  pub fn with_ticker(mut self, ticker: String) -> InlineResponse2006 {
-    self.ticker = ticker;
-    self
-  }
-
-  pub fn ticker(&self) -> &String {
-    &self.ticker
-  }
-
-
-  pub fn set_results(&mut self, results: Vec<StocksV2Trade>) {
+  pub fn set_results(&mut self, results: Vec<Financials>) {
     self.results = Some(results);
   }
 
-  pub fn with_results(mut self, results: Vec<StocksV2Trade>) -> InlineResponse2006 {
+  pub fn with_results(mut self, results: Vec<Financials>) -> InlineResponse2006 {
     self.results = Some(results);
     self
   }
 
-  pub fn results(&self) -> Option<&Vec<StocksV2Trade>> {
+  pub fn results(&self) -> Option<&Vec<Financials>> {
     self.results.as_ref()
   }
 

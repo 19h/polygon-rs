@@ -26,41 +26,41 @@ pub struct Financial {
   #[serde(rename = "reportDateStr")]
   report_date_str: String,  // 2017-12-31 
   #[serde(rename = "grossProfit")]
-  gross_profit: Option<f32>,  // 3.3912E+10 
+  gross_profit: Option<i64>,  // 33912000000 
   #[serde(rename = "costOfRevenue")]
-  cost_of_revenue: Option<f32>,  // 5.4381E+10 
+  cost_of_revenue: Option<i64>,  // 54381000000 
   #[serde(rename = "operatingRevenue")]
-  operating_revenue: Option<f32>,  // 8.8293E+10 
+  operating_revenue: Option<i64>,  // 88293000000 
   #[serde(rename = "totalRevenue")]
-  total_revenue: Option<f32>,  // 8.8293E+10 
+  total_revenue: Option<i64>,  // 88293000000 
   #[serde(rename = "operatingIncome")]
-  operating_income: Option<f32>,  // 2.6274E+10 
+  operating_income: Option<i64>,  // 26274000000 
   #[serde(rename = "netIncome")]
-  net_income: Option<f32>,  // 2.0065E+10 
+  net_income: Option<i64>,  // 20065000000 
   #[serde(rename = "researchAndDevelopment")]
-  research_and_development: Option<f32>,  // 3.407E+9 
+  research_and_development: Option<i64>,  // 3407000000 
   #[serde(rename = "operatingExpense")]
-  operating_expense: Option<f32>,  // 7.638E+9 
+  operating_expense: Option<i64>,  // 7638000000 
   #[serde(rename = "currentAssets")]
-  current_assets: Option<f32>,  // 1.4381E+11 
+  current_assets: Option<i64>,  // 143810000000 
   #[serde(rename = "totalAssets")]
-  total_assets: Option<f32>,  // 4.06794E+11 
+  total_assets: Option<i64>,  // 406794000000 
   #[serde(rename = "totalLiabilities")]
-  total_liabilities: Option<f32>,  // 2.66595E+11 
+  total_liabilities: Option<i64>,  // 266595000000 
   #[serde(rename = "currentCash")]
-  current_cash: Option<f32>,  // 2.7491E+10 
+  current_cash: Option<i64>,  // 27491000000 
   #[serde(rename = "currentDebt")]
-  current_debt: Option<f32>,  // 1.8478E+10 
+  current_debt: Option<i64>,  // 18478000000 
   #[serde(rename = "totalCash")]
-  total_cash: Option<f32>,  // 7.7153E+10 
+  total_cash: Option<i64>,  // 77153000000 
   #[serde(rename = "totalDebt")]
-  total_debt: Option<f32>,  // 1.224E+11 
+  total_debt: Option<i64>,  // 122400000000 
   #[serde(rename = "shareholderEquity")]
-  shareholder_equity: Option<f32>,  // 1.40199E+11 
+  shareholder_equity: Option<i64>,  // 140199000000 
   #[serde(rename = "cashChange")]
-  cash_change: Option<f32>,  // 7.202E+9 
+  cash_change: Option<i64>,  // 7202000000 
   #[serde(rename = "cashFlow")]
-  cash_flow: Option<f32>,  // 2.8293E+10 
+  cash_flow: Option<i64>,  // 28293000000 
   #[serde(rename = "operatingGainsLosses")]
   operating_gains_losses: Option<f32> 
 }
@@ -135,16 +135,16 @@ impl Financial {
   }
 
 
-  pub fn set_gross_profit(&mut self, gross_profit: f32) {
+  pub fn set_gross_profit(&mut self, gross_profit: i64) {
     self.gross_profit = Some(gross_profit);
   }
 
-  pub fn with_gross_profit(mut self, gross_profit: f32) -> Financial {
+  pub fn with_gross_profit(mut self, gross_profit: i64) -> Financial {
     self.gross_profit = Some(gross_profit);
     self
   }
 
-  pub fn gross_profit(&self) -> Option<&f32> {
+  pub fn gross_profit(&self) -> Option<&i64> {
     self.gross_profit.as_ref()
   }
 
@@ -152,16 +152,16 @@ impl Financial {
     self.gross_profit = None;
   }
 
-  pub fn set_cost_of_revenue(&mut self, cost_of_revenue: f32) {
+  pub fn set_cost_of_revenue(&mut self, cost_of_revenue: i64) {
     self.cost_of_revenue = Some(cost_of_revenue);
   }
 
-  pub fn with_cost_of_revenue(mut self, cost_of_revenue: f32) -> Financial {
+  pub fn with_cost_of_revenue(mut self, cost_of_revenue: i64) -> Financial {
     self.cost_of_revenue = Some(cost_of_revenue);
     self
   }
 
-  pub fn cost_of_revenue(&self) -> Option<&f32> {
+  pub fn cost_of_revenue(&self) -> Option<&i64> {
     self.cost_of_revenue.as_ref()
   }
 
@@ -169,16 +169,16 @@ impl Financial {
     self.cost_of_revenue = None;
   }
 
-  pub fn set_operating_revenue(&mut self, operating_revenue: f32) {
+  pub fn set_operating_revenue(&mut self, operating_revenue: i64) {
     self.operating_revenue = Some(operating_revenue);
   }
 
-  pub fn with_operating_revenue(mut self, operating_revenue: f32) -> Financial {
+  pub fn with_operating_revenue(mut self, operating_revenue: i64) -> Financial {
     self.operating_revenue = Some(operating_revenue);
     self
   }
 
-  pub fn operating_revenue(&self) -> Option<&f32> {
+  pub fn operating_revenue(&self) -> Option<&i64> {
     self.operating_revenue.as_ref()
   }
 
@@ -186,16 +186,16 @@ impl Financial {
     self.operating_revenue = None;
   }
 
-  pub fn set_total_revenue(&mut self, total_revenue: f32) {
+  pub fn set_total_revenue(&mut self, total_revenue: i64) {
     self.total_revenue = Some(total_revenue);
   }
 
-  pub fn with_total_revenue(mut self, total_revenue: f32) -> Financial {
+  pub fn with_total_revenue(mut self, total_revenue: i64) -> Financial {
     self.total_revenue = Some(total_revenue);
     self
   }
 
-  pub fn total_revenue(&self) -> Option<&f32> {
+  pub fn total_revenue(&self) -> Option<&i64> {
     self.total_revenue.as_ref()
   }
 
@@ -203,16 +203,16 @@ impl Financial {
     self.total_revenue = None;
   }
 
-  pub fn set_operating_income(&mut self, operating_income: f32) {
+  pub fn set_operating_income(&mut self, operating_income: i64) {
     self.operating_income = Some(operating_income);
   }
 
-  pub fn with_operating_income(mut self, operating_income: f32) -> Financial {
+  pub fn with_operating_income(mut self, operating_income: i64) -> Financial {
     self.operating_income = Some(operating_income);
     self
   }
 
-  pub fn operating_income(&self) -> Option<&f32> {
+  pub fn operating_income(&self) -> Option<&i64> {
     self.operating_income.as_ref()
   }
 
@@ -220,16 +220,16 @@ impl Financial {
     self.operating_income = None;
   }
 
-  pub fn set_net_income(&mut self, net_income: f32) {
+  pub fn set_net_income(&mut self, net_income: i64) {
     self.net_income = Some(net_income);
   }
 
-  pub fn with_net_income(mut self, net_income: f32) -> Financial {
+  pub fn with_net_income(mut self, net_income: i64) -> Financial {
     self.net_income = Some(net_income);
     self
   }
 
-  pub fn net_income(&self) -> Option<&f32> {
+  pub fn net_income(&self) -> Option<&i64> {
     self.net_income.as_ref()
   }
 
@@ -237,16 +237,16 @@ impl Financial {
     self.net_income = None;
   }
 
-  pub fn set_research_and_development(&mut self, research_and_development: f32) {
+  pub fn set_research_and_development(&mut self, research_and_development: i64) {
     self.research_and_development = Some(research_and_development);
   }
 
-  pub fn with_research_and_development(mut self, research_and_development: f32) -> Financial {
+  pub fn with_research_and_development(mut self, research_and_development: i64) -> Financial {
     self.research_and_development = Some(research_and_development);
     self
   }
 
-  pub fn research_and_development(&self) -> Option<&f32> {
+  pub fn research_and_development(&self) -> Option<&i64> {
     self.research_and_development.as_ref()
   }
 
@@ -254,16 +254,16 @@ impl Financial {
     self.research_and_development = None;
   }
 
-  pub fn set_operating_expense(&mut self, operating_expense: f32) {
+  pub fn set_operating_expense(&mut self, operating_expense: i64) {
     self.operating_expense = Some(operating_expense);
   }
 
-  pub fn with_operating_expense(mut self, operating_expense: f32) -> Financial {
+  pub fn with_operating_expense(mut self, operating_expense: i64) -> Financial {
     self.operating_expense = Some(operating_expense);
     self
   }
 
-  pub fn operating_expense(&self) -> Option<&f32> {
+  pub fn operating_expense(&self) -> Option<&i64> {
     self.operating_expense.as_ref()
   }
 
@@ -271,16 +271,16 @@ impl Financial {
     self.operating_expense = None;
   }
 
-  pub fn set_current_assets(&mut self, current_assets: f32) {
+  pub fn set_current_assets(&mut self, current_assets: i64) {
     self.current_assets = Some(current_assets);
   }
 
-  pub fn with_current_assets(mut self, current_assets: f32) -> Financial {
+  pub fn with_current_assets(mut self, current_assets: i64) -> Financial {
     self.current_assets = Some(current_assets);
     self
   }
 
-  pub fn current_assets(&self) -> Option<&f32> {
+  pub fn current_assets(&self) -> Option<&i64> {
     self.current_assets.as_ref()
   }
 
@@ -288,16 +288,16 @@ impl Financial {
     self.current_assets = None;
   }
 
-  pub fn set_total_assets(&mut self, total_assets: f32) {
+  pub fn set_total_assets(&mut self, total_assets: i64) {
     self.total_assets = Some(total_assets);
   }
 
-  pub fn with_total_assets(mut self, total_assets: f32) -> Financial {
+  pub fn with_total_assets(mut self, total_assets: i64) -> Financial {
     self.total_assets = Some(total_assets);
     self
   }
 
-  pub fn total_assets(&self) -> Option<&f32> {
+  pub fn total_assets(&self) -> Option<&i64> {
     self.total_assets.as_ref()
   }
 
@@ -305,16 +305,16 @@ impl Financial {
     self.total_assets = None;
   }
 
-  pub fn set_total_liabilities(&mut self, total_liabilities: f32) {
+  pub fn set_total_liabilities(&mut self, total_liabilities: i64) {
     self.total_liabilities = Some(total_liabilities);
   }
 
-  pub fn with_total_liabilities(mut self, total_liabilities: f32) -> Financial {
+  pub fn with_total_liabilities(mut self, total_liabilities: i64) -> Financial {
     self.total_liabilities = Some(total_liabilities);
     self
   }
 
-  pub fn total_liabilities(&self) -> Option<&f32> {
+  pub fn total_liabilities(&self) -> Option<&i64> {
     self.total_liabilities.as_ref()
   }
 
@@ -322,16 +322,16 @@ impl Financial {
     self.total_liabilities = None;
   }
 
-  pub fn set_current_cash(&mut self, current_cash: f32) {
+  pub fn set_current_cash(&mut self, current_cash: i64) {
     self.current_cash = Some(current_cash);
   }
 
-  pub fn with_current_cash(mut self, current_cash: f32) -> Financial {
+  pub fn with_current_cash(mut self, current_cash: i64) -> Financial {
     self.current_cash = Some(current_cash);
     self
   }
 
-  pub fn current_cash(&self) -> Option<&f32> {
+  pub fn current_cash(&self) -> Option<&i64> {
     self.current_cash.as_ref()
   }
 
@@ -339,16 +339,16 @@ impl Financial {
     self.current_cash = None;
   }
 
-  pub fn set_current_debt(&mut self, current_debt: f32) {
+  pub fn set_current_debt(&mut self, current_debt: i64) {
     self.current_debt = Some(current_debt);
   }
 
-  pub fn with_current_debt(mut self, current_debt: f32) -> Financial {
+  pub fn with_current_debt(mut self, current_debt: i64) -> Financial {
     self.current_debt = Some(current_debt);
     self
   }
 
-  pub fn current_debt(&self) -> Option<&f32> {
+  pub fn current_debt(&self) -> Option<&i64> {
     self.current_debt.as_ref()
   }
 
@@ -356,16 +356,16 @@ impl Financial {
     self.current_debt = None;
   }
 
-  pub fn set_total_cash(&mut self, total_cash: f32) {
+  pub fn set_total_cash(&mut self, total_cash: i64) {
     self.total_cash = Some(total_cash);
   }
 
-  pub fn with_total_cash(mut self, total_cash: f32) -> Financial {
+  pub fn with_total_cash(mut self, total_cash: i64) -> Financial {
     self.total_cash = Some(total_cash);
     self
   }
 
-  pub fn total_cash(&self) -> Option<&f32> {
+  pub fn total_cash(&self) -> Option<&i64> {
     self.total_cash.as_ref()
   }
 
@@ -373,16 +373,16 @@ impl Financial {
     self.total_cash = None;
   }
 
-  pub fn set_total_debt(&mut self, total_debt: f32) {
+  pub fn set_total_debt(&mut self, total_debt: i64) {
     self.total_debt = Some(total_debt);
   }
 
-  pub fn with_total_debt(mut self, total_debt: f32) -> Financial {
+  pub fn with_total_debt(mut self, total_debt: i64) -> Financial {
     self.total_debt = Some(total_debt);
     self
   }
 
-  pub fn total_debt(&self) -> Option<&f32> {
+  pub fn total_debt(&self) -> Option<&i64> {
     self.total_debt.as_ref()
   }
 
@@ -390,16 +390,16 @@ impl Financial {
     self.total_debt = None;
   }
 
-  pub fn set_shareholder_equity(&mut self, shareholder_equity: f32) {
+  pub fn set_shareholder_equity(&mut self, shareholder_equity: i64) {
     self.shareholder_equity = Some(shareholder_equity);
   }
 
-  pub fn with_shareholder_equity(mut self, shareholder_equity: f32) -> Financial {
+  pub fn with_shareholder_equity(mut self, shareholder_equity: i64) -> Financial {
     self.shareholder_equity = Some(shareholder_equity);
     self
   }
 
-  pub fn shareholder_equity(&self) -> Option<&f32> {
+  pub fn shareholder_equity(&self) -> Option<&i64> {
     self.shareholder_equity.as_ref()
   }
 
@@ -407,16 +407,16 @@ impl Financial {
     self.shareholder_equity = None;
   }
 
-  pub fn set_cash_change(&mut self, cash_change: f32) {
+  pub fn set_cash_change(&mut self, cash_change: i64) {
     self.cash_change = Some(cash_change);
   }
 
-  pub fn with_cash_change(mut self, cash_change: f32) -> Financial {
+  pub fn with_cash_change(mut self, cash_change: i64) -> Financial {
     self.cash_change = Some(cash_change);
     self
   }
 
-  pub fn cash_change(&self) -> Option<&f32> {
+  pub fn cash_change(&self) -> Option<&i64> {
     self.cash_change.as_ref()
   }
 
@@ -424,16 +424,16 @@ impl Financial {
     self.cash_change = None;
   }
 
-  pub fn set_cash_flow(&mut self, cash_flow: f32) {
+  pub fn set_cash_flow(&mut self, cash_flow: i64) {
     self.cash_flow = Some(cash_flow);
   }
 
-  pub fn with_cash_flow(mut self, cash_flow: f32) -> Financial {
+  pub fn with_cash_flow(mut self, cash_flow: i64) -> Financial {
     self.cash_flow = Some(cash_flow);
     self
   }
 
-  pub fn cash_flow(&self) -> Option<&f32> {
+  pub fn cash_flow(&self) -> Option<&i64> {
     self.cash_flow.as_ref()
   }
 

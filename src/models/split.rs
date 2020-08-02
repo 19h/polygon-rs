@@ -33,13 +33,13 @@ pub struct Split {
   #[serde(rename = "ratio")]
   ratio: f32,  // 0.142857 
   #[serde(rename = "tofactor")]
-  tofactor: f32,  // 7.0 
+  tofactor: Option<i64>,  // 7 
   #[serde(rename = "forfactor")]
-  forfactor: f32  // 1.0 
+  forfactor: Option<i64>  // 1 
 }
 
 impl Split {
-  pub fn new(ticker: String, ex_date: String, payment_date: String, ratio: f32, tofactor: f32, forfactor: f32, ) -> Split {
+  pub fn new(ticker: String, ex_date: String, payment_date: String, ratio: f32, ) -> Split {
     Split {
       ticker: ticker,
       ex_date: ex_date,
@@ -47,8 +47,8 @@ impl Split {
       record_date: None,
       declared_date: None,
       ratio: ratio,
-      tofactor: tofactor,
-      forfactor: forfactor
+      tofactor: None,
+      forfactor: None
     }
   }
 
@@ -142,33 +142,39 @@ impl Split {
   }
 
 
-  pub fn set_tofactor(&mut self, tofactor: f32) {
-    self.tofactor = tofactor;
+  pub fn set_tofactor(&mut self, tofactor: i64) {
+    self.tofactor = Some(tofactor);
   }
 
-  pub fn with_tofactor(mut self, tofactor: f32) -> Split {
-    self.tofactor = tofactor;
+  pub fn with_tofactor(mut self, tofactor: i64) -> Split {
+    self.tofactor = Some(tofactor);
     self
   }
 
-  pub fn tofactor(&self) -> &f32 {
-    &self.tofactor
+  pub fn tofactor(&self) -> Option<&i64> {
+    self.tofactor.as_ref()
   }
 
-
-  pub fn set_forfactor(&mut self, forfactor: f32) {
-    self.forfactor = forfactor;
+  pub fn reset_tofactor(&mut self) {
+    self.tofactor = None;
   }
 
-  pub fn with_forfactor(mut self, forfactor: f32) -> Split {
-    self.forfactor = forfactor;
+  pub fn set_forfactor(&mut self, forfactor: i64) {
+    self.forfactor = Some(forfactor);
+  }
+
+  pub fn with_forfactor(mut self, forfactor: i64) -> Split {
+    self.forfactor = Some(forfactor);
     self
   }
 
-  pub fn forfactor(&self) -> &f32 {
-    &self.forfactor
+  pub fn forfactor(&self) -> Option<&i64> {
+    self.forfactor.as_ref()
   }
 
+  pub fn reset_forfactor(&mut self) {
+    self.forfactor = None;
+  }
 
 }
 

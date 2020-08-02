@@ -20,23 +20,23 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AggResponse {
   #[serde(rename = "ticker")]
-  ticker: String,  // AAPL 
+  ticker: Option<String>,  // AAPL 
   #[serde(rename = "status")]
   status: String,  // OK 
   #[serde(rename = "adjusted")]
   adjusted: bool,  // true 
   #[serde(rename = "queryCount")]
-  query_count: Option<f32>,  // 55.0 
+  query_count: Option<i64>,  // 55 
   #[serde(rename = "resultsCount")]
-  results_count: Option<f32>,  // 2.0 
+  results_count: Option<i64>,  // 2 
   #[serde(rename = "results")]
   results: Vec<Aggv2> 
 }
 
 impl AggResponse {
-  pub fn new(ticker: String, status: String, adjusted: bool, results: Vec<Aggv2>, ) -> AggResponse {
+  pub fn new(status: String, adjusted: bool, results: Vec<Aggv2>, ) -> AggResponse {
     AggResponse {
-      ticker: ticker,
+      ticker: None,
       status: status,
       adjusted: adjusted,
       query_count: None,
@@ -46,18 +46,21 @@ impl AggResponse {
   }
 
   pub fn set_ticker(&mut self, ticker: String) {
-    self.ticker = ticker;
+    self.ticker = Some(ticker);
   }
 
   pub fn with_ticker(mut self, ticker: String) -> AggResponse {
-    self.ticker = ticker;
+    self.ticker = Some(ticker);
     self
   }
 
-  pub fn ticker(&self) -> &String {
-    &self.ticker
+  pub fn ticker(&self) -> Option<&String> {
+    self.ticker.as_ref()
   }
 
+  pub fn reset_ticker(&mut self) {
+    self.ticker = None;
+  }
 
   pub fn set_status(&mut self, status: String) {
     self.status = status;
@@ -87,16 +90,16 @@ impl AggResponse {
   }
 
 
-  pub fn set_query_count(&mut self, query_count: f32) {
+  pub fn set_query_count(&mut self, query_count: i64) {
     self.query_count = Some(query_count);
   }
 
-  pub fn with_query_count(mut self, query_count: f32) -> AggResponse {
+  pub fn with_query_count(mut self, query_count: i64) -> AggResponse {
     self.query_count = Some(query_count);
     self
   }
 
-  pub fn query_count(&self) -> Option<&f32> {
+  pub fn query_count(&self) -> Option<&i64> {
     self.query_count.as_ref()
   }
 
@@ -104,16 +107,16 @@ impl AggResponse {
     self.query_count = None;
   }
 
-  pub fn set_results_count(&mut self, results_count: f32) {
+  pub fn set_results_count(&mut self, results_count: i64) {
     self.results_count = Some(results_count);
   }
 
-  pub fn with_results_count(mut self, results_count: f32) -> AggResponse {
+  pub fn with_results_count(mut self, results_count: i64) -> AggResponse {
     self.results_count = Some(results_count);
     self
   }
 
-  pub fn results_count(&self) -> Option<&f32> {
+  pub fn results_count(&self) -> Option<&i64> {
     self.results_count.as_ref()
   }
 

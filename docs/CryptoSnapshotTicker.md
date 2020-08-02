@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **last_trade** | [***CryptoTickJson**](CryptoTickJson.md) |  | [default to null]
 **min** | [***CryptoSnapshotAgg**](CryptoSnapshotAgg.md) |  | [default to null]
 **prev_day** | [***CryptoSnapshotAgg**](CryptoSnapshotAgg.md) |  | [default to null]
-**todays_change** | **i64** | Value of the change from previous day | [default to null]
-**todays_change_perc** | **i64** | Percentage change since previous day | [default to null]
+**todays_change** | **f32** | Value of the change from previous day | [default to null]
+**todays_change_perc** | **f32** | Percentage change since previous day | [default to null]
 **updated** | **i64** | Last Updated timestamp | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

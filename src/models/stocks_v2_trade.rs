@@ -38,13 +38,13 @@ pub struct StocksV2Trade {
   #[serde(rename = "c")]
   c: Vec<i64>, 
   #[serde(rename = "p")]
-  p: i64, 
+  p: f32,  // 223.001 
   #[serde(rename = "z")]
   z: i64  // 1 
 }
 
 impl StocksV2Trade {
-  pub fn new(t: i64, q: i64, i: String, x: i64, s: i64, c: Vec<i64>, p: i64, z: i64, ) -> StocksV2Trade {
+  pub fn new(t: i64, q: i64, i: String, x: i64, s: i64, c: Vec<i64>, p: f32, z: i64, ) -> StocksV2Trade {
     StocksV2Trade {
       T: None,
       t: t,
@@ -195,16 +195,16 @@ impl StocksV2Trade {
   }
 
 
-  pub fn set_p(&mut self, p: i64) {
+  pub fn set_p(&mut self, p: f32) {
     self.p = p;
   }
 
-  pub fn with_p(mut self, p: i64) -> StocksV2Trade {
+  pub fn with_p(mut self, p: f32) -> StocksV2Trade {
     self.p = p;
     self
   }
 
-  pub fn p(&self) -> &i64 {
+  pub fn p(&self) -> &f32 {
     &self.p
   }
 

@@ -20,9 +20,9 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct CryptoTick {
   #[serde(rename = "price")]
-  price: i64, 
+  price: f32,  // 9349.44 
   #[serde(rename = "size")]
-  size: i64, 
+  size: f32,  // 0.03 
   #[serde(rename = "exchange")]
   exchange: i64,  // 2 
   #[serde(rename = "conditions")]
@@ -32,7 +32,7 @@ pub struct CryptoTick {
 }
 
 impl CryptoTick {
-  pub fn new(price: i64, size: i64, exchange: i64, conditions: Vec<i64>, timestamp: i64, ) -> CryptoTick {
+  pub fn new(price: f32, size: f32, exchange: i64, conditions: Vec<i64>, timestamp: i64, ) -> CryptoTick {
     CryptoTick {
       price: price,
       size: size,
@@ -42,30 +42,30 @@ impl CryptoTick {
     }
   }
 
-  pub fn set_price(&mut self, price: i64) {
+  pub fn set_price(&mut self, price: f32) {
     self.price = price;
   }
 
-  pub fn with_price(mut self, price: i64) -> CryptoTick {
+  pub fn with_price(mut self, price: f32) -> CryptoTick {
     self.price = price;
     self
   }
 
-  pub fn price(&self) -> &i64 {
+  pub fn price(&self) -> &f32 {
     &self.price
   }
 
 
-  pub fn set_size(&mut self, size: i64) {
+  pub fn set_size(&mut self, size: f32) {
     self.size = size;
   }
 
-  pub fn with_size(mut self, size: i64) -> CryptoTick {
+  pub fn with_size(mut self, size: f32) -> CryptoTick {
     self.size = size;
     self
   }
 
-  pub fn size(&self) -> &i64 {
+  pub fn size(&self) -> &f32 {
     &self.size
   }
 

@@ -19,34 +19,73 @@ use crate::models::*;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse20013 {
+  #[serde(rename = "day")]
+  day: String,  // Fri Feb 02 01:00:00 CET 2018 
+  #[serde(rename = "map")]
+  map: Value,  // {"a":"ask","b":"bid","t":"timestamp"} 
+  #[serde(rename = "msLatency")]
+  ms_latency: i64,  // 2 
   #[serde(rename = "status")]
   status: String,  // success 
-  #[serde(rename = "from")]
-  from: String,  // AUD 
-  #[serde(rename = "to")]
-  to: String,  // USD 
-  #[serde(rename = "initialAmount")]
-  initial_amount: f32,  // 100.0 
-  #[serde(rename = "converted")]
-  converted: f32,  // 78.76 
-  #[serde(rename = "lastTrade")]
-  last_trade: LastForexTrade, 
-  #[serde(rename = "symbol")]
-  symbol: Option<String>  // AUD/USD 
+  #[serde(rename = "pair")]
+  pair: String,  // AUD/USD 
+  #[serde(rename = "ticks")]
+  ticks: Vec<Forex> 
 }
 
 impl InlineResponse20013 {
-  pub fn new(status: String, from: String, to: String, initial_amount: f32, converted: f32, last_trade: LastForexTrade, ) -> InlineResponse20013 {
+  pub fn new(day: String, map: Value, ms_latency: i64, status: String, pair: String, ticks: Vec<Forex>, ) -> InlineResponse20013 {
     InlineResponse20013 {
+      day: day,
+      map: map,
+      ms_latency: ms_latency,
       status: status,
-      from: from,
-      to: to,
-      initial_amount: initial_amount,
-      converted: converted,
-      last_trade: last_trade,
-      symbol: None
+      pair: pair,
+      ticks: ticks
     }
   }
+
+  pub fn set_day(&mut self, day: String) {
+    self.day = day;
+  }
+
+  pub fn with_day(mut self, day: String) -> InlineResponse20013 {
+    self.day = day;
+    self
+  }
+
+  pub fn day(&self) -> &String {
+    &self.day
+  }
+
+
+  pub fn set_map(&mut self, map: Value) {
+    self.map = map;
+  }
+
+  pub fn with_map(mut self, map: Value) -> InlineResponse20013 {
+    self.map = map;
+    self
+  }
+
+  pub fn map(&self) -> &Value {
+    &self.map
+  }
+
+
+  pub fn set_ms_latency(&mut self, ms_latency: i64) {
+    self.ms_latency = ms_latency;
+  }
+
+  pub fn with_ms_latency(mut self, ms_latency: i64) -> InlineResponse20013 {
+    self.ms_latency = ms_latency;
+    self
+  }
+
+  pub fn ms_latency(&self) -> &i64 {
+    &self.ms_latency
+  }
+
 
   pub fn set_status(&mut self, status: String) {
     self.status = status;
@@ -62,92 +101,33 @@ impl InlineResponse20013 {
   }
 
 
-  pub fn set_from(&mut self, from: String) {
-    self.from = from;
+  pub fn set_pair(&mut self, pair: String) {
+    self.pair = pair;
   }
 
-  pub fn with_from(mut self, from: String) -> InlineResponse20013 {
-    self.from = from;
+  pub fn with_pair(mut self, pair: String) -> InlineResponse20013 {
+    self.pair = pair;
     self
   }
 
-  pub fn from(&self) -> &String {
-    &self.from
+  pub fn pair(&self) -> &String {
+    &self.pair
   }
 
 
-  pub fn set_to(&mut self, to: String) {
-    self.to = to;
+  pub fn set_ticks(&mut self, ticks: Vec<Forex>) {
+    self.ticks = ticks;
   }
 
-  pub fn with_to(mut self, to: String) -> InlineResponse20013 {
-    self.to = to;
+  pub fn with_ticks(mut self, ticks: Vec<Forex>) -> InlineResponse20013 {
+    self.ticks = ticks;
     self
   }
 
-  pub fn to(&self) -> &String {
-    &self.to
+  pub fn ticks(&self) -> &Vec<Forex> {
+    &self.ticks
   }
 
-
-  pub fn set_initial_amount(&mut self, initial_amount: f32) {
-    self.initial_amount = initial_amount;
-  }
-
-  pub fn with_initial_amount(mut self, initial_amount: f32) -> InlineResponse20013 {
-    self.initial_amount = initial_amount;
-    self
-  }
-
-  pub fn initial_amount(&self) -> &f32 {
-    &self.initial_amount
-  }
-
-
-  pub fn set_converted(&mut self, converted: f32) {
-    self.converted = converted;
-  }
-
-  pub fn with_converted(mut self, converted: f32) -> InlineResponse20013 {
-    self.converted = converted;
-    self
-  }
-
-  pub fn converted(&self) -> &f32 {
-    &self.converted
-  }
-
-
-  pub fn set_last_trade(&mut self, last_trade: LastForexTrade) {
-    self.last_trade = last_trade;
-  }
-
-  pub fn with_last_trade(mut self, last_trade: LastForexTrade) -> InlineResponse20013 {
-    self.last_trade = last_trade;
-    self
-  }
-
-  pub fn last_trade(&self) -> &LastForexTrade {
-    &self.last_trade
-  }
-
-
-  pub fn set_symbol(&mut self, symbol: String) {
-    self.symbol = Some(symbol);
-  }
-
-  pub fn with_symbol(mut self, symbol: String) -> InlineResponse20013 {
-    self.symbol = Some(symbol);
-    self
-  }
-
-  pub fn symbol(&self) -> Option<&String> {
-    self.symbol.as_ref()
-  }
-
-  pub fn reset_symbol(&mut self) {
-    self.symbol = None;
-  }
 
 }
 

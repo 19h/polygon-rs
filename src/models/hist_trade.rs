@@ -30,7 +30,7 @@ pub struct HistTrade {
   #[serde(rename = "exchange")]
   exchange: String,  // 12 
   #[serde(rename = "price")]
-  price: i64, 
+  price: f32,  // 172.17 
   #[serde(rename = "size")]
   size: i64,  // 50 
   #[serde(rename = "timestamp")]
@@ -38,7 +38,7 @@ pub struct HistTrade {
 }
 
 impl HistTrade {
-  pub fn new(condition1: i64, condition2: i64, condition3: i64, condition4: i64, exchange: String, price: i64, size: i64, timestamp: String, ) -> HistTrade {
+  pub fn new(condition1: i64, condition2: i64, condition3: i64, condition4: i64, exchange: String, price: f32, size: i64, timestamp: String, ) -> HistTrade {
     HistTrade {
       condition1: condition1,
       condition2: condition2,
@@ -121,16 +121,16 @@ impl HistTrade {
   }
 
 
-  pub fn set_price(&mut self, price: i64) {
+  pub fn set_price(&mut self, price: f32) {
     self.price = price;
   }
 
-  pub fn with_price(mut self, price: i64) -> HistTrade {
+  pub fn with_price(mut self, price: f32) -> HistTrade {
     self.price = price;
     self
   }
 
-  pub fn price(&self) -> &i64 {
+  pub fn price(&self) -> &f32 {
     &self.price
   }
 

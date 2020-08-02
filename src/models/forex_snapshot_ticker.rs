@@ -24,25 +24,25 @@ pub struct ForexSnapshotTicker {
   #[serde(rename = "day")]
   day: ForexSnapshotAgg, 
   #[serde(rename = "lastTrade")]
-  last_trade: Forex, 
+  last_trade: Option<Forex>, 
   #[serde(rename = "min")]
   min: ForexSnapshotAgg, 
   #[serde(rename = "prevDay")]
   prev_day: ForexSnapshotAgg, 
   #[serde(rename = "todaysChange")]
-  todays_change: i64, 
+  todays_change: f32,  // 0.001 
   #[serde(rename = "todaysChangePerc")]
-  todays_change_perc: i64, 
+  todays_change_perc: f32,  // 2.55 
   #[serde(rename = "updated")]
   updated: i64  // 1547787608999 
 }
 
 impl ForexSnapshotTicker {
-  pub fn new(ticker: String, day: ForexSnapshotAgg, last_trade: Forex, min: ForexSnapshotAgg, prev_day: ForexSnapshotAgg, todays_change: i64, todays_change_perc: i64, updated: i64, ) -> ForexSnapshotTicker {
+  pub fn new(ticker: String, day: ForexSnapshotAgg, min: ForexSnapshotAgg, prev_day: ForexSnapshotAgg, todays_change: f32, todays_change_perc: f32, updated: i64, ) -> ForexSnapshotTicker {
     ForexSnapshotTicker {
       ticker: ticker,
       day: day,
-      last_trade: last_trade,
+      last_trade: None,
       min: min,
       prev_day: prev_day,
       todays_change: todays_change,
@@ -80,18 +80,21 @@ impl ForexSnapshotTicker {
 
 
   pub fn set_last_trade(&mut self, last_trade: Forex) {
-    self.last_trade = last_trade;
+    self.last_trade = Some(last_trade);
   }
 
   pub fn with_last_trade(mut self, last_trade: Forex) -> ForexSnapshotTicker {
-    self.last_trade = last_trade;
+    self.last_trade = Some(last_trade);
     self
   }
 
-  pub fn last_trade(&self) -> &Forex {
-    &self.last_trade
+  pub fn last_trade(&self) -> Option<&Forex> {
+    self.last_trade.as_ref()
   }
 
+  pub fn reset_last_trade(&mut self) {
+    self.last_trade = None;
+  }
 
   pub fn set_min(&mut self, min: ForexSnapshotAgg) {
     self.min = min;
@@ -121,30 +124,30 @@ impl ForexSnapshotTicker {
   }
 
 
-  pub fn set_todays_change(&mut self, todays_change: i64) {
+  pub fn set_todays_change(&mut self, todays_change: f32) {
     self.todays_change = todays_change;
   }
 
-  pub fn with_todays_change(mut self, todays_change: i64) -> ForexSnapshotTicker {
+  pub fn with_todays_change(mut self, todays_change: f32) -> ForexSnapshotTicker {
     self.todays_change = todays_change;
     self
   }
 
-  pub fn todays_change(&self) -> &i64 {
+  pub fn todays_change(&self) -> &f32 {
     &self.todays_change
   }
 
 
-  pub fn set_todays_change_perc(&mut self, todays_change_perc: i64) {
+  pub fn set_todays_change_perc(&mut self, todays_change_perc: f32) {
     self.todays_change_perc = todays_change_perc;
   }
 
-  pub fn with_todays_change_perc(mut self, todays_change_perc: i64) -> ForexSnapshotTicker {
+  pub fn with_todays_change_perc(mut self, todays_change_perc: f32) -> ForexSnapshotTicker {
     self.todays_change_perc = todays_change_perc;
     self
   }
 
-  pub fn todays_change_perc(&self) -> &i64 {
+  pub fn todays_change_perc(&self) -> &f32 {
     &self.todays_change_perc
   }
 

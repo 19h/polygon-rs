@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **market** | **String** | Status of the market as a whole | [default to null]
-**server_time** | **DateTime<Utc>** | Current time of the server | [default to null]
+**server_time** | **String** | Current time of the server | [default to null]
 **exchanges** | [***MarketStatusExchanges**](MarketStatus_exchanges.md) |  | [default to null]
 **currencies** | [***MarketStatusCurrencies**](MarketStatus_currencies.md) |  | [optional] [default to null]
 

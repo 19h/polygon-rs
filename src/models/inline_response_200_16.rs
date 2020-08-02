@@ -20,22 +20,16 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct InlineResponse20016 {
   #[serde(rename = "status")]
-  status: String,  // success 
-  #[serde(rename = "symbol")]
-  symbol: String,  // BTC-USD 
-  #[serde(rename = "last")]
-  last: CryptoTick, 
-  #[serde(rename = "lastAverage")]
-  last_average: Option<Value> 
+  status: String,  // OK 
+  #[serde(rename = "tickers")]
+  tickers: Vec<ForexSnapshotTicker> 
 }
 
 impl InlineResponse20016 {
-  pub fn new(status: String, symbol: String, last: CryptoTick, ) -> InlineResponse20016 {
+  pub fn new(status: String, tickers: Vec<ForexSnapshotTicker>, ) -> InlineResponse20016 {
     InlineResponse20016 {
       status: status,
-      symbol: symbol,
-      last: last,
-      last_average: None
+      tickers: tickers
     }
   }
 
@@ -53,50 +47,19 @@ impl InlineResponse20016 {
   }
 
 
-  pub fn set_symbol(&mut self, symbol: String) {
-    self.symbol = symbol;
+  pub fn set_tickers(&mut self, tickers: Vec<ForexSnapshotTicker>) {
+    self.tickers = tickers;
   }
 
-  pub fn with_symbol(mut self, symbol: String) -> InlineResponse20016 {
-    self.symbol = symbol;
+  pub fn with_tickers(mut self, tickers: Vec<ForexSnapshotTicker>) -> InlineResponse20016 {
+    self.tickers = tickers;
     self
   }
 
-  pub fn symbol(&self) -> &String {
-    &self.symbol
+  pub fn tickers(&self) -> &Vec<ForexSnapshotTicker> {
+    &self.tickers
   }
 
-
-  pub fn set_last(&mut self, last: CryptoTick) {
-    self.last = last;
-  }
-
-  pub fn with_last(mut self, last: CryptoTick) -> InlineResponse20016 {
-    self.last = last;
-    self
-  }
-
-  pub fn last(&self) -> &CryptoTick {
-    &self.last
-  }
-
-
-  pub fn set_last_average(&mut self, last_average: Value) {
-    self.last_average = Some(last_average);
-  }
-
-  pub fn with_last_average(mut self, last_average: Value) -> InlineResponse20016 {
-    self.last_average = Some(last_average);
-    self
-  }
-
-  pub fn last_average(&self) -> Option<&Value> {
-    self.last_average.as_ref()
-  }
-
-  pub fn reset_last_average(&mut self) {
-    self.last_average = None;
-  }
 
 }
 

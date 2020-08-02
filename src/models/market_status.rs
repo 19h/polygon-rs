@@ -22,7 +22,7 @@ pub struct MarketStatus {
   #[serde(rename = "market")]
   market: String,  // open 
   #[serde(rename = "serverTime")]
-  server_time: DateTime<Utc>,  // 2018-07-19T08:51:07-04:00 
+  server_time: String,  // 2018-07-19T08:51:07-04:00 
   #[serde(rename = "exchanges")]
   exchanges: MarketStatusExchanges, 
   #[serde(rename = "currencies")]
@@ -30,7 +30,7 @@ pub struct MarketStatus {
 }
 
 impl MarketStatus {
-  pub fn new(market: String, server_time: DateTime<Utc>, exchanges: MarketStatusExchanges, ) -> MarketStatus {
+  pub fn new(market: String, server_time: String, exchanges: MarketStatusExchanges, ) -> MarketStatus {
     MarketStatus {
       market: market,
       server_time: server_time,
@@ -53,16 +53,16 @@ impl MarketStatus {
   }
 
 
-  pub fn set_server_time(&mut self, server_time: DateTime<Utc>) {
+  pub fn set_server_time(&mut self, server_time: String) {
     self.server_time = server_time;
   }
 
-  pub fn with_server_time(mut self, server_time: DateTime<Utc>) -> MarketStatus {
+  pub fn with_server_time(mut self, server_time: String) -> MarketStatus {
     self.server_time = server_time;
     self
   }
 
-  pub fn server_time(&self) -> &DateTime<Utc> {
+  pub fn server_time(&self) -> &String {
     &self.server_time
   }
 

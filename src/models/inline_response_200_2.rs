@@ -22,7 +22,7 @@ pub struct InlineResponse2002 {
   #[serde(rename = "status")]
   status: Option<String>,  // OK 
   #[serde(rename = "results")]
-  results: Option<Vec<String>>  // [{"locale":"US","name":"United States"},{"locale":"GB","name":"Great Britain / UK"},{"locale":"CA","name":"Canada"}] 
+  results: Option<Vec<InlineResponse2002Results>> 
 }
 
 impl InlineResponse2002 {
@@ -50,16 +50,16 @@ impl InlineResponse2002 {
     self.status = None;
   }
 
-  pub fn set_results(&mut self, results: Vec<String>) {
+  pub fn set_results(&mut self, results: Vec<InlineResponse2002Results>) {
     self.results = Some(results);
   }
 
-  pub fn with_results(mut self, results: Vec<String>) -> InlineResponse2002 {
+  pub fn with_results(mut self, results: Vec<InlineResponse2002Results>) -> InlineResponse2002 {
     self.results = Some(results);
     self
   }
 
-  pub fn results(&self) -> Option<&Vec<String>> {
+  pub fn results(&self) -> Option<&Vec<InlineResponse2002Results>> {
     self.results.as_ref()
   }
 

@@ -20,29 +20,29 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct StocksSnapshotBookItem {
   #[serde(rename = "p")]
-  p: i64, 
+  p: f32,  // 0.2907 
   #[serde(rename = "x")]
   x: Value  // {"2":0.553,"5":2.32} 
 }
 
 impl StocksSnapshotBookItem {
-  pub fn new(p: i64, x: Value, ) -> StocksSnapshotBookItem {
+  pub fn new(p: f32, x: Value, ) -> StocksSnapshotBookItem {
     StocksSnapshotBookItem {
       p: p,
       x: x
     }
   }
 
-  pub fn set_p(&mut self, p: i64) {
+  pub fn set_p(&mut self, p: f32) {
     self.p = p;
   }
 
-  pub fn with_p(mut self, p: i64) -> StocksSnapshotBookItem {
+  pub fn with_p(mut self, p: f32) -> StocksSnapshotBookItem {
     self.p = p;
     self
   }
 
-  pub fn p(&self) -> &i64 {
+  pub fn p(&self) -> &f32 {
     &self.p
   }
 

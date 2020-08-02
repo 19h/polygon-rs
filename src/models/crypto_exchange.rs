@@ -20,7 +20,7 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct CryptoExchange {
   #[serde(rename = "id")]
-  id: f32,  // 2.0 
+  id: i64,  // 2 
   #[serde(rename = "type")]
   _type: String,  // exchange 
   #[serde(rename = "market")]
@@ -32,7 +32,7 @@ pub struct CryptoExchange {
 }
 
 impl CryptoExchange {
-  pub fn new(id: f32, _type: String, market: String, name: String, url: String, ) -> CryptoExchange {
+  pub fn new(id: i64, _type: String, market: String, name: String, url: String, ) -> CryptoExchange {
     CryptoExchange {
       id: id,
       _type: _type,
@@ -42,16 +42,16 @@ impl CryptoExchange {
     }
   }
 
-  pub fn set_id(&mut self, id: f32) {
+  pub fn set_id(&mut self, id: i64) {
     self.id = id;
   }
 
-  pub fn with_id(mut self, id: f32) -> CryptoExchange {
+  pub fn with_id(mut self, id: i64) -> CryptoExchange {
     self.id = id;
     self
   }
 
-  pub fn id(&self) -> &f32 {
+  pub fn id(&self) -> &i64 {
     &self.id
   }
 

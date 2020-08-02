@@ -20,15 +20,15 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Forex {
   #[serde(rename = "a")]
-  a: i64, 
+  a: f32,  // 0.80392 
   #[serde(rename = "b")]
-  b: i64, 
+  b: f32,  // 0.80392 
   #[serde(rename = "t")]
   t: i64  // 1517529600225 
 }
 
 impl Forex {
-  pub fn new(a: i64, b: i64, t: i64, ) -> Forex {
+  pub fn new(a: f32, b: f32, t: i64, ) -> Forex {
     Forex {
       a: a,
       b: b,
@@ -36,30 +36,30 @@ impl Forex {
     }
   }
 
-  pub fn set_a(&mut self, a: i64) {
+  pub fn set_a(&mut self, a: f32) {
     self.a = a;
   }
 
-  pub fn with_a(mut self, a: i64) -> Forex {
+  pub fn with_a(mut self, a: f32) -> Forex {
     self.a = a;
     self
   }
 
-  pub fn a(&self) -> &i64 {
+  pub fn a(&self) -> &f32 {
     &self.a
   }
 
 
-  pub fn set_b(&mut self, b: i64) {
+  pub fn set_b(&mut self, b: f32) {
     self.b = b;
   }
 
-  pub fn with_b(mut self, b: i64) -> Forex {
+  pub fn with_b(mut self, b: f32) -> Forex {
     self.b = b;
     self
   }
 
-  pub fn b(&self) -> &i64 {
+  pub fn b(&self) -> &f32 {
     &self.b
   }
 

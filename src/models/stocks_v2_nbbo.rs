@@ -34,13 +34,13 @@ pub struct StocksV2Nbbo {
   #[serde(rename = "i")]
   i: Option<Vec<i64>>, 
   #[serde(rename = "p")]
-  p: i64, 
+  p: f32,  // 223.001 
   #[serde(rename = "x")]
   x: i64,  // 11 
   #[serde(rename = "s")]
   s: i64,  // 100 
   #[serde(rename = "P")]
-  P: i64, 
+  P: f32,  // 223.001 
   #[serde(rename = "X")]
   X: i64,  // 11 
   #[serde(rename = "S")]
@@ -50,7 +50,7 @@ pub struct StocksV2Nbbo {
 }
 
 impl StocksV2Nbbo {
-  pub fn new(t: i64, q: i64, p: i64, x: i64, s: i64, P: i64, X: i64, S: i64, z: i64, ) -> StocksV2Nbbo {
+  pub fn new(t: i64, q: i64, p: f32, x: i64, s: i64, P: f32, X: i64, S: i64, z: i64, ) -> StocksV2Nbbo {
     StocksV2Nbbo {
       T: None,
       t: t,
@@ -182,16 +182,16 @@ impl StocksV2Nbbo {
     self.i = None;
   }
 
-  pub fn set_p(&mut self, p: i64) {
+  pub fn set_p(&mut self, p: f32) {
     self.p = p;
   }
 
-  pub fn with_p(mut self, p: i64) -> StocksV2Nbbo {
+  pub fn with_p(mut self, p: f32) -> StocksV2Nbbo {
     self.p = p;
     self
   }
 
-  pub fn p(&self) -> &i64 {
+  pub fn p(&self) -> &f32 {
     &self.p
   }
 
@@ -224,16 +224,16 @@ impl StocksV2Nbbo {
   }
 
 
-  pub fn set_P(&mut self, P: i64) {
+  pub fn set_P(&mut self, P: f32) {
     self.P = P;
   }
 
-  pub fn with_P(mut self, P: i64) -> StocksV2Nbbo {
+  pub fn with_P(mut self, P: f32) -> StocksV2Nbbo {
     self.P = P;
     self
   }
 
-  pub fn P(&self) -> &i64 {
+  pub fn P(&self) -> &f32 {
     &self.P
   }
 

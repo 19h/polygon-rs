@@ -24,11 +24,11 @@ pub struct InlineResponse2009 {
   #[serde(rename = "symbol")]
   symbol: String,  // AAPL 
   #[serde(rename = "last")]
-  last: LastQuote 
+  last: LastTrade 
 }
 
 impl InlineResponse2009 {
-  pub fn new(status: String, symbol: String, last: LastQuote, ) -> InlineResponse2009 {
+  pub fn new(status: String, symbol: String, last: LastTrade, ) -> InlineResponse2009 {
     InlineResponse2009 {
       status: status,
       symbol: symbol,
@@ -64,16 +64,16 @@ impl InlineResponse2009 {
   }
 
 
-  pub fn set_last(&mut self, last: LastQuote) {
+  pub fn set_last(&mut self, last: LastTrade) {
     self.last = last;
   }
 
-  pub fn with_last(mut self, last: LastQuote) -> InlineResponse2009 {
+  pub fn with_last(mut self, last: LastTrade) -> InlineResponse2009 {
     self.last = last;
     self
   }
 
-  pub fn last(&self) -> &LastQuote {
+  pub fn last(&self) -> &LastTrade {
     &self.last
   }
 

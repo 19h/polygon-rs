@@ -20,19 +20,19 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct StocksSnapshotAgg {
   #[serde(rename = "c")]
-  c: i64, 
+  c: f32,  // 0.2907 
   #[serde(rename = "h")]
-  h: i64, 
+  h: f32,  // 0.2947 
   #[serde(rename = "l")]
-  l: i64, 
+  l: f32,  // 0.2901 
   #[serde(rename = "o")]
-  o: i64, 
+  o: f32,  // 0.2905 
   #[serde(rename = "v")]
   v: i64  // 1432 
 }
 
 impl StocksSnapshotAgg {
-  pub fn new(c: i64, h: i64, l: i64, o: i64, v: i64, ) -> StocksSnapshotAgg {
+  pub fn new(c: f32, h: f32, l: f32, o: f32, v: i64, ) -> StocksSnapshotAgg {
     StocksSnapshotAgg {
       c: c,
       h: h,
@@ -42,58 +42,58 @@ impl StocksSnapshotAgg {
     }
   }
 
-  pub fn set_c(&mut self, c: i64) {
+  pub fn set_c(&mut self, c: f32) {
     self.c = c;
   }
 
-  pub fn with_c(mut self, c: i64) -> StocksSnapshotAgg {
+  pub fn with_c(mut self, c: f32) -> StocksSnapshotAgg {
     self.c = c;
     self
   }
 
-  pub fn c(&self) -> &i64 {
+  pub fn c(&self) -> &f32 {
     &self.c
   }
 
 
-  pub fn set_h(&mut self, h: i64) {
+  pub fn set_h(&mut self, h: f32) {
     self.h = h;
   }
 
-  pub fn with_h(mut self, h: i64) -> StocksSnapshotAgg {
+  pub fn with_h(mut self, h: f32) -> StocksSnapshotAgg {
     self.h = h;
     self
   }
 
-  pub fn h(&self) -> &i64 {
+  pub fn h(&self) -> &f32 {
     &self.h
   }
 
 
-  pub fn set_l(&mut self, l: i64) {
+  pub fn set_l(&mut self, l: f32) {
     self.l = l;
   }
 
-  pub fn with_l(mut self, l: i64) -> StocksSnapshotAgg {
+  pub fn with_l(mut self, l: f32) -> StocksSnapshotAgg {
     self.l = l;
     self
   }
 
-  pub fn l(&self) -> &i64 {
+  pub fn l(&self) -> &f32 {
     &self.l
   }
 
 
-  pub fn set_o(&mut self, o: i64) {
+  pub fn set_o(&mut self, o: f32) {
     self.o = o;
   }
 
-  pub fn with_o(mut self, o: i64) -> StocksSnapshotAgg {
+  pub fn with_o(mut self, o: f32) -> StocksSnapshotAgg {
     self.o = o;
     self
   }
 
-  pub fn o(&self) -> &i64 {
+  pub fn o(&self) -> &f32 {
     &self.o
   }
 

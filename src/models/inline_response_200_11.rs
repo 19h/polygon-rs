@@ -21,15 +21,15 @@ use crate::models::*;
 pub struct InlineResponse20011 {
   #[serde(rename = "status")]
   status: String,  // OK 
-  #[serde(rename = "ticker")]
-  ticker: Option<StocksSnapshotTicker> 
+  #[serde(rename = "tickers")]
+  tickers: Vec<StocksSnapshotTicker> 
 }
 
 impl InlineResponse20011 {
-  pub fn new(status: String, ) -> InlineResponse20011 {
+  pub fn new(status: String, tickers: Vec<StocksSnapshotTicker>, ) -> InlineResponse20011 {
     InlineResponse20011 {
       status: status,
-      ticker: None
+      tickers: tickers
     }
   }
 
@@ -47,22 +47,19 @@ impl InlineResponse20011 {
   }
 
 
-  pub fn set_ticker(&mut self, ticker: StocksSnapshotTicker) {
-    self.ticker = Some(ticker);
+  pub fn set_tickers(&mut self, tickers: Vec<StocksSnapshotTicker>) {
+    self.tickers = tickers;
   }
 
-  pub fn with_ticker(mut self, ticker: StocksSnapshotTicker) -> InlineResponse20011 {
-    self.ticker = Some(ticker);
+  pub fn with_tickers(mut self, tickers: Vec<StocksSnapshotTicker>) -> InlineResponse20011 {
+    self.tickers = tickers;
     self
   }
 
-  pub fn ticker(&self) -> Option<&StocksSnapshotTicker> {
-    self.ticker.as_ref()
+  pub fn tickers(&self) -> &Vec<StocksSnapshotTicker> {
+    &self.tickers
   }
 
-  pub fn reset_ticker(&mut self) {
-    self.ticker = None;
-  }
 
 }
 

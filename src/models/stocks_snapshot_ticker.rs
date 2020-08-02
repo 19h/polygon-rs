@@ -32,15 +32,15 @@ pub struct StocksSnapshotTicker {
   #[serde(rename = "prevDay")]
   prev_day: StocksSnapshotAgg, 
   #[serde(rename = "todaysChange")]
-  todays_change: i64, 
+  todays_change: f32,  // 0.001 
   #[serde(rename = "todaysChangePerc")]
-  todays_change_perc: i64, 
+  todays_change_perc: f32,  // 2.55 
   #[serde(rename = "updated")]
   updated: i64  // 1547787608999 
 }
 
 impl StocksSnapshotTicker {
-  pub fn new(ticker: String, day: StocksSnapshotAgg, last_trade: Trade, min: StocksSnapshotAgg, prev_day: StocksSnapshotAgg, todays_change: i64, todays_change_perc: i64, updated: i64, ) -> StocksSnapshotTicker {
+  pub fn new(ticker: String, day: StocksSnapshotAgg, last_trade: Trade, min: StocksSnapshotAgg, prev_day: StocksSnapshotAgg, todays_change: f32, todays_change_perc: f32, updated: i64, ) -> StocksSnapshotTicker {
     StocksSnapshotTicker {
       ticker: ticker,
       day: day,
@@ -141,30 +141,30 @@ impl StocksSnapshotTicker {
   }
 
 
-  pub fn set_todays_change(&mut self, todays_change: i64) {
+  pub fn set_todays_change(&mut self, todays_change: f32) {
     self.todays_change = todays_change;
   }
 
-  pub fn with_todays_change(mut self, todays_change: i64) -> StocksSnapshotTicker {
+  pub fn with_todays_change(mut self, todays_change: f32) -> StocksSnapshotTicker {
     self.todays_change = todays_change;
     self
   }
 
-  pub fn todays_change(&self) -> &i64 {
+  pub fn todays_change(&self) -> &f32 {
     &self.todays_change
   }
 
 
-  pub fn set_todays_change_perc(&mut self, todays_change_perc: i64) {
+  pub fn set_todays_change_perc(&mut self, todays_change_perc: f32) {
     self.todays_change_perc = todays_change_perc;
   }
 
-  pub fn with_todays_change_perc(mut self, todays_change_perc: i64) -> StocksSnapshotTicker {
+  pub fn with_todays_change_perc(mut self, todays_change_perc: f32) -> StocksSnapshotTicker {
     self.todays_change_perc = todays_change_perc;
     self
   }
 
-  pub fn todays_change_perc(&self) -> &i64 {
+  pub fn todays_change_perc(&self) -> &f32 {
     &self.todays_change_perc
   }
 

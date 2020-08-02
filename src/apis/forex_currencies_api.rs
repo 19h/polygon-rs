@@ -45,19 +45,19 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static> ForexCu
 
 #[async_trait::async_trait]
 pub trait ForexCurrenciesApi {
-    async fn v1_conversion_from_to_get(&self, from: &str, to: &str, amount: i64, precision: i64) -> Result<InlineResponse20013, Error<serde_json::Value>>;
-    async fn v1_historic_forex_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20012, Error<serde_json::Value>>;
-    async fn v1_last_quote_currencies_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20014, Error<serde_json::Value>>;
+    async fn v1_conversion_from_to_get(&self, from: &str, to: &str, amount: i64, precision: i64) -> Result<InlineResponse20014, Error<serde_json::Value>>;
+    async fn v1_historic_forex_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20013, Error<serde_json::Value>>;
+    async fn v1_last_quote_currencies_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20015, Error<serde_json::Value>>;
     async fn v2_aggs_grouped_locale_locale_market_market_date_get(&self, locale: &str, market: &str, date: &str, unadjusted: bool) -> Result<AggResponse, Error<serde_json::Value>>;
     async fn v2_aggs_ticker_ticker_prev_get(&self, ticker: &str, unadjusted: bool) -> Result<AggResponse, Error<serde_json::Value>>;
-    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: f32, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_global_markets_forex_direction_get(&self, direction: &str) -> Result<InlineResponse20015, Error<serde_json::Value>>;
-    async fn v2_snapshot_locale_global_markets_forex_tickers_get(&self, ) -> Result<InlineResponse20015, Error<serde_json::Value>>;
+    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: i64, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_global_markets_forex_direction_get(&self, direction: &str) -> Result<InlineResponse20016, Error<serde_json::Value>>;
+    async fn v2_snapshot_locale_global_markets_forex_tickers_get(&self, ) -> Result<InlineResponse20016, Error<serde_json::Value>>;
 }
 
 #[async_trait::async_trait]
 impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCurrenciesApi for ForexCurrenciesApiClient<C> {
-    async fn v1_conversion_from_to_get(&self, from: &str, to: &str, amount: i64, precision: i64) -> Result<InlineResponse20013, Error<serde_json::Value>> {
+    async fn v1_conversion_from_to_get(&self, from: &str, to: &str, amount: i64, precision: i64) -> Result<InlineResponse20014, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -145,7 +145,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
         res_body
     }
 
-    async fn v1_historic_forex_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20012, Error<serde_json::Value>> {
+    async fn v1_historic_forex_from_to_date_get(&self, from: &str, to: &str, date: String, offset: i64, limit: i64) -> Result<InlineResponse20013, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -233,7 +233,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
         res_body
     }
 
-    async fn v1_last_quote_currencies_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20014, Error<serde_json::Value>> {
+    async fn v1_last_quote_currencies_from_to_get(&self, from: &str, to: &str) -> Result<InlineResponse20015, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -493,7 +493,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
         res_body
     }
 
-    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: f32, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>> {
+    async fn v2_aggs_ticker_ticker_range_multiplier_timespan_from_to_get(&self, ticker: &str, multiplier: i64, timespan: &str, from: &str, to: &str, unadjusted: bool, sort: String) -> Result<AggResponse, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -581,7 +581,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
         res_body
     }
 
-    async fn v2_snapshot_locale_global_markets_forex_direction_get(&self, direction: &str) -> Result<InlineResponse20015, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_global_markets_forex_direction_get(&self, direction: &str) -> Result<InlineResponse20016, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
@@ -667,7 +667,7 @@ impl<C: hyper::client::connect::Connect + Clone + Send + Sync + 'static>ForexCur
         res_body
     }
 
-    async fn v2_snapshot_locale_global_markets_forex_tickers_get(&self, ) -> Result<InlineResponse20015, Error<serde_json::Value>> {
+    async fn v2_snapshot_locale_global_markets_forex_tickers_get(&self, ) -> Result<InlineResponse20016, Error<serde_json::Value>> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();

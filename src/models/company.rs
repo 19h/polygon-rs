@@ -38,7 +38,7 @@ pub struct Company {
   #[serde(rename = "lei")]
   lei: Option<String>,  // HWUPKR0MPOU8FGXBT394 
   #[serde(rename = "sic")]
-  sic: Option<f32>,  // 3571.0 
+  sic: Option<i64>,  // 3571 
   #[serde(rename = "country")]
   country: Option<String>,  // us 
   #[serde(rename = "industry")]
@@ -46,9 +46,9 @@ pub struct Company {
   #[serde(rename = "sector")]
   sector: Option<String>,  // Technology 
   #[serde(rename = "marketcap")]
-  marketcap: Option<f32>,  // 8.156049855E+11 
+  marketcap: Option<i64>,  // 815604985500 
   #[serde(rename = "employees")]
-  employees: Option<f32>,  // 116000.0 
+  employees: Option<i64>,  // 116000 
   #[serde(rename = "phone")]
   phone: Option<String>,  // (408) 996-1010 
   #[serde(rename = "ceo")]
@@ -238,16 +238,16 @@ impl Company {
     self.lei = None;
   }
 
-  pub fn set_sic(&mut self, sic: f32) {
+  pub fn set_sic(&mut self, sic: i64) {
     self.sic = Some(sic);
   }
 
-  pub fn with_sic(mut self, sic: f32) -> Company {
+  pub fn with_sic(mut self, sic: i64) -> Company {
     self.sic = Some(sic);
     self
   }
 
-  pub fn sic(&self) -> Option<&f32> {
+  pub fn sic(&self) -> Option<&i64> {
     self.sic.as_ref()
   }
 
@@ -306,16 +306,16 @@ impl Company {
     self.sector = None;
   }
 
-  pub fn set_marketcap(&mut self, marketcap: f32) {
+  pub fn set_marketcap(&mut self, marketcap: i64) {
     self.marketcap = Some(marketcap);
   }
 
-  pub fn with_marketcap(mut self, marketcap: f32) -> Company {
+  pub fn with_marketcap(mut self, marketcap: i64) -> Company {
     self.marketcap = Some(marketcap);
     self
   }
 
-  pub fn marketcap(&self) -> Option<&f32> {
+  pub fn marketcap(&self) -> Option<&i64> {
     self.marketcap.as_ref()
   }
 
@@ -323,16 +323,16 @@ impl Company {
     self.marketcap = None;
   }
 
-  pub fn set_employees(&mut self, employees: f32) {
+  pub fn set_employees(&mut self, employees: i64) {
     self.employees = Some(employees);
   }
 
-  pub fn with_employees(mut self, employees: f32) -> Company {
+  pub fn with_employees(mut self, employees: i64) -> Company {
     self.employees = Some(employees);
     self
   }
 
-  pub fn employees(&self) -> Option<&f32> {
+  pub fn employees(&self) -> Option<&i64> {
     self.employees.as_ref()
   }
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **consensus_eps** | **f32** |  | [optional] [default to null]
 **estimated_eps** | **f32** |  | [optional] [default to null]
 **announce_time** | **String** |  | [optional] [default to null]
-**number_of_estimates** | **f32** |  | [optional] [default to null]
+**number_of_estimates** | **i64** |  | [optional] [default to null]
 **eps_surprise_dollar** | **f32** |  | [optional] [default to null]
 **year_ago** | **f32** |  | [optional] [default to null]
 **year_ago_change_percent** | **f32** |  | [optional] [default to null]

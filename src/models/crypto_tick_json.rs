@@ -20,9 +20,9 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct CryptoTickJson {
   #[serde(rename = "p")]
-  p: i64, 
+  p: f32,  // 9349.44 
   #[serde(rename = "s")]
-  s: i64, 
+  s: f32,  // 0.03 
   #[serde(rename = "x")]
   x: i64,  // 2 
   #[serde(rename = "c")]
@@ -32,7 +32,7 @@ pub struct CryptoTickJson {
 }
 
 impl CryptoTickJson {
-  pub fn new(p: i64, s: i64, x: i64, c: Vec<i64>, t: i64, ) -> CryptoTickJson {
+  pub fn new(p: f32, s: f32, x: i64, c: Vec<i64>, t: i64, ) -> CryptoTickJson {
     CryptoTickJson {
       p: p,
       s: s,
@@ -42,30 +42,30 @@ impl CryptoTickJson {
     }
   }
 
-  pub fn set_p(&mut self, p: i64) {
+  pub fn set_p(&mut self, p: f32) {
     self.p = p;
   }
 
-  pub fn with_p(mut self, p: i64) -> CryptoTickJson {
+  pub fn with_p(mut self, p: f32) -> CryptoTickJson {
     self.p = p;
     self
   }
 
-  pub fn p(&self) -> &i64 {
+  pub fn p(&self) -> &f32 {
     &self.p
   }
 
 
-  pub fn set_s(&mut self, s: i64) {
+  pub fn set_s(&mut self, s: f32) {
     self.s = s;
   }
 
-  pub fn with_s(mut self, s: i64) -> CryptoTickJson {
+  pub fn with_s(mut self, s: f32) -> CryptoTickJson {
     self.s = s;
     self
   }
 
-  pub fn s(&self) -> &i64 {
+  pub fn s(&self) -> &f32 {
     &self.s
   }
 

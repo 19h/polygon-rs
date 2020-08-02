@@ -38,7 +38,7 @@ pub struct Earning {
   #[serde(rename = "announceTime")]
   announce_time: Option<String>,  // AMC 
   #[serde(rename = "numberOfEstimates")]
-  number_of_estimates: Option<f32>,  // 9.0 
+  number_of_estimates: Option<i64>,  // 9 
   #[serde(rename = "EPSSurpriseDollar")]
   eps_surprise_dollar: Option<f32>,  // 0.07 
   #[serde(rename = "yearAgo")]
@@ -213,16 +213,16 @@ impl Earning {
     self.announce_time = None;
   }
 
-  pub fn set_number_of_estimates(&mut self, number_of_estimates: f32) {
+  pub fn set_number_of_estimates(&mut self, number_of_estimates: i64) {
     self.number_of_estimates = Some(number_of_estimates);
   }
 
-  pub fn with_number_of_estimates(mut self, number_of_estimates: f32) -> Earning {
+  pub fn with_number_of_estimates(mut self, number_of_estimates: i64) -> Earning {
     self.number_of_estimates = Some(number_of_estimates);
     self
   }
 
-  pub fn number_of_estimates(&self) -> Option<&f32> {
+  pub fn number_of_estimates(&self) -> Option<&i64> {
     self.number_of_estimates.as_ref()
   }
 

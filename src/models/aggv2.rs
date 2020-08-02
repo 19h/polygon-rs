@@ -22,23 +22,23 @@ pub struct Aggv2 {
   #[serde(rename = "T")]
   T: Option<String>,  // AAPL 
   #[serde(rename = "v")]
-  v: i64,  // 31315282 
+  v: f32,  // 31315282 
   #[serde(rename = "o")]
-  o: i64, 
+  o: f32,  // 102.87 
   #[serde(rename = "c")]
-  c: i64, 
+  c: f32,  // 103.74 
   #[serde(rename = "h")]
-  h: i64, 
+  h: f32,  // 103.82 
   #[serde(rename = "l")]
-  l: i64, 
+  l: f32,  // 102.65 
   #[serde(rename = "t")]
-  t: Option<f32>,  // 1.549314E+12 
+  t: Option<i64>,  // 1549314000000 
   #[serde(rename = "n")]
   n: Option<f32>  // 4.0 
 }
 
 impl Aggv2 {
-  pub fn new(v: i64, o: i64, c: i64, h: i64, l: i64, ) -> Aggv2 {
+  pub fn new(v: f32, o: f32, c: f32, h: f32, l: f32, ) -> Aggv2 {
     Aggv2 {
       T: None,
       v: v,
@@ -68,86 +68,86 @@ impl Aggv2 {
     self.T = None;
   }
 
-  pub fn set_v(&mut self, v: i64) {
+  pub fn set_v(&mut self, v: f32) {
     self.v = v;
   }
 
-  pub fn with_v(mut self, v: i64) -> Aggv2 {
+  pub fn with_v(mut self, v: f32) -> Aggv2 {
     self.v = v;
     self
   }
 
-  pub fn v(&self) -> &i64 {
+  pub fn v(&self) -> &f32 {
     &self.v
   }
 
 
-  pub fn set_o(&mut self, o: i64) {
+  pub fn set_o(&mut self, o: f32) {
     self.o = o;
   }
 
-  pub fn with_o(mut self, o: i64) -> Aggv2 {
+  pub fn with_o(mut self, o: f32) -> Aggv2 {
     self.o = o;
     self
   }
 
-  pub fn o(&self) -> &i64 {
+  pub fn o(&self) -> &f32 {
     &self.o
   }
 
 
-  pub fn set_c(&mut self, c: i64) {
+  pub fn set_c(&mut self, c: f32) {
     self.c = c;
   }
 
-  pub fn with_c(mut self, c: i64) -> Aggv2 {
+  pub fn with_c(mut self, c: f32) -> Aggv2 {
     self.c = c;
     self
   }
 
-  pub fn c(&self) -> &i64 {
+  pub fn c(&self) -> &f32 {
     &self.c
   }
 
 
-  pub fn set_h(&mut self, h: i64) {
+  pub fn set_h(&mut self, h: f32) {
     self.h = h;
   }
 
-  pub fn with_h(mut self, h: i64) -> Aggv2 {
+  pub fn with_h(mut self, h: f32) -> Aggv2 {
     self.h = h;
     self
   }
 
-  pub fn h(&self) -> &i64 {
+  pub fn h(&self) -> &f32 {
     &self.h
   }
 
 
-  pub fn set_l(&mut self, l: i64) {
+  pub fn set_l(&mut self, l: f32) {
     self.l = l;
   }
 
-  pub fn with_l(mut self, l: i64) -> Aggv2 {
+  pub fn with_l(mut self, l: f32) -> Aggv2 {
     self.l = l;
     self
   }
 
-  pub fn l(&self) -> &i64 {
+  pub fn l(&self) -> &f32 {
     &self.l
   }
 
 
-  pub fn set_t(&mut self, t: f32) {
+  pub fn set_t(&mut self, t: i64) {
     self.t = Some(t);
   }
 
-  pub fn with_t(mut self, t: f32) -> Aggv2 {
+  pub fn with_t(mut self, t: i64) -> Aggv2 {
     self.t = Some(t);
     self
   }
 
-  pub fn t(&self) -> Option<&f32> {
+  pub fn t(&self) -> Option<&i64> {
     self.t.as_ref()
   }
 

@@ -20,11 +20,11 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct StocksSnapshotQuote {
   #[serde(rename = "p")]
-  p: i64,  // 120 
+  p: f32,  // 120.0 
   #[serde(rename = "s")]
   s: i64,  // 5 
   #[serde(rename = "P")]
-  P: i64,  // 121 
+  P: f32,  // 121.0 
   #[serde(rename = "S")]
   S: i64,  // 3 
   #[serde(rename = "t")]
@@ -32,7 +32,7 @@ pub struct StocksSnapshotQuote {
 }
 
 impl StocksSnapshotQuote {
-  pub fn new(p: i64, s: i64, P: i64, S: i64, t: i64, ) -> StocksSnapshotQuote {
+  pub fn new(p: f32, s: i64, P: f32, S: i64, t: i64, ) -> StocksSnapshotQuote {
     StocksSnapshotQuote {
       p: p,
       s: s,
@@ -42,16 +42,16 @@ impl StocksSnapshotQuote {
     }
   }
 
-  pub fn set_p(&mut self, p: i64) {
+  pub fn set_p(&mut self, p: f32) {
     self.p = p;
   }
 
-  pub fn with_p(mut self, p: i64) -> StocksSnapshotQuote {
+  pub fn with_p(mut self, p: f32) -> StocksSnapshotQuote {
     self.p = p;
     self
   }
 
-  pub fn p(&self) -> &i64 {
+  pub fn p(&self) -> &f32 {
     &self.p
   }
 
@@ -70,16 +70,16 @@ impl StocksSnapshotQuote {
   }
 
 
-  pub fn set_P(&mut self, P: i64) {
+  pub fn set_P(&mut self, P: f32) {
     self.P = P;
   }
 
-  pub fn with_P(mut self, P: i64) -> StocksSnapshotQuote {
+  pub fn with_P(mut self, P: f32) -> StocksSnapshotQuote {
     self.P = P;
     self
   }
 
-  pub fn P(&self) -> &i64 {
+  pub fn P(&self) -> &f32 {
     &self.P
   }
 

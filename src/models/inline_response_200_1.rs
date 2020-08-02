@@ -22,7 +22,7 @@ pub struct InlineResponse2001 {
   #[serde(rename = "status")]
   status: Option<String>,  // OK 
   #[serde(rename = "results")]
-  results: Option<Vec<String>>  // [{"market":"STOCKS","desc":"Stocks / Equities / ETFs"},{"market":"INDICES","desc":"Indices"},{"market":"MF","desc":"Mutual Funds"}] 
+  results: Option<Value>  // {"types":{"CS":"Common Stock","ADR":"American Depository Receipt","NVDR":"Non-Voting Depository Receipt","GDR":"Global Depositary Receipt"},"indexTypes":{"INDEX":"Index","ETF":"Exchange Traded Fund (ETF)","ETN":"Exchange Traded Note (ETN)"}} 
 }
 
 impl InlineResponse2001 {
@@ -50,16 +50,16 @@ impl InlineResponse2001 {
     self.status = None;
   }
 
-  pub fn set_results(&mut self, results: Vec<String>) {
+  pub fn set_results(&mut self, results: Value) {
     self.results = Some(results);
   }
 
-  pub fn with_results(mut self, results: Vec<String>) -> InlineResponse2001 {
+  pub fn with_results(mut self, results: Value) -> InlineResponse2001 {
     self.results = Some(results);
     self
   }
 
-  pub fn results(&self) -> Option<&Vec<String>> {
+  pub fn results(&self) -> Option<&Value> {
     self.results.as_ref()
   }
 

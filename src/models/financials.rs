@@ -39,11 +39,11 @@ pub struct Financials {
   #[serde(rename = "assetsCurrent")]
   assets_current: Option<i64>, 
   #[serde(rename = "assetTurnover")]
-  asset_turnover: Option<i64>, 
+  asset_turnover: Option<f32>, 
   #[serde(rename = "assetsNonCurrent")]
   assets_non_current: Option<i64>, 
   #[serde(rename = "bookValuePerShare")]
-  book_value_per_share: Option<i64>, 
+  book_value_per_share: Option<f32>, 
   #[serde(rename = "capitalExpenditure")]
   capital_expenditure: Option<i64>, 
   #[serde(rename = "cashAndEquivalents")]
@@ -55,9 +55,9 @@ pub struct Financials {
   #[serde(rename = "consolidatedIncome")]
   consolidated_income: Option<i64>, 
   #[serde(rename = "currentRatio")]
-  current_ratio: Option<i64>, 
+  current_ratio: Option<f32>, 
   #[serde(rename = "debtToEquityRatio")]
-  debt_to_equity_ratio: Option<i64>, 
+  debt_to_equity_ratio: Option<f32>, 
   #[serde(rename = "debt")]
   debt: Option<i64>, 
   #[serde(rename = "debtCurrent")]
@@ -81,7 +81,7 @@ pub struct Financials {
   #[serde(rename = "earningsBeforeInterestTaxesDepreciationAmortization")]
   earnings_before_interest_taxes_depreciation_amortization: Option<i64>, 
   #[serde(rename = "EBITDAMargin")]
-  ebitda_margin: Option<i64>, 
+  ebitda_margin: Option<f32>, 
   #[serde(rename = "earningsBeforeInterestTaxesDepreciationAmortizationUSD")]
   earnings_before_interest_taxes_depreciation_amortization_usd: Option<i64>, 
   #[serde(rename = "earningBeforeInterestTaxesUSD")]
@@ -89,11 +89,11 @@ pub struct Financials {
   #[serde(rename = "earningsBeforeTax")]
   earnings_before_tax: Option<i64>, 
   #[serde(rename = "earningsPerBasicShare")]
-  earnings_per_basic_share: Option<i64>, 
+  earnings_per_basic_share: Option<f32>, 
   #[serde(rename = "earningsPerDilutedShare")]
-  earnings_per_diluted_share: Option<i64>, 
+  earnings_per_diluted_share: Option<f32>, 
   #[serde(rename = "earningsPerBasicShareUSD")]
-  earnings_per_basic_share_usd: Option<i64>, 
+  earnings_per_basic_share_usd: Option<f32>, 
   #[serde(rename = "shareholdersEquity")]
   shareholders_equity: Option<i64>, 
   #[serde(rename = "averageEquity")]
@@ -105,17 +105,17 @@ pub struct Financials {
   #[serde(rename = "enterpriseValueOverEBIT")]
   enterprise_value_over_ebit: Option<i64>, 
   #[serde(rename = "enterpriseValueOverEBITDA")]
-  enterprise_value_over_ebitda: Option<i64>, 
+  enterprise_value_over_ebitda: Option<f32>, 
   #[serde(rename = "freeCashFlow")]
   free_cash_flow: Option<i64>, 
   #[serde(rename = "freeCashFlowPerShare")]
-  free_cash_flow_per_share: Option<i64>, 
+  free_cash_flow_per_share: Option<f32>, 
   #[serde(rename = "foreignCurrencyUSDExchangeRate")]
   foreign_currency_usd_exchange_rate: Option<i64>, 
   #[serde(rename = "grossProfit")]
   gross_profit: Option<i64>, 
   #[serde(rename = "grossMargin")]
-  gross_margin: Option<i64>, 
+  gross_margin: Option<f32>, 
   #[serde(rename = "goodwillAndIntangibleAssets")]
   goodwill_and_intangible_assets: Option<i64>, 
   #[serde(rename = "interestExpense")]
@@ -171,7 +171,7 @@ pub struct Financials {
   #[serde(rename = "netIncomeToNonControllingInterests")]
   net_income_to_non_controlling_interests: Option<i64>, 
   #[serde(rename = "profitMargin")]
-  profit_margin: Option<i64>, 
+  profit_margin: Option<f32>, 
   #[serde(rename = "operatingExpenses")]
   operating_expenses: Option<i64>, 
   #[serde(rename = "operatingIncome")]
@@ -181,21 +181,21 @@ pub struct Financials {
   #[serde(rename = "payoutRatio")]
   payout_ratio: Option<i64>, 
   #[serde(rename = "priceToBookValue")]
-  price_to_book_value: Option<i64>, 
+  price_to_book_value: Option<f32>, 
   #[serde(rename = "priceEarnings")]
-  price_earnings: Option<i64>, 
+  price_earnings: Option<f32>, 
   #[serde(rename = "priceToEarningsRatio")]
-  price_to_earnings_ratio: Option<i64>, 
+  price_to_earnings_ratio: Option<f32>, 
   #[serde(rename = "propertyPlantEquipmentNet")]
   property_plant_equipment_net: Option<i64>, 
   #[serde(rename = "preferredDividendsIncomeStatementImpact")]
   preferred_dividends_income_statement_impact: Option<i64>, 
   #[serde(rename = "sharePriceAdjustedClose")]
-  share_price_adjusted_close: Option<i64>, 
+  share_price_adjusted_close: Option<f32>, 
   #[serde(rename = "priceSales")]
-  price_sales: Option<i64>, 
+  price_sales: Option<f32>, 
   #[serde(rename = "priceToSalesRatio")]
-  price_to_sales_ratio: Option<i64>, 
+  price_to_sales_ratio: Option<f32>, 
   #[serde(rename = "tradeAndNonTradeReceivables")]
   trade_and_non_trade_receivables: Option<i64>, 
   #[serde(rename = "accumulatedRetainedEarningsDeficit")]
@@ -207,13 +207,13 @@ pub struct Financials {
   #[serde(rename = "researchAndDevelopmentExpense")]
   research_and_development_expense: Option<i64>, 
   #[serde(rename = "returnOnAverageAssets")]
-  return_on_average_assets: Option<i64>, 
+  return_on_average_assets: Option<f32>, 
   #[serde(rename = "returnOnAverageEquity")]
-  return_on_average_equity: Option<i64>, 
+  return_on_average_equity: Option<f32>, 
   #[serde(rename = "returnOnInvestedCapital")]
-  return_on_invested_capital: Option<i64>, 
+  return_on_invested_capital: Option<f32>, 
   #[serde(rename = "returnOnSales")]
-  return_on_sales: Option<i64>, 
+  return_on_sales: Option<f32>, 
   #[serde(rename = "shareBasedCompensation")]
   share_based_compensation: Option<i64>, 
   #[serde(rename = "sellingGeneralAndAdministrativeExpense")]
@@ -227,7 +227,7 @@ pub struct Financials {
   #[serde(rename = "weightedAverageSharesDiluted")]
   weighted_average_shares_diluted: Option<i64>, 
   #[serde(rename = "salesPerShare")]
-  sales_per_share: Option<i64>, 
+  sales_per_share: Option<f32>, 
   #[serde(rename = "tangibleAssetValue")]
   tangible_asset_value: Option<i64>, 
   #[serde(rename = "taxAssets")]
@@ -237,7 +237,7 @@ pub struct Financials {
   #[serde(rename = "taxLiabilities")]
   tax_liabilities: Option<i64>, 
   #[serde(rename = "tangibleAssetsBookValuePerShare")]
-  tangible_assets_book_value_per_share: Option<i64>, 
+  tangible_assets_book_value_per_share: Option<f32>, 
   #[serde(rename = "workingCapital")]
   working_capital: Option<i64> 
 }
@@ -508,16 +508,16 @@ impl Financials {
     self.assets_current = None;
   }
 
-  pub fn set_asset_turnover(&mut self, asset_turnover: i64) {
+  pub fn set_asset_turnover(&mut self, asset_turnover: f32) {
     self.asset_turnover = Some(asset_turnover);
   }
 
-  pub fn with_asset_turnover(mut self, asset_turnover: i64) -> Financials {
+  pub fn with_asset_turnover(mut self, asset_turnover: f32) -> Financials {
     self.asset_turnover = Some(asset_turnover);
     self
   }
 
-  pub fn asset_turnover(&self) -> Option<&i64> {
+  pub fn asset_turnover(&self) -> Option<&f32> {
     self.asset_turnover.as_ref()
   }
 
@@ -542,16 +542,16 @@ impl Financials {
     self.assets_non_current = None;
   }
 
-  pub fn set_book_value_per_share(&mut self, book_value_per_share: i64) {
+  pub fn set_book_value_per_share(&mut self, book_value_per_share: f32) {
     self.book_value_per_share = Some(book_value_per_share);
   }
 
-  pub fn with_book_value_per_share(mut self, book_value_per_share: i64) -> Financials {
+  pub fn with_book_value_per_share(mut self, book_value_per_share: f32) -> Financials {
     self.book_value_per_share = Some(book_value_per_share);
     self
   }
 
-  pub fn book_value_per_share(&self) -> Option<&i64> {
+  pub fn book_value_per_share(&self) -> Option<&f32> {
     self.book_value_per_share.as_ref()
   }
 
@@ -644,16 +644,16 @@ impl Financials {
     self.consolidated_income = None;
   }
 
-  pub fn set_current_ratio(&mut self, current_ratio: i64) {
+  pub fn set_current_ratio(&mut self, current_ratio: f32) {
     self.current_ratio = Some(current_ratio);
   }
 
-  pub fn with_current_ratio(mut self, current_ratio: i64) -> Financials {
+  pub fn with_current_ratio(mut self, current_ratio: f32) -> Financials {
     self.current_ratio = Some(current_ratio);
     self
   }
 
-  pub fn current_ratio(&self) -> Option<&i64> {
+  pub fn current_ratio(&self) -> Option<&f32> {
     self.current_ratio.as_ref()
   }
 
@@ -661,16 +661,16 @@ impl Financials {
     self.current_ratio = None;
   }
 
-  pub fn set_debt_to_equity_ratio(&mut self, debt_to_equity_ratio: i64) {
+  pub fn set_debt_to_equity_ratio(&mut self, debt_to_equity_ratio: f32) {
     self.debt_to_equity_ratio = Some(debt_to_equity_ratio);
   }
 
-  pub fn with_debt_to_equity_ratio(mut self, debt_to_equity_ratio: i64) -> Financials {
+  pub fn with_debt_to_equity_ratio(mut self, debt_to_equity_ratio: f32) -> Financials {
     self.debt_to_equity_ratio = Some(debt_to_equity_ratio);
     self
   }
 
-  pub fn debt_to_equity_ratio(&self) -> Option<&i64> {
+  pub fn debt_to_equity_ratio(&self) -> Option<&f32> {
     self.debt_to_equity_ratio.as_ref()
   }
 
@@ -865,16 +865,16 @@ impl Financials {
     self.earnings_before_interest_taxes_depreciation_amortization = None;
   }
 
-  pub fn set_ebitda_margin(&mut self, ebitda_margin: i64) {
+  pub fn set_ebitda_margin(&mut self, ebitda_margin: f32) {
     self.ebitda_margin = Some(ebitda_margin);
   }
 
-  pub fn with_ebitda_margin(mut self, ebitda_margin: i64) -> Financials {
+  pub fn with_ebitda_margin(mut self, ebitda_margin: f32) -> Financials {
     self.ebitda_margin = Some(ebitda_margin);
     self
   }
 
-  pub fn ebitda_margin(&self) -> Option<&i64> {
+  pub fn ebitda_margin(&self) -> Option<&f32> {
     self.ebitda_margin.as_ref()
   }
 
@@ -933,16 +933,16 @@ impl Financials {
     self.earnings_before_tax = None;
   }
 
-  pub fn set_earnings_per_basic_share(&mut self, earnings_per_basic_share: i64) {
+  pub fn set_earnings_per_basic_share(&mut self, earnings_per_basic_share: f32) {
     self.earnings_per_basic_share = Some(earnings_per_basic_share);
   }
 
-  pub fn with_earnings_per_basic_share(mut self, earnings_per_basic_share: i64) -> Financials {
+  pub fn with_earnings_per_basic_share(mut self, earnings_per_basic_share: f32) -> Financials {
     self.earnings_per_basic_share = Some(earnings_per_basic_share);
     self
   }
 
-  pub fn earnings_per_basic_share(&self) -> Option<&i64> {
+  pub fn earnings_per_basic_share(&self) -> Option<&f32> {
     self.earnings_per_basic_share.as_ref()
   }
 
@@ -950,16 +950,16 @@ impl Financials {
     self.earnings_per_basic_share = None;
   }
 
-  pub fn set_earnings_per_diluted_share(&mut self, earnings_per_diluted_share: i64) {
+  pub fn set_earnings_per_diluted_share(&mut self, earnings_per_diluted_share: f32) {
     self.earnings_per_diluted_share = Some(earnings_per_diluted_share);
   }
 
-  pub fn with_earnings_per_diluted_share(mut self, earnings_per_diluted_share: i64) -> Financials {
+  pub fn with_earnings_per_diluted_share(mut self, earnings_per_diluted_share: f32) -> Financials {
     self.earnings_per_diluted_share = Some(earnings_per_diluted_share);
     self
   }
 
-  pub fn earnings_per_diluted_share(&self) -> Option<&i64> {
+  pub fn earnings_per_diluted_share(&self) -> Option<&f32> {
     self.earnings_per_diluted_share.as_ref()
   }
 
@@ -967,16 +967,16 @@ impl Financials {
     self.earnings_per_diluted_share = None;
   }
 
-  pub fn set_earnings_per_basic_share_usd(&mut self, earnings_per_basic_share_usd: i64) {
+  pub fn set_earnings_per_basic_share_usd(&mut self, earnings_per_basic_share_usd: f32) {
     self.earnings_per_basic_share_usd = Some(earnings_per_basic_share_usd);
   }
 
-  pub fn with_earnings_per_basic_share_usd(mut self, earnings_per_basic_share_usd: i64) -> Financials {
+  pub fn with_earnings_per_basic_share_usd(mut self, earnings_per_basic_share_usd: f32) -> Financials {
     self.earnings_per_basic_share_usd = Some(earnings_per_basic_share_usd);
     self
   }
 
-  pub fn earnings_per_basic_share_usd(&self) -> Option<&i64> {
+  pub fn earnings_per_basic_share_usd(&self) -> Option<&f32> {
     self.earnings_per_basic_share_usd.as_ref()
   }
 
@@ -1069,16 +1069,16 @@ impl Financials {
     self.enterprise_value_over_ebit = None;
   }
 
-  pub fn set_enterprise_value_over_ebitda(&mut self, enterprise_value_over_ebitda: i64) {
+  pub fn set_enterprise_value_over_ebitda(&mut self, enterprise_value_over_ebitda: f32) {
     self.enterprise_value_over_ebitda = Some(enterprise_value_over_ebitda);
   }
 
-  pub fn with_enterprise_value_over_ebitda(mut self, enterprise_value_over_ebitda: i64) -> Financials {
+  pub fn with_enterprise_value_over_ebitda(mut self, enterprise_value_over_ebitda: f32) -> Financials {
     self.enterprise_value_over_ebitda = Some(enterprise_value_over_ebitda);
     self
   }
 
-  pub fn enterprise_value_over_ebitda(&self) -> Option<&i64> {
+  pub fn enterprise_value_over_ebitda(&self) -> Option<&f32> {
     self.enterprise_value_over_ebitda.as_ref()
   }
 
@@ -1103,16 +1103,16 @@ impl Financials {
     self.free_cash_flow = None;
   }
 
-  pub fn set_free_cash_flow_per_share(&mut self, free_cash_flow_per_share: i64) {
+  pub fn set_free_cash_flow_per_share(&mut self, free_cash_flow_per_share: f32) {
     self.free_cash_flow_per_share = Some(free_cash_flow_per_share);
   }
 
-  pub fn with_free_cash_flow_per_share(mut self, free_cash_flow_per_share: i64) -> Financials {
+  pub fn with_free_cash_flow_per_share(mut self, free_cash_flow_per_share: f32) -> Financials {
     self.free_cash_flow_per_share = Some(free_cash_flow_per_share);
     self
   }
 
-  pub fn free_cash_flow_per_share(&self) -> Option<&i64> {
+  pub fn free_cash_flow_per_share(&self) -> Option<&f32> {
     self.free_cash_flow_per_share.as_ref()
   }
 
@@ -1154,16 +1154,16 @@ impl Financials {
     self.gross_profit = None;
   }
 
-  pub fn set_gross_margin(&mut self, gross_margin: i64) {
+  pub fn set_gross_margin(&mut self, gross_margin: f32) {
     self.gross_margin = Some(gross_margin);
   }
 
-  pub fn with_gross_margin(mut self, gross_margin: i64) -> Financials {
+  pub fn with_gross_margin(mut self, gross_margin: f32) -> Financials {
     self.gross_margin = Some(gross_margin);
     self
   }
 
-  pub fn gross_margin(&self) -> Option<&i64> {
+  pub fn gross_margin(&self) -> Option<&f32> {
     self.gross_margin.as_ref()
   }
 
@@ -1630,16 +1630,16 @@ impl Financials {
     self.net_income_to_non_controlling_interests = None;
   }
 
-  pub fn set_profit_margin(&mut self, profit_margin: i64) {
+  pub fn set_profit_margin(&mut self, profit_margin: f32) {
     self.profit_margin = Some(profit_margin);
   }
 
-  pub fn with_profit_margin(mut self, profit_margin: i64) -> Financials {
+  pub fn with_profit_margin(mut self, profit_margin: f32) -> Financials {
     self.profit_margin = Some(profit_margin);
     self
   }
 
-  pub fn profit_margin(&self) -> Option<&i64> {
+  pub fn profit_margin(&self) -> Option<&f32> {
     self.profit_margin.as_ref()
   }
 
@@ -1715,16 +1715,16 @@ impl Financials {
     self.payout_ratio = None;
   }
 
-  pub fn set_price_to_book_value(&mut self, price_to_book_value: i64) {
+  pub fn set_price_to_book_value(&mut self, price_to_book_value: f32) {
     self.price_to_book_value = Some(price_to_book_value);
   }
 
-  pub fn with_price_to_book_value(mut self, price_to_book_value: i64) -> Financials {
+  pub fn with_price_to_book_value(mut self, price_to_book_value: f32) -> Financials {
     self.price_to_book_value = Some(price_to_book_value);
     self
   }
 
-  pub fn price_to_book_value(&self) -> Option<&i64> {
+  pub fn price_to_book_value(&self) -> Option<&f32> {
     self.price_to_book_value.as_ref()
   }
 
@@ -1732,16 +1732,16 @@ impl Financials {
     self.price_to_book_value = None;
   }
 
-  pub fn set_price_earnings(&mut self, price_earnings: i64) {
+  pub fn set_price_earnings(&mut self, price_earnings: f32) {
     self.price_earnings = Some(price_earnings);
   }
 
-  pub fn with_price_earnings(mut self, price_earnings: i64) -> Financials {
+  pub fn with_price_earnings(mut self, price_earnings: f32) -> Financials {
     self.price_earnings = Some(price_earnings);
     self
   }
 
-  pub fn price_earnings(&self) -> Option<&i64> {
+  pub fn price_earnings(&self) -> Option<&f32> {
     self.price_earnings.as_ref()
   }
 
@@ -1749,16 +1749,16 @@ impl Financials {
     self.price_earnings = None;
   }
 
-  pub fn set_price_to_earnings_ratio(&mut self, price_to_earnings_ratio: i64) {
+  pub fn set_price_to_earnings_ratio(&mut self, price_to_earnings_ratio: f32) {
     self.price_to_earnings_ratio = Some(price_to_earnings_ratio);
   }
 
-  pub fn with_price_to_earnings_ratio(mut self, price_to_earnings_ratio: i64) -> Financials {
+  pub fn with_price_to_earnings_ratio(mut self, price_to_earnings_ratio: f32) -> Financials {
     self.price_to_earnings_ratio = Some(price_to_earnings_ratio);
     self
   }
 
-  pub fn price_to_earnings_ratio(&self) -> Option<&i64> {
+  pub fn price_to_earnings_ratio(&self) -> Option<&f32> {
     self.price_to_earnings_ratio.as_ref()
   }
 
@@ -1800,16 +1800,16 @@ impl Financials {
     self.preferred_dividends_income_statement_impact = None;
   }
 
-  pub fn set_share_price_adjusted_close(&mut self, share_price_adjusted_close: i64) {
+  pub fn set_share_price_adjusted_close(&mut self, share_price_adjusted_close: f32) {
     self.share_price_adjusted_close = Some(share_price_adjusted_close);
   }
 
-  pub fn with_share_price_adjusted_close(mut self, share_price_adjusted_close: i64) -> Financials {
+  pub fn with_share_price_adjusted_close(mut self, share_price_adjusted_close: f32) -> Financials {
     self.share_price_adjusted_close = Some(share_price_adjusted_close);
     self
   }
 
-  pub fn share_price_adjusted_close(&self) -> Option<&i64> {
+  pub fn share_price_adjusted_close(&self) -> Option<&f32> {
     self.share_price_adjusted_close.as_ref()
   }
 
@@ -1817,16 +1817,16 @@ impl Financials {
     self.share_price_adjusted_close = None;
   }
 
-  pub fn set_price_sales(&mut self, price_sales: i64) {
+  pub fn set_price_sales(&mut self, price_sales: f32) {
     self.price_sales = Some(price_sales);
   }
 
-  pub fn with_price_sales(mut self, price_sales: i64) -> Financials {
+  pub fn with_price_sales(mut self, price_sales: f32) -> Financials {
     self.price_sales = Some(price_sales);
     self
   }
 
-  pub fn price_sales(&self) -> Option<&i64> {
+  pub fn price_sales(&self) -> Option<&f32> {
     self.price_sales.as_ref()
   }
 
@@ -1834,16 +1834,16 @@ impl Financials {
     self.price_sales = None;
   }
 
-  pub fn set_price_to_sales_ratio(&mut self, price_to_sales_ratio: i64) {
+  pub fn set_price_to_sales_ratio(&mut self, price_to_sales_ratio: f32) {
     self.price_to_sales_ratio = Some(price_to_sales_ratio);
   }
 
-  pub fn with_price_to_sales_ratio(mut self, price_to_sales_ratio: i64) -> Financials {
+  pub fn with_price_to_sales_ratio(mut self, price_to_sales_ratio: f32) -> Financials {
     self.price_to_sales_ratio = Some(price_to_sales_ratio);
     self
   }
 
-  pub fn price_to_sales_ratio(&self) -> Option<&i64> {
+  pub fn price_to_sales_ratio(&self) -> Option<&f32> {
     self.price_to_sales_ratio.as_ref()
   }
 
@@ -1936,16 +1936,16 @@ impl Financials {
     self.research_and_development_expense = None;
   }
 
-  pub fn set_return_on_average_assets(&mut self, return_on_average_assets: i64) {
+  pub fn set_return_on_average_assets(&mut self, return_on_average_assets: f32) {
     self.return_on_average_assets = Some(return_on_average_assets);
   }
 
-  pub fn with_return_on_average_assets(mut self, return_on_average_assets: i64) -> Financials {
+  pub fn with_return_on_average_assets(mut self, return_on_average_assets: f32) -> Financials {
     self.return_on_average_assets = Some(return_on_average_assets);
     self
   }
 
-  pub fn return_on_average_assets(&self) -> Option<&i64> {
+  pub fn return_on_average_assets(&self) -> Option<&f32> {
     self.return_on_average_assets.as_ref()
   }
 
@@ -1953,16 +1953,16 @@ impl Financials {
     self.return_on_average_assets = None;
   }
 
-  pub fn set_return_on_average_equity(&mut self, return_on_average_equity: i64) {
+  pub fn set_return_on_average_equity(&mut self, return_on_average_equity: f32) {
     self.return_on_average_equity = Some(return_on_average_equity);
   }
 
-  pub fn with_return_on_average_equity(mut self, return_on_average_equity: i64) -> Financials {
+  pub fn with_return_on_average_equity(mut self, return_on_average_equity: f32) -> Financials {
     self.return_on_average_equity = Some(return_on_average_equity);
     self
   }
 
-  pub fn return_on_average_equity(&self) -> Option<&i64> {
+  pub fn return_on_average_equity(&self) -> Option<&f32> {
     self.return_on_average_equity.as_ref()
   }
 
@@ -1970,16 +1970,16 @@ impl Financials {
     self.return_on_average_equity = None;
   }
 
-  pub fn set_return_on_invested_capital(&mut self, return_on_invested_capital: i64) {
+  pub fn set_return_on_invested_capital(&mut self, return_on_invested_capital: f32) {
     self.return_on_invested_capital = Some(return_on_invested_capital);
   }
 
-  pub fn with_return_on_invested_capital(mut self, return_on_invested_capital: i64) -> Financials {
+  pub fn with_return_on_invested_capital(mut self, return_on_invested_capital: f32) -> Financials {
     self.return_on_invested_capital = Some(return_on_invested_capital);
     self
   }
 
-  pub fn return_on_invested_capital(&self) -> Option<&i64> {
+  pub fn return_on_invested_capital(&self) -> Option<&f32> {
     self.return_on_invested_capital.as_ref()
   }
 
@@ -1987,16 +1987,16 @@ impl Financials {
     self.return_on_invested_capital = None;
   }
 
-  pub fn set_return_on_sales(&mut self, return_on_sales: i64) {
+  pub fn set_return_on_sales(&mut self, return_on_sales: f32) {
     self.return_on_sales = Some(return_on_sales);
   }
 
-  pub fn with_return_on_sales(mut self, return_on_sales: i64) -> Financials {
+  pub fn with_return_on_sales(mut self, return_on_sales: f32) -> Financials {
     self.return_on_sales = Some(return_on_sales);
     self
   }
 
-  pub fn return_on_sales(&self) -> Option<&i64> {
+  pub fn return_on_sales(&self) -> Option<&f32> {
     self.return_on_sales.as_ref()
   }
 
@@ -2106,16 +2106,16 @@ impl Financials {
     self.weighted_average_shares_diluted = None;
   }
 
-  pub fn set_sales_per_share(&mut self, sales_per_share: i64) {
+  pub fn set_sales_per_share(&mut self, sales_per_share: f32) {
     self.sales_per_share = Some(sales_per_share);
   }
 
-  pub fn with_sales_per_share(mut self, sales_per_share: i64) -> Financials {
+  pub fn with_sales_per_share(mut self, sales_per_share: f32) -> Financials {
     self.sales_per_share = Some(sales_per_share);
     self
   }
 
-  pub fn sales_per_share(&self) -> Option<&i64> {
+  pub fn sales_per_share(&self) -> Option<&f32> {
     self.sales_per_share.as_ref()
   }
 
@@ -2191,16 +2191,16 @@ impl Financials {
     self.tax_liabilities = None;
   }
 
-  pub fn set_tangible_assets_book_value_per_share(&mut self, tangible_assets_book_value_per_share: i64) {
+  pub fn set_tangible_assets_book_value_per_share(&mut self, tangible_assets_book_value_per_share: f32) {
     self.tangible_assets_book_value_per_share = Some(tangible_assets_book_value_per_share);
   }
 
-  pub fn with_tangible_assets_book_value_per_share(mut self, tangible_assets_book_value_per_share: i64) -> Financials {
+  pub fn with_tangible_assets_book_value_per_share(mut self, tangible_assets_book_value_per_share: f32) -> Financials {
     self.tangible_assets_book_value_per_share = Some(tangible_assets_book_value_per_share);
     self
   }
 
-  pub fn tangible_assets_book_value_per_share(&self) -> Option<&i64> {
+  pub fn tangible_assets_book_value_per_share(&self) -> Option<&f32> {
     self.tangible_assets_book_value_per_share.as_ref()
   }
 
