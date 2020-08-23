@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **i** | **String** | Trade ID | [default to null]
 **x** | **i64** | Exchange ID | [default to null]
 **s** | **i64** | Size/Volume of the trade | [default to null]
-**c** | **Vec<i64>** | Conditions | [default to null]
-**p** | **f32** | Price of the trade | [default to null]
+**c** | **Vec<i64>** | Conditions | [optional] [default to null]
+**p** | **f32** | Price of the trade | [optional] [default to null]
 **z** | **i64** | Tape where trade occurred. ( 1,2 &#x3D; CTA, 3 &#x3D; UTP ) | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

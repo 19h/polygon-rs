@@ -36,15 +36,15 @@ pub struct StocksV2Trade {
   #[serde(rename = "s")]
   s: i64,  // 100 
   #[serde(rename = "c")]
-  c: Vec<i64>, 
+  c: Option<Vec<i64>>, 
   #[serde(rename = "p")]
-  p: f32,  // 223.001 
+  p: Option<f32>,  // 223.001 
   #[serde(rename = "z")]
   z: i64  // 1 
 }
 
 impl StocksV2Trade {
-  pub fn new(t: i64, q: i64, i: String, x: i64, s: i64, c: Vec<i64>, p: f32, z: i64, ) -> StocksV2Trade {
+  pub fn new(t: i64, q: i64, i: String, x: i64, s: i64, z: i64, ) -> StocksV2Trade {
     StocksV2Trade {
       T: None,
       t: t,
@@ -54,8 +54,8 @@ impl StocksV2Trade {
       i: i,
       x: x,
       s: s,
-      c: c,
-      p: p,
+      c: None,
+      p: None,
       z: z
     }
   }
@@ -182,32 +182,38 @@ impl StocksV2Trade {
 
 
   pub fn set_c(&mut self, c: Vec<i64>) {
-    self.c = c;
+    self.c = Some(c);
   }
 
   pub fn with_c(mut self, c: Vec<i64>) -> StocksV2Trade {
-    self.c = c;
+    self.c = Some(c);
     self
   }
 
-  pub fn c(&self) -> &Vec<i64> {
-    &self.c
+  pub fn c(&self) -> Option<&Vec<i64>> {
+    self.c.as_ref()
   }
 
+  pub fn reset_c(&mut self) {
+    self.c = None;
+  }
 
   pub fn set_p(&mut self, p: f32) {
-    self.p = p;
+    self.p = Some(p);
   }
 
   pub fn with_p(mut self, p: f32) -> StocksV2Trade {
-    self.p = p;
+    self.p = Some(p);
     self
   }
 
-  pub fn p(&self) -> &f32 {
-    &self.p
+  pub fn p(&self) -> Option<&f32> {
+    self.p.as_ref()
   }
 
+  pub fn reset_p(&mut self) {
+    self.p = None;
+  }
 
   pub fn set_z(&mut self, z: i64) {
     self.z = z;

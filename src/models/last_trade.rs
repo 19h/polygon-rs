@@ -26,11 +26,11 @@ pub struct LastTrade {
   #[serde(rename = "exchange")]
   exchange: i64,  // 11 
   #[serde(rename = "cond1")]
-  cond1: i64,  // 14 
+  cond1: Option<i64>,  // 14 
   #[serde(rename = "cond2")]
-  cond2: i64,  // 16 
+  cond2: Option<i64>,  // 16 
   #[serde(rename = "cond3")]
-  cond3: i64,  // 0 
+  cond3: Option<i64>,  // 0 
   #[serde(rename = "cond4")]
   cond4: Option<i64>,  // 0 
   #[serde(rename = "timestamp")]
@@ -38,14 +38,14 @@ pub struct LastTrade {
 }
 
 impl LastTrade {
-  pub fn new(price: f32, size: i64, exchange: i64, cond1: i64, cond2: i64, cond3: i64, timestamp: i64, ) -> LastTrade {
+  pub fn new(price: f32, size: i64, exchange: i64, timestamp: i64, ) -> LastTrade {
     LastTrade {
       price: price,
       size: size,
       exchange: exchange,
-      cond1: cond1,
-      cond2: cond2,
-      cond3: cond3,
+      cond1: None,
+      cond2: None,
+      cond3: None,
       cond4: None,
       timestamp: timestamp
     }
@@ -94,46 +94,55 @@ impl LastTrade {
 
 
   pub fn set_cond1(&mut self, cond1: i64) {
-    self.cond1 = cond1;
+    self.cond1 = Some(cond1);
   }
 
   pub fn with_cond1(mut self, cond1: i64) -> LastTrade {
-    self.cond1 = cond1;
+    self.cond1 = Some(cond1);
     self
   }
 
-  pub fn cond1(&self) -> &i64 {
-    &self.cond1
+  pub fn cond1(&self) -> Option<&i64> {
+    self.cond1.as_ref()
   }
 
+  pub fn reset_cond1(&mut self) {
+    self.cond1 = None;
+  }
 
   pub fn set_cond2(&mut self, cond2: i64) {
-    self.cond2 = cond2;
+    self.cond2 = Some(cond2);
   }
 
   pub fn with_cond2(mut self, cond2: i64) -> LastTrade {
-    self.cond2 = cond2;
+    self.cond2 = Some(cond2);
     self
   }
 
-  pub fn cond2(&self) -> &i64 {
-    &self.cond2
+  pub fn cond2(&self) -> Option<&i64> {
+    self.cond2.as_ref()
   }
 
+  pub fn reset_cond2(&mut self) {
+    self.cond2 = None;
+  }
 
   pub fn set_cond3(&mut self, cond3: i64) {
-    self.cond3 = cond3;
+    self.cond3 = Some(cond3);
   }
 
   pub fn with_cond3(mut self, cond3: i64) -> LastTrade {
-    self.cond3 = cond3;
+    self.cond3 = Some(cond3);
     self
   }
 
-  pub fn cond3(&self) -> &i64 {
-    &self.cond3
+  pub fn cond3(&self) -> Option<&i64> {
+    self.cond3.as_ref()
   }
 
+  pub fn reset_cond3(&mut self) {
+    self.cond3 = None;
+  }
 
   pub fn set_cond4(&mut self, cond4: i64) {
     self.cond4 = Some(cond4);

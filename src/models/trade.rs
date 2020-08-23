@@ -20,15 +20,15 @@ use crate::models::*;
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Trade {
   #[serde(rename = "c1")]
-  c1: i64,  // 14 
+  c1: Option<i64>,  // 14 
   #[serde(rename = "c2")]
-  c2: i64,  // 12 
+  c2: Option<i64>,  // 12 
   #[serde(rename = "c3")]
-  c3: i64,  // 0 
+  c3: Option<i64>,  // 0 
   #[serde(rename = "c4")]
-  c4: i64,  // 0 
+  c4: Option<i64>,  // 0 
   #[serde(rename = "e")]
-  e: String,  // 12 
+  e: Option<String>,  // 12 
   #[serde(rename = "p")]
   p: f32,  // 172.17 
   #[serde(rename = "s")]
@@ -38,13 +38,13 @@ pub struct Trade {
 }
 
 impl Trade {
-  pub fn new(c1: i64, c2: i64, c3: i64, c4: i64, e: String, p: f32, s: i64, t: i64, ) -> Trade {
+  pub fn new(p: f32, s: i64, t: i64, ) -> Trade {
     Trade {
-      c1: c1,
-      c2: c2,
-      c3: c3,
-      c4: c4,
-      e: e,
+      c1: None,
+      c2: None,
+      c3: None,
+      c4: None,
+      e: None,
       p: p,
       s: s,
       t: t
@@ -52,74 +52,89 @@ impl Trade {
   }
 
   pub fn set_c1(&mut self, c1: i64) {
-    self.c1 = c1;
+    self.c1 = Some(c1);
   }
 
   pub fn with_c1(mut self, c1: i64) -> Trade {
-    self.c1 = c1;
+    self.c1 = Some(c1);
     self
   }
 
-  pub fn c1(&self) -> &i64 {
-    &self.c1
+  pub fn c1(&self) -> Option<&i64> {
+    self.c1.as_ref()
   }
 
+  pub fn reset_c1(&mut self) {
+    self.c1 = None;
+  }
 
   pub fn set_c2(&mut self, c2: i64) {
-    self.c2 = c2;
+    self.c2 = Some(c2);
   }
 
   pub fn with_c2(mut self, c2: i64) -> Trade {
-    self.c2 = c2;
+    self.c2 = Some(c2);
     self
   }
 
-  pub fn c2(&self) -> &i64 {
-    &self.c2
+  pub fn c2(&self) -> Option<&i64> {
+    self.c2.as_ref()
   }
 
+  pub fn reset_c2(&mut self) {
+    self.c2 = None;
+  }
 
   pub fn set_c3(&mut self, c3: i64) {
-    self.c3 = c3;
+    self.c3 = Some(c3);
   }
 
   pub fn with_c3(mut self, c3: i64) -> Trade {
-    self.c3 = c3;
+    self.c3 = Some(c3);
     self
   }
 
-  pub fn c3(&self) -> &i64 {
-    &self.c3
+  pub fn c3(&self) -> Option<&i64> {
+    self.c3.as_ref()
   }
 
+  pub fn reset_c3(&mut self) {
+    self.c3 = None;
+  }
 
   pub fn set_c4(&mut self, c4: i64) {
-    self.c4 = c4;
+    self.c4 = Some(c4);
   }
 
   pub fn with_c4(mut self, c4: i64) -> Trade {
-    self.c4 = c4;
+    self.c4 = Some(c4);
     self
   }
 
-  pub fn c4(&self) -> &i64 {
-    &self.c4
+  pub fn c4(&self) -> Option<&i64> {
+    self.c4.as_ref()
   }
 
+  pub fn reset_c4(&mut self) {
+    self.c4 = None;
+  }
 
   pub fn set_e(&mut self, e: String) {
-    self.e = e;
+    self.e = Some(e);
   }
 
   pub fn with_e(mut self, e: String) -> Trade {
-    self.e = e;
+    self.e = Some(e);
     self
   }
 
-  pub fn e(&self) -> &String {
-    &self.e
+  pub fn e(&self) -> Option<&String> {
+    self.e.as_ref()
   }
 
+  pub fn reset_e(&mut self) {
+    self.e = None;
+  }
 
   pub fn set_p(&mut self, p: f32) {
     self.p = p;
