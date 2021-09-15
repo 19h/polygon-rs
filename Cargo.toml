@@ -17,7 +17,7 @@ hyper = "^0.13.6"
 url = "^2.1.1"
 headers = "^0.3.2"
 tokio = { version = "^0.2.21", features = ["full"] }
-bigdecimal = { version = "^0.1.2", features = ["serde"] }
+bigdecimal = { version = "0.3.0", features = ["serde"] }
 chrono = { version = "^0.4.13", features = ["serde"] }
 async-trait = "^0.1.36"
 
